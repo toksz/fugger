@@ -1,0 +1,52 @@
+{
+  "name": "resources-game-reference",
+  "version": "1.0.0",
+  "description": "RESOURCES GPS MMO Game Reference with real-time data integration",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "migrate": "node scripts/migrate-game-data.js",
+    "supabase:start": "supabase start",
+    "supabase:stop": "supabase stop",
+    "supabase:reset": "supabase db reset",
+    "supabase:generate-types": "supabase gen types typescript --local > types/supabase.ts"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.1",
+    "@supabase/auth-ui-react": "^0.4.7",
+    "@supabase/auth-ui-shared": "^0.1.8",
+    "next": "^14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "bootstrap": "^4.6.2",
+    "jquery": "^3.7.1",
+    "popper.js": "^1.16.1",
+    "react-bootstrap": "^2.9.1",
+    "react-chartjs-2": "^5.2.0",
+    "chart.js": "^4.4.0",
+    "swr": "^2.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/react": "^18.2.44",
+    "@types/react-dom": "^18.2.17",
+    "typescript": "^5.3.3",
+    "eslint": "^8.55.0",
+    "eslint-config-next": "^14.0.4",
+    "@supabase/supabase-cli": "^1.142.2"
+  },
+  "keywords": [
+    "resources-game",
+    "mmo",
+    "reference",
+    "calculator",
+    "supabase",
+    "nextjs",
+    "real-time"
+  ],
+  "author": "ROO",
+  "license": "MIT"
+}
