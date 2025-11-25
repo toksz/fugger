@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - RESOURCES GPS MMO Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-cogs mr-2"></i>RESOURCES GPS MMO Game
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="baseDropdown" data-toggle="dropdown">
+                            <i class="fas fa-building mr-1"></i>Base
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="headquarters.html"><i class="fas fa-home mr-2"></i>Headquarters</a>
+                            <a class="dropdown-item" href="factories.html"><i class="fas fa-industry mr-2"></i>Factories</a>
+                            <a class="dropdown-item" href="special-buildings.html"><i class="fas fa-landmark mr-2"></i>Special Buildings</a>
+                            <a class="dropdown-item active" href="resources.html"><i class="fas fa-gem mr-2"></i>Resources</a>
+                            <a class="dropdown-item" href="products.html"><i class="fas fa-cube mr-2"></i>Products</a>
+                            <a class="dropdown-item" href="loot.html"><i class="fas fa-treasure-chest mr-2"></i>Loot</a>
+                            <a class="dropdown-item" href="units.html"><i class="fas fa-users mr-2"></i>Units</a>
+                            <a class="dropdown-item" href="luxury-goods.html"><i class="fas fa-crown mr-2"></i>Luxury Goods</a>
+                            <a class="dropdown-item" href="prices.html"><i class="fas fa-chart-line mr-2"></i>Prices</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" data-toggle="dropdown">
+                            <i class="fas fa-tools mr-1"></i>Tools
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="production-calculation.html"><i class="fas fa-calculator mr-2"></i>Production Calculation</a>
+                            <a class="dropdown-item" href="factory-improvement.html"><i class="fas fa-arrow-trend-up mr-2"></i>Factory Improvement</a>
+                            <a class="dropdown-item" href="mine-improvements.html"><i class="fas fa-mountain mr-2"></i>Mine Improvements</a>
+                            <a class="dropdown-item" href="recycling.html"><i class="fas fa-recycle mr-2"></i>Recycling</a>
+                            <a class="dropdown-item" href="mines-cost.html"><i class="fas fa-money-bill-wave mr-2"></i>Mines Cost</a>
+                            <a class="dropdown-item" href="yield-of-the-mines.html"><i class="fas fa-chart-bar mr-2"></i>Yield of Mines</a>
+                            <a class="dropdown-item" href="attack-calculator.html"><i class="fas fa-sword mr-2"></i>Attack Calculator</a>
+                            <a class="dropdown-item" href="calculation-of-warehouse.html"><i class="fas fa-warehouse mr-2"></i>Warehouse Calculator</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Resources</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex align-items-center mb-4">
+                    <i class="fas fa-gem text-primary mr-4" style="font-size: 4rem;"></i>
+                    <div>
+                        <h1 class="mb-0">Resources</h1>
+                        <p class="text-muted mb-0">Raw materials extracted from mines and used in production</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resource Categories -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-list mr-2"></i>All Resources</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Raw materials extracted from mines, used in factory production, and essential for base development.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resource List -->
+        <div class="row">
+            <!-- Coal -->
+            <div class="col-lg-6 mb-4">
+                <div class="card resource-card h-100">
+                    <div class="card-header d-flex align-items-center">
+                        <img src="assets/images/coal.png" alt="Coal" class="resource-icon mr-3">
+                        <h5 class="mb-0">Coal</h5>
+                        <span class="badge badge-secondary ml-auto">Basic</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <strong>Mine Level:</strong><br>
+                                <span class="badge badge-primary">Level 1</span>
+                            </div>
+                            <div class="col-6">
+                                <strong>Price:</strong><br>
+                                <span id="coalPrice">1,200</span> Credits
+                            </div>
+                        </div>
+                        
+                        <h6>Used In Production:</h6>
+                        <ul>
+                            <li>Plastics (150 per 100 units)</li>
+                            <li>Copper Refining (30 per 100 units)</li>
+                            <li>Steel Production (25 per 100 units)</li>
+                            <li>Concrete Manufacturing (50 per 100 units)</li>
+                        </ul>
+                        
+                        <div class="mt-3">
+                            <strong>Extraction Rate:</strong> 45 units/hour
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Iron Ore -->
+            <div class="col-lg-6 mb-4">
+                <div class="card resource-card h-100">
+                    <div class="card-header d-flex align-items-center">
+                        <img src="assets/images/iron-ore.png" alt="Iron Ore" class="resource-icon mr-3">
+                        <h5 class="mb-0">Iron Ore</h5>
+                        <span class="badge badge-secondary ml-auto">Basic</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <strong>Mine Level:</strong><br>
+                                <span class="badge badge-primary">Level 2</span>
+                            </div>
+                            <div class="col-6">
+                                <strong>Price:</strong><br>
+                                <span id="ironOrePrice">2,500</span> Credits
+                            </div>
+                        </div>
+                        
+                        <h6>Used In Production:</h6>
+                        <ul>
+                            <li>Steel Production (200 per 100 units)</li>
+                            <li>Ironworks Operations</li>
+                            <li>Construction Materials</li>
+                        </ul>
+                        
+                        <div class="mt-3">
+                            <strong>Extraction Rate:</strong> 35 units/hour
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Crude Oil -->
+            <div class="col-lg-6 mb-4">
+                <div class="card resource-card h-100">
+                    <div class="card-header d-flex align-items-center">
+                        <img src="assets/images/crude-oil.png" alt="Crude Oil" class="resource-icon mr-3">
+                        <h5 class="mb-0">Crude Oil</h5>
+                        <span class="badge badge-warning ml-auto">Advanced</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <strong>Mine Level:</strong><br>
+                                <span class="badge badge-primary">Level 3</span>
+                            </div>
+                            <div class="col-6">
+                                <strong>Price:</strong><br>
+                                <span id="crudeOilPrice">5,800</span> Credits
+                            </div>
+                        </div>
+                        
+                        <h6>Used In Production:</h6>
+                        <ul>
+                            <li>Plastics (150 per 100 units)</li>
+                            <li>Aluminium Production (30 per 100 units)</li>
+                            <li>Fossil Fuel Processing</li>
+                            <li>Plastic Factory Operations</li>
+                        </ul>
+                        
+                        <div class="mt-3">
+                            <strong>Extraction Rate:</strong> 28 units/hour
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copper Ore -->
+            <div class="col-lg-6 mb-4">
+                <div class="card resource-card h-100">
+                    <div class="card-header d-flex align-items-center">
+                        <img src="assets/images/copper-ore.png" alt="Copper Ore" class="resource-icon mr-3">
+                        <h5 class="mb-0">Copper Ore</h5>
+                        <span class="badge badge-warning ml-auto">Advanced</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <strong>Mine Level:</strong><br>
+                                <span class="badge badge-primary">Level 2</span>
+                            </div>
+                            <div class="col-6">
+                                <strong>Price:</strong><br>
+                                <span id="copperOrePrice">3,200</span> Credits
+                            </div>
+                        </div>
+                        
+                        <h6>Used In Production:</h6>
+                        <ul>
+                            <li>Copper Refining (200 per 100 units)</li>
+                            <li>Electronics Production (180 per 100 units)</li>
+                            <li>Battery Manufacturing (80 per 100 units)</li>
+                            <li>Arms Factory Operations</li>
+                        </ul>
+                        
+                        <div class="mt-3">
+                            <strong>Extraction Rate:</strong> 32 units/hour
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gold Ore -->
+            <div class="col-lg-6 mb-4">
+                <div class="card resource-card h-100">
+                    <div class="card-header d-flex align-items-center">
+                        <img src="assets/images/gold-ore.png" alt="Gold Ore" class="resource-icon mr-3">
+                        <h5 class="mb-0">Gold Ore</h5>
+                        <span class="badge badge-info ml-auto">Rare</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <strong>Mine Level:</strong><br>
+                                <span class="badge badge-primary">Level 5</span>
+                            </div>
+                            <div class="col-6">
+                                <strong>Price:</strong><br>
+                                <span id="goldOrePrice">15,750</span> Credits
+                            </div>
+                        </div>
+                        
+                        <h6>Used In Production:</h6>
+                        <ul>
+                            <li>Gold Refining Operations</li>
+                            <li>Luxury Goods Production</li>
+                            <li>Casino Construction</li>
+                            <li>High-end Electronics</li>
+                        </ul>
+                        
+                        <div class="mt-3">
+                            <strong>Extraction Rate:</strong> 12 units/hour
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Silicon -->
+            <div class="col-lg-6 mb-4">
+                <div class="card resource-card h-100">
+                    <div class="card-header d-flex align-items-center">
+                        <img src="assets/images/silicon.png" alt="Silicon" class="resource-icon mr-3">
+                        <h5 class="mb-0">Silicon</h5>
+                        <span class="badge badge-info ml-auto">Rare</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <strong>Mine Level:</strong><br>
+                                <span class="badge badge-primary">Level 4</span>
+                            </div>
+                            <div class="col-6">
+                                <strong>Price:</strong><br>
+                                <span id="siliconPrice">8,900</span> Credits
+                            </div>
+                        </div>
+                        
+                        <h6>Used In Production:</h6>
+                        <ul>
+                            <li>Electronics Production (60 per 100 units)</li>
+                            <li>Silicon Refinery Operations</li>
+                            <li>Tech Center Construction</li>
+                            <li>Advanced Circuit Manufacturing</li>
+                        </ul>
+                        
+                        <div class="mt-3">
+                            <strong>Extraction Rate:</strong> 18 units/hour
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bauxite -->
+            <div class="col-lg-6 mb-4">
+                <div class="card resource-card h-100">
+                    <div class="card-header d-flex align-items-center">
+                        <img src="assets/images/bauxite.png" alt="Bauxite" class="resource-icon mr-3">
+                        <h5 class="mb-0">Bauxite</h5>
+                        <span class="badge badge-warning ml-auto">Advanced</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <strong>Mine Level:</strong><br>
+                                <span class="badge badge-primary">Level 3</span>
+                            </div>
+                            <div class="col-6">
+                                <strong>Price:</strong><br>
+                                <span id="bauxitePrice">4,200</span> Credits
+                            </div>
+                        </div>
+                        
+                        <h6>Used In Production:</h6>
+                        <ul>
+                            <li>Aluminium Production (200 per 100 units)</li>
+                            <li>Aluminium Factory Operations</li>
+                            <li>High-grade Steel Production</li>
+                            <li>Aerospace Components</li>
+                        </ul>
+                        
+                        <div class="div class="mt-3">
+                            <strong>Extraction Rate:</strong> 25 units/hour
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lithium -->
+            <div class="col-lg-6 mb-4">
+                <div class="card resource-card h-100">
+                    <div class="card-header d-flex align-items-center">
+                        <img src="assets/images/lithium-ore.png" alt="Lithium Ore" class="resource-icon mr-3">
+                        <h5 class="mb-0">Lithium Ore</h5>
+                        <span class="badge badge-info ml-auto">Rare</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <strong>Mine Level:</strong><br>
+                                <span class="badge badge-primary">Level 5</span>
+                            </div>
+                            <div class="col-6">
+                                <strong>Price:</strong><br>
+                                <span id="lithiumOrePrice">12,300</span> Credits
+                            </div>
+                        </div>
+                        
+                        <h6>Used In Production:</h6>
+                        <ul>
+                            <li>Battery Production (100 per 100 units)</li>
+                            <li>Lithium Refinery Operations</li>
+                            <li>Advanced Electronics</li>
+                            <li>High-tech Applications</li>
+                        </ul>
+                        
+                        <div class="mt-3">
+                            <strong>Extraction Rate:</strong> 15 units/hour
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resource Statistics -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-chart-line mr-2"></i>Resource Statistics</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3 text-center">
+                                <h3 class="text-primary">15</h3>
+                                <p class="mb-0">Total Resource Types</p>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <h3 class="text-success">Level 1</h3>
+                                <p class="mb-0">Minimum Mine Level</p>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <h3 class="text-warning">12,300</h3>
+                                <p class="mb-0">Highest Resource Price</p>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <h3 class="text-info">45</h3>
+                                <p class="mb-0">Max Extraction Rate</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>RESOURCES GPS MMO Game Reference</h5>
+                    <p class="mb-0">Complete game reference and calculator suite</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <p class="mb-0">
+                        <a href="index.html" class="text-light">Back to Home</a> | 
+                        <a href="special-buildings.html" class="text-light ml-2">Previous: Special Buildings</a> | 
+                        <a href="products.html" class="text-light ml-2">Next: Products</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="helper.js"></script>
+    <script>
+        // Resource data for calculator integration
+        window.ResourceData = {
+            coal: {
+                name: "Coal",
+                mineLevel: 1,
+                price: 1200,
+                extractionRate: 45,
+                uses: ["Plastics", "Copper Refining", "Steel Production"]
+            },
+            ironOre: {
+                name: "Iron Ore",
+                mineLevel: 2,
+                price: 2500,
+                extractionRate: 35,
+                uses: ["Steel Production", "Ironworks", "Construction"]
+            },
+            crudeOil: {
+                name: "Crude Oil",
+                mineLevel: 3,
+                price: 5800,
+                extractionRate: 28,
+                uses: ["Plastics", "Aluminium Production", "Fossil Fuel Processing"]
+            },
+            copperOre: {
+                name: "Copper Ore",
+                mineLevel: 2,
+                price: 3200,
+                extractionRate: 32,
+                uses: ["Copper Refining", "Electronics", "Battery Manufacturing"]
+            },
+            goldOre: {
+                name: "Gold Ore",
+                mineLevel: 5,
+                price: 15750,
+                extractionRate: 12,
+                uses: ["Gold Refining", "Luxury Goods", "High-end Electronics"]
+            },
+            silicon: {
+                name: "Silicon",
+                mineLevel: 4,
+                price: 8900,
+                extractionRate: 18,
+                uses: ["Electronics Production", "Circuit Manufacturing", "Tech Centers"]
+            },
+            bauxite: {
+                name: "Bauxite",
+                mineLevel: 3,
+                price: 4200,
+                extractionRate: 25,
+                uses: ["Aluminium Production", "Aerospace Components"]
+            },
+            lithiumOre: {
+                name: "Lithium Ore",
+                mineLevel: 5,
+                price: 12300,
+                extractionRate: 15,
+                uses: ["Battery Production", "Advanced Electronics"]
+            }
+        };
+    </script>
+</body>
+</html>

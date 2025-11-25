@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prices - RESOURCES GPS MMO Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-cogs mr-2"></i>RESOURCES GPS MMO Game
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="baseDropdown" data-toggle="dropdown">
+                            <i class="fas fa-building mr-1"></i>Base
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="headquarters.html"><i class="fas fa-home mr-2"></i>Headquarters</a>
+                            <a class="dropdown-item" href="factories.html"><i class="fas fa-industry mr-2"></i>Factories</a>
+                            <a class="dropdown-item" href="special-buildings.html"><i class="fas fa-landmark mr-2"></i>Special Buildings</a>
+                            <a class="dropdown-item" href="resources.html"><i class="fas fa-gem mr-2"></i>Resources</a>
+                            <a class="dropdown-item" href="products.html"><i class="fas fa-cube mr-2"></i>Products</a>
+                            <a class="dropdown-item" href="loot.html"><i class="fas fa-treasure-chest mr-2"></i>Loot</a>
+                            <a class="dropdown-item" href="units.html"><i class="fas fa-users mr-2"></i>Units</a>
+                            <a class="dropdown-item" href="luxury-goods.html"><i class="fas fa-crown mr-2"></i>Luxury Goods</a>
+                            <a class="dropdown-item active" href="prices.html"><i class="fas fa-chart-line mr-2"></i>Prices</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" data-toggle="dropdown">
+                            <i class="fas fa-tools mr-1"></i>Tools
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="production-calculation.html"><i class="fas fa-calculator mr-2"></i>Production Calculation</a>
+                            <a class="dropdown-item" href="factory-improvement.html"><i class="fas fa-arrow-trend-up mr-2"></i>Factory Improvement</a>
+                            <a class="dropdown-item" href="mine-improvements.html"><i class="fas fa-mountain mr-2"></i>Mine Improvements</a>
+                            <a class="dropdown-item" href="recycling.html"><i class="fas fa-recycle mr-2"></i>Recycling</a>
+                            <a class="dropdown-item" href="mines-cost.html"><i class="fas fa-money-bill-wave mr-2"></i>Mines Cost</a>
+                            <a class="dropdown-item" href="yield-of-the-mines.html"><i class="fas fa-chart-bar mr-2"></i>Yield of Mines</a>
+                            <a class="dropdown-item" href="attack-calculator.html"><i class="fas fa-sword mr-2"></i>Attack Calculator</a>
+                            <a class="dropdown-item" href="calculation-of-warehouse.html"><i class="fas fa-warehouse mr-2"></i>Warehouse Calculator</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Prices</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex align-items-center mb-4">
+                    <i class="fas fa-chart-line text-success mr-4" style="font-size: 4rem;"></i>
+                    <div>
+                        <h1 class="mb-0">Market Prices</h1>
+                        <p class="text-muted mb-0">Current market values for all resources and products</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Price Overview -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-info-circle mr-2"></i>Market Information</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Current market prices for resources, products, and special items in RESOURCES GPS MMO Game. Prices fluctuate based on supply, demand, and market events. Use this data to optimize your trading and production strategies.</p>
+                        <div class="row mt-3">
+                            <div class="col-md-3 text-center">
+                                <h6 class="text-primary">50+</h6>
+                                <small>Tradeable Items</small>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <h6 class="text-success">Dynamic</h6>
+                                <small>Price Changes</small>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <h6 class="text-warning">24/7</h6>
+                                <small>Market Activity</small>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <h6 class="text-info">Real-time</h6>
+                                <small>Data Updates</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Price Categories -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <ul class="nav nav-pills nav-fill" id="priceTabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="all-prices-tab" data-toggle="pill" href="#all-prices" role="tab">All Prices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="resources-tab" data-toggle="pill" href="#resources" role="tab">Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="products-tab" data-toggle="pill" href="#products" role="tab">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="special-tab" data-toggle="pill" href="#special" role="tab">Special Items</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Price Tables -->
+        <div class="tab-content" id="priceTabContent">
+            <!-- All Prices Tab -->
+            <div class="tab-pane fade show active" id="all-prices" role="tabpanel">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0"><i class="fas fa-table mr-2"></i>Complete Price List</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-hover">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th><i class="fas fa-box mr-2"></i>Item</th>
+                                                <th><i class="fas fa-tag mr-2"></i>Category</th>
+                                                <th><i class="fas fa-dollar-sign mr-2"></i>Current Price</th>
+                                                <th><i class="fas fa-chart-line mr-2"></i>Change (24h)</th>
+                                                <th><i class="fas fa-chart-bar mr-2"></i>Volume</th>
+                                                <th><i class="fas fa-info-circle mr-2"></i>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Resources -->
+                                            <tr>
+                                                <td><i class="fas fa-mountain text-secondary mr-2"></i>Coal</td>
+                                                <td>Raw Resource</td>
+                                                <td class="text-warning font-weight-bold">45 Credits</td>
+                                                <td><span class="text-success"><i class="fas fa-arrow-up mr-1"></i>+2.3%</span></td>
+                                                <td>1,247 units</td>
+                                                <td><span class="badge badge-success">Stable</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="fas fa-gem text-danger mr-2"></i>Iron Ore</td>
+                                                <td>Raw Resource</td>
+                                                <td class="text-warning font-weight-bold">120 Credits</td>
+                                                <td><span class="text-danger"><i class="fas fa-arrow-down mr-1"></i>-1.8%</span></td>
+                                                <td>892 units</td>
+                                                <td><span class="badge badge-warning">Volatile</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="fas fa-oil-can text-dark mr-2"></i>Crude Oil</td>
+                                                <td>Raw Resource</td>
+                                                <td class="text-warning font-weight-bold">85 Credits</td>
+                                                <td><span class="text-success"><i class="fas fa-arrow-up mr-1"></i>+4.2%</span></td>
+                                                <td>2,156 units</td>
+                                                <td><span class="badge badge-info">Rising</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="fas fa-coin text-primary mr-2"></i>Copper Ore</td>
+                                                <td>Raw Resource</td>
+                                                <td class="text-warning font-weight-bold">95 Credits</td>
+                                                <td><span class="text-muted"><i class="fas fa-minus mr-1"></i>0.0%</span></td>
+                                                <td>1,089 units</td>
+                                                <td><span class="badge badge-secondary">Stable</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="fas fa-star text-warning mr-2"></i>Gold Ore</td>
+                                                <td>Raw Resource</td>
+                                                <td class="text-warning font-weight-bold">750 Credits</td>
+                                                <td><span class="text-success"><i class="fas fa-arrow-up mr-1"></i>+6.1%</span></td>
+                                                <td>234 units</td>
+                                                <td><span class="badge badge-warning">High Demand</span></td>
+                                            </tr>
+                                            
+                                            <!-- Products -->
+                                            <tr>
+                                                <td><i class="fas fa-microchip text-info mr-2"></i>Electronics</td>
+                                                <td>Manufactured Product</td>
+                                                <td class="text-warning font-weight-bold">2,500 Credits</td>
+                                                <td><span class="text-success"><i class="fas fa-arrow-up mr-1"></i>+8.5%</span></td>
+                                                <td>456 units</td>
+                                                <td><span class="badge badge-success">Profitable</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="fas fa-recycle text-success mr-2"></i>Plastics</td>
+                                                <td>Manufactured Product</td>
+                                                <td class="text-warning font-weight-bold">180 Credits</td>
+                                                <td><span class="text-danger"><i class="fas fa-arrow-down mr-1"></i>-3.2%</span></td>
+                                                <td>1,789 units</td>
+                                                <td><span class="badge badge-info">Stable</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="fas fa-hammer text-secondary mr-2"></i>Steel</td>
+                                                <td>Manufactured Product</td>
+                                                <td class="text-warning font-weight-bold">350 Credits</td>
+                                                <td><span class="text-success"><i class="fas fa-arrow-up mr-1"></i>+1.9%</span></td>
+                                                <td>967 units</td>
+                                                <td><span class="badge badge-success">Good Demand</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="fas fa-briefcase-medical text-primary mr-2"></i>Medical Technology</td>
+                                                <td>Advanced Product</td>
+                                                <td class="text-warning font-weight-bold">5,750 Credits</td>
+                                                <td><span class="text-success"><i class="fas fa-arrow-up mr-1"></i>+12.4%</span></td>
+                                                <td>123 units</td>
+                                                <td><span class="badge badge-danger">Scarce</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="fas fa-bomb text-danger mr-2"></i>Weapons</td>
+                                                <td>Military Product</td>
+                                                <td class="text-warning font-weight-bold">3,200 Credits</td>
+                                                <td><span class="text-success"><i class="fas fa-arrow-up mr-1"></i>+15.7%</span></td>
+                                                <td>89 units</td>
+                                                <td><span class="badge badge-warning">Restricted</span></td>
+                                            </tr>
+                                            
+                                            <!-- Special Items -->
+                                            <tr>
+                                                <td><i class="fas fa-treasure-chest text-warning mr-2"></i>Tech Upgrade 1</td>
+                                                <td>Loot Item</td>
+                                                <td class="text-warning font-weight-bold">250,000 Credits</td>
+                                                <td><span class="text-muted"><i class="fas fa-minus mr-1"></i>0.0%</span></td>
+                                                <td>12 units</td>
+                                                <td><span class="badge badge-info">Rare</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="fas fa-users text-primary mr-2"></i>Guest Workers</td>
+                                                <td>Staff Item</td>
+                                                <td class="text-warning font-weight-bold">75,000 Credits</td>
+                                                <td><span class="text-success"><i class="fas fa-arrow-up mr-1"></i>+22.1%</span></td>
+                                                <td>5 units</td>
+                                                <td><span class="badge badge-warning">High Demand</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="fas fa-clock text-info mr-2"></i>Night Shift</td>
+                                                <td>Time Boost</td>
+                                                <td class="text-warning font-weight-bold">50,000 Credits</td>
+                                                <td><span class="text-danger"><i class="fas fa-arrow-down mr-1"></i>-8.3%</span></td>
+                                                <td>8 units</td>
+                                                <td><span class="badge badge-secondary">Available</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="fas fa-car text-primary mr-2"></i>Luxury Car</td>
+                                                <td>Luxury Item</td>
+                                                <td class="text-warning font-weight-bold">2,500,000 Credits</td>
+                                                <td><span class="text-success"><i class="fas fa-arrow-up mr-1"></i>+5.2%</span></td>
+                                                <td>1 unit</td>
+                                                <td><span class="badge badge-warning">Ultra Rare</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="fas fa-plane text-info mr-2"></i>Private Jet</td>
+                                                <td>Luxury Item</td>
+                                                <td class="text-warning font-weight-bold">15,000,000 Credits</td>
+                                                <td><span class="text-muted"><i class="fas fa-minus mr-1"></i>0.0%</span></td>
+                                                <td>0 units</td>
+                                                <td><span class="badge badge-danger">Legendary</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resources Tab -->
+            <div class="tab-pane fade" id="resources" role="tabpanel">
+                <div class="row">
+                    <div class="col-12">
+                        <h5>Resource Prices</h5>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Resource</th>
+                                        <th>Price</th>
+                                        <th>Change (24h)</th>
+                                        <th>Market Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Coal</td>
+                                        <td>45 Credits</td>
+                                        <td class="text-success">+2.3%</td>
+                                        <td><span class="badge badge-success">Stable</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Iron Ore</td>
+                                        <td>120 Credits</td>
+                                        <td class="text-danger">-1.8%</td>
+                                        <td><span class="badge badge-warning">Volatile</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Crude Oil</td>
+                                        <td>85 Credits</td>
+                                        <td class="text-success">+4.2%</td>
+                                        <td><span class="badge badge-info">Rising</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Products Tab -->
+            <div class="tab-pane fade" id="products" role="tabpanel">
+                <div class="row">
+                    <div class="col-12">
+                        <h5>Product Prices</h5>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th>Change (24h)</th>
+                                        <th>Market Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Electronics</td>
+                                        <td>2,500 Credits</td>
+                                        <td class="text-success">+8.5%</td>
+                                        <td><span class="badge badge-success">Profitable</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Plastics</td>
+                                        <td>180 Credits</td>
+                                        <td class="text-danger">-3.2%</td>
+                                        <td><span class="badge badge-info">Stable</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Steel</td>
+                                        <td>350 Credits</td>
+                                        <td class="text-success">+1.9%</td>
+                                        <td><span class="badge badge-success">Good Demand</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Special Tab -->
+            <div class="tab-pane fade" id="special" role="tabpanel">
+                <div class="row">
+                    <div class="col-12">
+                        <h5>Special Item Prices</h5>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Price</th>
+                                        <th>Change (24h)</th>
+                                        <th>Rarity</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Tech Upgrade 1</td>
+                                        <td>250,000 Credits</td>
+                                        <td class="text-muted">0.0%</td>
+                                        <td><span class="badge badge-info">Rare</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Luxury Car</td>
+                                        <td>2,500,000 Credits</td>
+                                        <td class="text-success">+5.2%</td>
+                                        <td><span class="badge badge-warning">Ultra Rare</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Private Jet</td>
+                                        <td>15,000,000 Credits</td>
+                                        <td class="text-muted">0.0%</td>
+                                        <td><span class="badge badge-danger">Legendary</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Price Statistics -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-chart-area mr-2"></i>Market Statistics</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3 text-center">
+                                <h6 class="text-success">+15.7%</h6>
+                                <small>Biggest Gain (Weapons)</small>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <h6 class="text-danger">-8.3%</h6>
+                                <small>Biggest Loss (Night Shift)</small>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <h6 class="text-primary">15.75M</h6>
+                                <small>Most Expensive (Private Jet)</small>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <h6 class="text-warning">45</h6>
+                                <small>Cheapest (Coal)</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>RESOURCES GPS MMO Game Reference</h5>
+                    <p class="mb-0">Complete game reference and calculator suite</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <p class="mb-0">
+                        <a href="index.html" class="text-light">Back to Home</a> | 
+                        <a href="luxury-goods.html" class="text-light ml-2">Previous: Luxury Goods</a> | 
+                        <a href="production-calculation.html" class="text-light ml-2">Next: Tools</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="helper.js"></script>
+</body>
+</html>

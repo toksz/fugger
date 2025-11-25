@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Goods - RESOURCES GPS MMO Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-cogs mr-2"></i>RESOURCES GPS MMO Game
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="baseDropdown" data-toggle="dropdown">
+                            <i class="fas fa-building mr-1"></i>Base
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="headquarters.html"><i class="fas fa-home mr-2"></i>Headquarters</a>
+                            <a class="dropdown-item" href="factories.html"><i class="fas fa-industry mr-2"></i>Factories</a>
+                            <a class="dropdown-item" href="special-buildings.html"><i class="fas fa-landmark mr-2"></i>Special Buildings</a>
+                            <a class="dropdown-item" href="resources.html"><i class="fas fa-gem mr-2"></i>Resources</a>
+                            <a class="dropdown-item" href="products.html"><i class="fas fa-cube mr-2"></i>Products</a>
+                            <a class="dropdown-item" href="loot.html"><i class="fas fa-treasure-chest mr-2"></i>Loot</a>
+                            <a class="dropdown-item" href="units.html"><i class="fas fa-users mr-2"></i>Units</a>
+                            <a class="dropdown-item active" href="luxury-goods.html"><i class="fas fa-crown mr-2"></i>Luxury Goods</a>
+                            <a class="dropdown-item" href="prices.html"><i class="fas fa-chart-line mr-2"></i>Prices</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" data-toggle="dropdown">
+                            <i class="fas fa-tools mr-1"></i>Tools
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="production-calculation.html"><i class="fas fa-calculator mr-2"></i>Production Calculation</a>
+                            <a class="dropdown-item" href="factory-improvement.html"><i class="fas fa-arrow-trend-up mr-2"></i>Factory Improvement</a>
+                            <a class="dropdown-item" href="mine-improvements.html"><i class="fas fa-mountain mr-2"></i>Mine Improvements</a>
+                            <a class="dropdown-item" href="recycling.html"><i class="fas fa-recycle mr-2"></i>Recycling</a>
+                            <a class="dropdown-item" href="mines-cost.html"><i class="fas fa-money-bill-wave mr-2"></i>Mines Cost</a>
+                            <a class="dropdown-item" href="yield-of-the-mines.html"><i class="fas fa-chart-bar mr-2"></i>Yield of Mines</a>
+                            <a class="dropdown-item" href="attack-calculator.html"><i class="fas fa-sword mr-2"></i>Attack Calculator</a>
+                            <a class="dropdown-item" href="calculation-of-warehouse.html"><i class="fas fa-warehouse mr-2"></i>Warehouse Calculator</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Luxury Goods</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex align-items-center mb-4">
+                    <i class="fas fa-crown text-warning mr-4" style="font-size: 4rem;"></i>
+                    <div>
+                        <h1 class="mb-0">Luxury Goods</h1>
+                        <p class="text-muted mb-0">Premium items and achievements for the elite base owner</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Luxury Goods Overview -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-gem mr-2"></i>Luxury Collection</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Luxury goods represent the pinnacle of success in RESOURCES GPS MMO Game. These prestigious items serve as status symbols, provide substantial bonuses, and demonstrate your wealth and influence in the game world.</p>
+                        <div class="row mt-3">
+                            <div class="col-md-3 text-center">
+                                <h6 class="text-warning">25+</h6>
+                                <small>Luxury Items</small>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <h6 class="text-success">Million+</h6>
+                                <small>Max Value</small>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <h6 class="text-primary">Prestige</h6>
+                                <small>Status Level</small>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <h6 class="text-danger">Epic</h6>
+                                <small>Quality Tier</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Luxury Categories -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <ul class="nav nav-pills nav-fill" id="luxuryTabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="all-luxury-tab" data-toggle="pill" href="#all-luxury" role="tab">All Luxury</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="vehicles-tab" data-toggle="pill" href="#vehicles" role="tab">Vehicles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="property-tab" data-toggle="pill" href="#property" role="tab">Property</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="artifacts-tab" data-toggle="pill" href="#artifacts" role="tab">Artifacts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="collections-tab" data-toggle="pill" href="#collections" role="tab">Collections</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Luxury Items -->
+        <div class="tab-content" id="luxuryTabContent">
+            <!-- All Luxury Tab -->
+            <div class="tab-pane fade show active" id="all-luxury" role="tabpanel">
+                <div class="row">
+                    <!-- Luxury Car -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="card luxury-card h-100">
+                            <div class="card-header d-flex align-items-center">
+                                <i class="fas fa-car text-primary mr-3" style="font-size: 2rem;"></i>
+                                <h5 class="mb-0">Luxury Car</h5>
+                                <span class="badge badge-warning ml-auto">Premium</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <strong>Status Bonus:</strong><br>
+                                        <span class="text-success">+15% Respect</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Value:</strong><br>
+                                        <span class="text-warning">2,500,000</span>
+                                    </div>
+                                </div>
+                                
+                                <h6>Description:</h6>
+                                <p>A high-end luxury vehicle that demonstrates your success and status in the business world.</p>
+                                
+                                <h6>Benefits:</h6>
+                                <ul>
+                                    <li>Increases respect from other players</li>
+                                    <li>Reduces intimidation attempts by 30%</li>
+                                    <li>Provides mobility bonus for quick responses</li>
+                                    <li>Attracts positive attention from authorities</li>
+                                </ul>
+                                
+                                <div class="mt-3">
+                                    <strong>Requirements:</strong> <span class="text-info">HQ Level 15, Elite Membership</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Private Jet -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="card luxury-card h-100">
+                            <div class="card-header d-flex align-items-center">
+                                <i class="fas fa-plane text-info mr-3" style="font-size: 2rem;"></i>
+                                <h5 class="mb-0">Private Jet</h5>
+                                <span class="badge badge-info ml-auto">Elite</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <strong>Global Reach:</strong><br>
+                                        <span class="text-success">Unlimited</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Value:</strong><br>
+                                        <span class="text-warning">15,000,000</span>
+                                    </div>
+                                </div>
+                                
+                                <h6>Description:</h6>
+                                <p>A state-of-the-art private aircraft for global business operations and elite travel.</p>
+                                
+                                <h6>Benefits:</h6>
+                                <ul>
+                                    <li>Instant global access and rapid response</li>
+                                    <li>Impresses high-value business contacts</li>
+                                    <li>Provides exclusive diplomatic immunity</li>
+                                    <li>Enables emergency evacuations</li>
+                                </ul>
+                                
+                                <div class="mt-3">
+                                    <strong>Requirements:</strong> <span class="text-info">HQ Level 25, Millionaire Status</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Private Yacht -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="card luxury-card h-100">
+                            <div class="card-header d-flex align-items-center">
+                                <i class="fas fa-ship text-primary mr-3" style="font-size: 2rem;"></i>
+                                <h5 class="mb-0">Luxury Yacht</h5>
+                                <span class="badge badge-primary ml-auto">Maritime</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <strong>Status:</strong><br>
+                                        <span class="text-success">Ultra Elite</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Value:</strong><br>
+                                        <span class="text-warning">8,000,000</span>
+                                    </div>
+                                </div>
+                                
+                                <h6>Description:</h6>
+                                <p>A magnificent floating palace for hosting elite gatherings and maritime business.</p>
+                                
+                                <h6>Benefits:</h6>
+                                <ul>
+                                    <li>Host exclusive business parties</li>
+                                    <li>Access to exclusive maritime routes</li>
+                                    <li>Substantial protection from sea attacks</li>
+                                    <li>Impressive diplomatic presence</li>
+                                </ul>
+                                
+                                <div class="mt-3">
+                                    <strong>Requirements:</strong> <span class="text-info">HQ Level 20, Naval Connections</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Private Island -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="card luxury-card h-100">
+                            <div class="card-header d-flex align-items-center">
+                                <i class="fas fa-island-tropical text-success mr-3" style="font-size: 2rem;"></i>
+                                <h5 class="mb-0">Private Island</h5>
+                                <span class="badge badge-success ml-auto">Ultimate</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <strong>Exclusivity:</strong><br>
+                                        <span class="text-success">Absolute</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Value:</strong><br>
+                                        <span class="text-warning">50,000,000</span>
+                                    </div>
+                                </div>
+                                
+                                <h6>Description:</h6>
+                                <p>An entire private island resort for the ultimate in privacy and luxury living.</p>
+                                
+                                <h6>Benefits:</h6>
+                                <ul>
+                                    <li>Complete privacy and security</li>
+                                    <li>Custom facilities and infrastructure</li>
+                                    <li>Elite retreat for confidential meetings</li>
+                                    <li>Ultimate status symbol</li>
+                                </ul>
+                                
+                                <div class="mt-3">
+                                    <strong>Requirements:</strong> <span class="text-info">HQ Level 30, Billionaire Status</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Diamond Collection -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="card luxury-card h-100">
+                            <div class="card-header d-flex align-items-center">
+                                <i class="fas fa-gem text-warning mr-3" style="font-size: 2rem;"></i>
+                                <h5 class="mb-0">Diamond Collection</h5>
+                                <span class="badge badge-warning ml-auto">Rare</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <strong>Rarity:</strong><br>
+                                        <span class="text-success">Extremely Rare</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Value:</strong><br>
+                                        <span class="text-warning">12,000,000</span>
+                                    </div>
+                                </div>
+                                
+                                <h6>Description:</h6>
+                                <p>A curated collection of the finest diamonds and precious gems from around the world.</p>
+                                
+                                <h6>Benefits:</h6>
+                                <ul>
+                                    <li>Massive wealth display</li>
+                                    <li>Attracts high-end business opportunities</li>
+                                    <li>Used as diplomatic gifts</li>
+                                    <li>Insurance against economic downturns</li>
+                                </ul>
+                                
+                                <div class="mt-3">
+                                    <strong>Requirements:</strong> <span class="text-info">HQ Level 18, Gem Expert Status</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Art Collection -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="card luxury-card h-100">
+                            <div class="card-header d-flex align-items-center">
+                                <i class="fas fa-palette text-danger mr-3" style="font-size: 2rem;"></i>
+                                <h5 class="mb-0">Art Collection</h5>
+                                <span class="badge badge-danger ml-auto">Cultural</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <strong>Cultural Value:</strong><br>
+                                        <span class="text-success">Inestimable</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Value:</strong><br>
+                                        <span class="text-warning">25,000,000</span>
+                                    </div>
+                                </div>
+                                
+                                <h6>Description:</h6>
+                                <p>A world-class collection of masterpieces from renowned artists across history.</p>
+                                
+                                <h6>Benefits:</h6>
+                                <ul>
+                                    <li>Cultural prestige and influence</li>
+                                    <li>Access to elite art circles</li>
+                                    <li>Valuable investment potential</li>
+                                    <li>Impressive diplomatic leverage</li>
+                                </ul>
+                                
+                                <div class="mt-3">
+                                    <strong>Requirements:</strong> <span class="text-info">HQ Level 22, Art Patron Status</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mansion Complex -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="card luxury-card h-100">
+                            <div class="card-header d-flex align-items-center">
+                                <i class="fas fa-home text-warning mr-3" style="font-size: 2rem;"></i>
+                                <h5 class="mb-0">Luxury Mansion</h5>
+                                <span class="badge badge-warning ml-auto">Residential</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <strong>Accommodation:</strong><br>
+                                        <span class="text-success">Elite</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Value:</strong><br>
+                                        <span class="text-warning">18,000,000</span>
+                                    </div>
+                                </div>
+                                
+                                <h6>Description:</h6>
+                                <p>An opulent mansion complex with all the amenities expected of true luxury living.</p>
+                                
+                                <h6>Benefits:</h6>
+                                <ul>
+                                    <li>Host elite social events</li>
+                                    <li>Private security and staff quarters</li>
+                                    <li>Showcase of wealth and taste</li>
+                                    <li>Multiple business meeting spaces</li>
+                                </ul>
+                                
+                                <div class="mt-3">
+                                    <strong>Requirements:</strong> <span class="text-info">HQ Level 16, Social Elite Status</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Castle Estate -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="card luxury-card h-100">
+                            <div class="card-header d-flex align-items-center">
+                                <i class="fas fa-chess-rook text-dark mr-3" style="font-size: 2rem;"></i>
+                                <h5 class="mb-0">Castle Estate</h5>
+                                <span class="badge badge-dark ml-auto">Historic</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <strong>Heritage:</strong><br>
+                                        <span class="text-success">Historic</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Value:</strong><br>
+                                        <span class="text-warning">35,000,000</span>
+                                    </div>
+                                </div>
+                                
+                                <h6>Description:</h6>
+                                <p>A magnificent historic castle estate with modern amenities and military history.</p>
+                                
+                                <h6>Benefits:</h6>
+                                <ul>
+                                    <li>Historical prestige and gravitas</li>
+                                    <li>Natural defensive advantages</li>
+                                    <li>Tourist attraction income</li>
+                                    <li>Ultimate symbol of power</li>
+                                </ul>
+                                
+                                <div class="mt-3">
+                                    <strong>Requirements:</strong> <span class="text-info">HQ Level 28, Historical Preservation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other tabs would be similar but filtered by category -->
+            <div class="tab-pane fade" id="vehicles" role="tabpanel">
+                <div class="row">
+                    <div class="col-12">
+                        <h5>Luxury Vehicles</h5>
+                        <p>Premium transportation options for the elite base owner.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-pane fade" id="property" role="tabpanel">
+                <div class="row">
+                    <div class="col-12">
+                        <h5>Premium Property</h5>
+                        <p>Exclusive real estate and location-based luxury investments.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-pane fade" id="artifacts" role="tabpanel">
+                <div class="row">
+                    <div class="col-12">
+                        <h5>Cultural Artifacts</h5>
+                        <p>Valuable art, gems, and collectible items of cultural significance.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-pane fade" id="collections" role="tabpanel">
+                <div class="row">
+                    <div class="col-12">
+                        <h5>Special Collections</h5>
+                        <p>Rare and unique item collections for the discerning collector.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Luxury Goods Statistics -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-trophy mr-2"></i>Prestige System</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3 text-center">
+                                <h6 class="text-warning">Legendary</h6>
+                                <small>Highest Tier</small>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <h6 class="text-success">100M+</h6>
+                                <small>Total Investment</small>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <h6 class="text-primary">Elite</h6>
+                                <small>Status Level</small>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <h6 class="text-danger">Ultimate</h6>
+                                <small>Achievement</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>RESOURCES GPS MMO Game Reference</h5>
+                    <p class="mb-0">Complete game reference and calculator suite</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <p class="mb-0">
+                        <a href="index.html" class="text-light">Back to Home</a> | 
+                        <a href="units.html" class="text-light ml-2">Previous: Units</a> | 
+                        <a href="prices.html" class="text-light ml-2">Next: Prices</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="helper.js"></script>
+</body>
+</html>

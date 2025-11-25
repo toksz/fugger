@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Units - RESOURCES GPS MMO Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-cogs mr-2"></i>RESOURCES GPS MMO Game
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="baseDropdown" data-toggle="dropdown">
+                            <i class="fas fa-building mr-1"></i>Base
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="headquarters.html"><i class="fas fa-home mr-2"></i>Headquarters</a>
+                            <a class="dropdown-item" href="factories.html"><i class="fas fa-industry mr-2"></i>Factories</a>
+                            <a class="dropdown-item" href="special-buildings.html"><i class="fas fa-landmark mr-2"></i>Special Buildings</a>
+                            <a class="dropdown-item" href="resources.html"><i class="fas fa-gem mr-2"></i>Resources</a>
+                            <a class="dropdown-item" href="products.html"><i class="fas fa-cube mr-2"></i>Products</a>
+                            <a class="dropdown-item" href="loot.html"><i class="fas fa-treasure-chest mr-2"></i>Loot</a>
+                            <a class="dropdown-item active" href="units.html"><i class="fas fa-users mr-2"></i>Units</a>
+                            <a class="dropdown-item" href="luxury-goods.html"><i class="fas fa-crown mr-2"></i>Luxury Goods</a>
+                            <a class="dropdown-item" href="prices.html"><i class="fas fa-chart-line mr-2"></i>Prices</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" data-toggle="dropdown">
+                            <i class="fas fa-tools mr-1"></i>Tools
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="production-calculation.html"><i class="fas fa-calculator mr-2"></i>Production Calculation</a>
+                            <a class="dropdown-item" href="factory-improvement.html"><i class="fas fa-arrow-trend-up mr-2"></i>Factory Improvement</a>
+                            <a class="dropdown-item" href="mine-improvements.html"><i class="fas fa-mountain mr-2"></i>Mine Improvements</a>
+                            <a class="dropdown-item" href="recycling.html"><i class="fas fa-recycle mr-2"></i>Recycling</a>
+                            <a class="dropdown-item" href="mines-cost.html"><i class="fas fa-money-bill-wave mr-2"></i>Mines Cost</a>
+                            <a class="dropdown-item" href="yield-of-the-mines.html"><i class="fas fa-chart-bar mr-2"></i>Yield of Mines</a>
+                            <a class="dropdown-item" href="attack-calculator.html"><i class="fas fa-sword mr-2"></i>Attack Calculator</a>
+                            <a class="dropdown-item" href="calculation-of-warehouse.html"><i class="fas fa-warehouse mr-2"></i>Warehouse Calculator</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Units</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex align-items-center mb-4">
+                    <i class="fas fa-users text-primary mr-4" style="font-size: 4rem;"></i>
+                    <div>
+                        <h1 class="mb-0">Units</h1>
+                        <p class="text-muted mb-0">Military and specialized units for protection and operations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Units Overview -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-info-circle mr-2"></i>Units Overview</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Units provide security, defense, and specialized functions for your base. Each unit type has unique abilities and can be trained using resources and credits. Units can defend against attacks and provide various tactical advantages.</p>
+                        <div class="row mt-3">
+                            <div class="col-md-3 text-center">
+                                <h6 class="text-primary">6</h6>
+                                <small>Unit Types</small>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <h6 class="text-success">500</h6>
+                                <small>Max Units</small>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <h6 class="text-warning">24h</h6>
+                                <small>Training Time</small>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <h6 class="text-info">Multiple</h6>
+                                <small>Unlock Methods</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Unit Categories -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <ul class="nav nav-pills nav-fill" id="unitTabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="all-units-tab" data-toggle="pill" href="#all-units" role="tab">All Units</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="security-tab" data-toggle="pill" href="#security" role="tab">Security</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="military-tab" data-toggle="pill" href="#military" role="tab">Military</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="special-tab" data-toggle="pill" href="#special" role="tab">Special</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Unit Types -->
+        <div class="tab-content" id="unitTabContent">
+            <!-- All Units Tab -->
+            <div class="tab-pane fade show active" id="all-units" role="tabpanel">
+                <div class="row">
+                    <!-- Security Staff -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="card unit-card h-100">
+                            <div class="card-header d-flex align-items-center">
+                                <i class="fas fa-shield-alt text-primary mr-3" style="font-size: 2rem;"></i>
+                                <h5 class="mb-0">Security Staff</h5>
+                                <span class="badge badge-primary ml-auto">Basic</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <strong>Attack Power:</strong><br>
+                                        <span class="text-danger">Low</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Defense:</strong><br>
+                                        <span class="text-info">Medium</span>
+                                    </div>
+                                </div>
+                                
+                                <h6>Training Requirements:</h6>
+                                <ul>
+                                    <li><i class="fas fa-cube text-warning mr-2"></i>Credits: 5,000</li>
+                                    <li><i class="fas fa-hourglass-half mr-2"></i>Training Time: 2 hours</li>
+                                    <li><i class="fas fa-building mr-2"></i>Training Facility: Basic Barracks</li>
+                                </ul>
+                                
+                                <h6>Special Abilities:</h6>
+                                <ul>
+                                    <li>Provides perimeter security</li>
+                                    <li>Reduces theft by 25%</li>
+                                    <li>Can identify suspicious activity</li>
+                                </ul>
+                                
+                                <div class="mt-3">
+                                    <strong>Recommended Quantity:</strong> <span class="text-success">50-100 units</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Watch Dogs -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="card unit-card h-100">
+                            <div class="card-header d-flex align-items-center">
+                                <i class="fas fa-dog text-success mr-3" style="font-size: 2rem;"></i>
+                                <h5 class="mb-0">Watch Dogs</h5>
+                                <span class="badge badge-success ml-auto">Support</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <strong>Detection:</strong><br>
+                                        <span class="text-success">High</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Alert Speed:</strong><br>
+                                        <span class="text-info">Very Fast</span>
+                                    </div>
+                                </div>
+                                
+                                <h6>Training Requirements:</h6>
+                                <ul>
+                                    <li><i class="fas fa-cube text-warning mr-2"></i>Credits: 3,500</li>
+                                    <li><i class="fas fa-hourglass-half mr-2"></i>Training Time: 1 hour</li>
+                                    <li><i class="fas fa-building mr-2"></i>Training Facility: Kennel</li>
+                                </ul>
+                                
+                                <h6>Special Abilities:</h6>
+                                <ul>
+                                    <li>Early warning system</li>
+                                    <li>Detect stealth operations</li>
+                                    <li>Boost security staff effectiveness by 15%</li>
+                                </ul>
+                                
+                                <div class="mt-3">
+                                    <strong>Recommended Quantity:</strong> <span class="text-success">25-50 units</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Attack Dogs -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="card unit-card h-100">
+                            <div class="card-header d-flex align-items-center">
+                                <i class="fas fa-fire text-danger mr-3" style="font-size: 2rem;"></i>
+                                <h5 class="mb-0">Attack Dogs</h5>
+                                <span class="badge badge-danger ml-auto">Aggressive</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <strong>Attack Power:</strong><br>
+                                        <span class="text-danger">High</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Speed:</strong><br>
+                                        <span class="text-warning">Very High</span>
+                                    </div>
+                                </div>
+                                
+                                <h6>Training Requirements:</h6>
+                                <ul>
+                                    <li><i class="fas fa-cube text-warning mr-2"></i>Credits: 8,000</li>
+                                    <li><i class="fas fa-hourglass-half mr-2"></i>Training Time: 4 hours</li>
+                                    <li><i class="fas fa-building mr-2"></i>Training Facility: Attack Kennel</li>
+                                </ul>
+                                
+                                <h6>Special Abilities:</h6>
+                                <ul>
+                                    <li>High damage output in combat</li>
+                                    <li>Can chase fleeing enemies</li>
+                                    <li>Intimidate opponents</li>
+                                </ul>
+                                
+                                <div class="mt-3">
+                                    <strong>Recommended Quantity:</strong> <span class="text-success">20-40 units</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gangster -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="card unit-card h-100">
+                            <div class="card-header d-flex align-items-center">
+                                <i class="fas fa-skull text-dark mr-3" style="font-size: 2rem;"></i>
+                                <h5 class="mb-0">Gangster</h5>
+                                <span class="badge badge-dark ml-auto">Elite</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <strong>Attack Power:</strong><br>
+                                        <span class="text-danger">Very High</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Tactics:</strong><br>
+                                        <span class="text-info">Advanced</span>
+                                    </div>
+                                </div>
+                                
+                                <h6>Training Requirements:</h6>
+                                <ul>
+                                    <li><i class="fas fa-cube text-warning mr-2"></i>Credits: 25,000</li>
+                                    <li><i class="fas fa-hourglass-half mr-2"></i>Training Time: 8 hours</li>
+                                    <li><i class="fas fa-building mr-2"></i>Training Facility: Crime HQ</li>
+                                </ul>
+                                
+                                <h6>Special Abilities:</h6>
+                                <ul>
+                                    <li>Advanced combat techniques</li>
+                                    <li>Can coordinate attacks</li>
+                                    <li>Extract information from enemies</li>
+                                </ul>
+                                
+                                <div class="mt-3">
+                                    <strong>Recommended Quantity:</strong> <span class="text-success">10-25 units</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Elite Force -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="card unit-card h-100">
+                            <div class="card-header d-flex align-items-center">
+                                <i class="fas fa-medal text-warning mr-3" style="font-size: 2rem;"></i>
+                                <h5 class="mb-0">Elite Force</h5>
+                                <span class="badge badge-warning ml-auto">Elite</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <strong>Attack Power:</strong><br>
+                                        <span class="text-danger">Maximum</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Defense:</strong><br>
+                                        <span class="text-info">Maximum</span>
+                                    </div>
+                                </div>
+                                
+                                <h6>Training Requirements:</h6>
+                                <ul>
+                                    <li><i class="fas fa-cube text-warning mr-2"></i>Credits: 50,000</li>
+                                    <li><i class="fas fa-hourglass-half mr-2"></i>Training Time: 12 hours</li>
+                                    <li><i class="fas fa-building mr-2"></i>Training Facility: Elite Academy</li>
+                                </ul>
+                                
+                                <h6>Special Abilities:</h6>
+                                <ul>
+                                    <li>Superior equipment and training</li>
+                                    <li>Can lead other units in combat</li>
+                                    <li>Immune to fear effects</li>
+                                </ul>
+                                
+                                <div class="mt-3">
+                                    <strong>Recommended Quantity:</strong> <span class="text-success">5-15 units</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Private Army -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="card unit-card h-100">
+                            <div class="card-header d-flex align-items-center">
+                                <i class="fas fa-flag text-primary mr-3" style="font-size: 2rem;"></i>
+                                <h5 class="mb-0">Private Army</h5>
+                                <span class="badge badge-info ml-auto">Military</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <strong>Organization:</strong><br>
+                                        <span class="text-success">High</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Equipment:</strong><br>
+                                        <span class="text-warning">Military Grade</span>
+                                    </div>
+                                </div>
+                                
+                                <h6>Training Requirements:</h6>
+                                <ul>
+                                    <li><i class="fas fa-cube text-warning mr-2"></i>Credits: 100,000</li>
+                                    <li><i class="fas fa-hourglass-half mr-2"></i>Training Time: 24 hours</li>
+                                    <li><i class="fas fa-building mr-2"></i>Training Facility: Military Base</li>
+                                </ul>
+                                
+                                <h6>Special Abilities:</h6>
+                                <ul>
+                                    <li>Large-scale operations</li>
+                                    <li>Can coordinate with other units</li>
+                                    <li>Access to heavy weaponry</li>
+                                </ul>
+                                
+                                <div class="mt-3">
+                                    <strong>Recommended Quantity:</strong> <span class="text-success">1-10 units</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security Tab -->
+            <div class="tab-pane fade" id="security" role="tabpanel">
+                <div class="row">
+                    <div class="col-12">
+                        <h5>Security Units</h5>
+                        <p>Specialized units focused on protection and surveillance of your base.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Military Tab -->
+            <div class="tab-pane fade" id="military" role="tabpanel">
+                <div class="row">
+                    <div class="col-12">
+                        <h5>Military Units</h5>
+                        <p>Combat-focused units designed for offensive and defensive operations.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Special Tab -->
+            <div class="tab-pane fade" id="special" role="tabpanel">
+                <div class="row">
+                    <div class="col-12">
+                        <h5>Special Units</h5>
+                        <p>Unique units with special abilities and tactical advantages.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Unit Training Center -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-graduation-cap mr-2"></i>Training Centers</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>Basic Facilities</h6>
+                                <ul>
+                                    <li><strong>Barracks:</strong> Basic unit training</li>
+                                    <li><strong>Kennel:</strong> Dog unit training</li>
+                                    <li><strong>Security Office:</strong> Security staff training</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h6>Advanced Facilities</h6>
+                                <ul>
+                                    <li><strong>Elite Academy:</strong> Elite unit training</li>
+                                    <li><strong>Military Base:</strong> Army training</li>
+                                    <li><strong>Crime HQ:</strong> Gangster training</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>RESOURCES GPS MMO Game Reference</h5>
+                    <p class="mb-0">Complete game reference and calculator suite</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <p class="mb-0">
+                        <a href="index.html" class="text-light">Back to Home</a> | 
+                        <a href="loot.html" class="text-light ml-2">Previous: Loot</a> | 
+                        <a href="luxury-goods.html" class="text-light ml-2">Next: Luxury Goods</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="helper.js"></script>
+</body>
+</html>

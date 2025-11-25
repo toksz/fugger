@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warehouse Calculator - RESOURCES GPS MMO Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-cogs mr-2"></i>RESOURCES GPS MMO Game
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="baseDropdown" data-toggle="dropdown">
+                            <i class="fas fa-building mr-1"></i>Base
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="headquarters.html"><i class="fas fa-home mr-2"></i>Headquarters</a>
+                            <a class="dropdown-item" href="factories.html"><i class="fas fa-industry mr-2"></i>Factories</a>
+                            <a class="dropdown-item" href="special-buildings.html"><i class="fas fa-landmark mr-2"></i>Special Buildings</a>
+                            <a class="dropdown-item" href="resources.html"><i class="fas fa-gem mr-2"></i>Resources</a>
+                            <a class="dropdown-item" href="products.html"><i class="fas fa-cube mr-2"></i>Products</a>
+                            <a class="dropdown-item" href="loot.html"><i class="fas fa-treasure-chest mr-2"></i>Loot</a>
+                            <a class="dropdown-item" href="units.html"><i class="fas fa-users mr-2"></i>Units</a>
+                            <a class="dropdown-item" href="luxury-goods.html"><i class="fas fa-crown mr-2"></i>Luxury Goods</a>
+                            <a class="dropdown-item" href="prices.html"><i class="fas fa-chart-line mr-2"></i>Prices</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" data-toggle="dropdown">
+                            <i class="fas fa-tools mr-1"></i>Tools
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="production-calculation.html"><i class="fas fa-calculator mr-2"></i>Production Calculation</a>
+                            <a class="dropdown-item" href="factory-improvement.html"><i class="fas fa-arrow-trend-up mr-2"></i>Factory Improvement</a>
+                            <a class="dropdown-item" href="mine-improvements.html"><i class="fas fa-mountain mr-2"></i>Mine Improvements</a>
+                            <a class="dropdown-item" href="recycling.html"><i class="fas fa-recycle mr-2"></i>Recycling</a>
+                            <a class="dropdown-item" href="mines-cost.html"><i class="fas fa-money-bill-wave mr-2"></i>Mines Cost</a>
+                            <a class="dropdown-item" href="yield-of-the-mines.html"><i class="fas fa-chart-bar mr-2"></i>Yield of Mines</a>
+                            <a class="dropdown-item" href="attack-calculator.html"><i class="fas fa-sword mr-2"></i>Attack Calculator</a>
+                            <a class="dropdown-item active" href="calculation-of-warehouse.html"><i class="fas fa-warehouse mr-2"></i>Warehouse Calculator</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="production-calculation.html">Tools</a></li>
+                <li class="breadcrumb-item active">Warehouse Calculator</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex align-items-center mb-4">
+                    <i class="fas fa-warehouse text-warning mr-4" style="font-size: 4rem;"></i>
+                    <div>
+                        <h1 class="mb-0">Warehouse Calculator</h1>
+                        <p class="text-muted mb-0">Optimize storage capacity, inventory management, and warehouse efficiency</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calculator Interface -->
+        <div class="row">
+            <!-- Input Panel -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-cogs mr-2"></i>Warehouse Configuration</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="warehouseForm">
+                            <!-- Warehouse Level -->
+                            <div class="form-group">
+                                <label for="warehouseLevel"><i class="fas fa-level-up-alt mr-2"></i>Warehouse Level</label>
+                                <select class="form-control" id="warehouseLevel">
+                                    <option value="1">Level 1 (1,000 units)</option>
+                                    <option value="2">Level 2 (2,500 units)</option>
+                                    <option value="3">Level 3 (5,000 units)</option>
+                                    <option value="4">Level 4 (10,000 units)</option>
+                                    <option value="5">Level 5 (20,000 units)</option>
+                                    <option value="6">Level 6 (40,000 units)</option>
+                                    <option value="7">Level 7 (80,000 units)</option>
+                                </select>
+                            </div>
+
+                            <!-- Item Types -->
+                            <div class="form-group">
+                                <label for="itemTypes"><i class="fas fa-boxes mr-2"></i>Primary Item Type</label>
+                                <select class="form-control" id="itemTypes">
+                                    <option value="">Select Item Type</option>
+                                    <option value="raw-materials">Raw Materials</option>
+                                    <option value="manufactured-goods">Manufactured Goods</option>
+                                    <option value="luxury-items">Luxury Items</option>
+                                    <option value="mixed-inventory">Mixed Inventory</option>
+                                </select>
+                            </div>
+
+                            <!-- Current Inventory -->
+                            <div class="form-group">
+                                <label for="currentInventory"><i class="fas fa-chart-pie mr-2"></i>Current Inventory (units)</label>
+                                <input type="number" class="form-control" id="currentInventory" value="500" min="0" max="100000">
+                            </div>
+
+                            <!-- Daily Flow -->
+                            <div class="form-group">
+                                <label for="dailyFlow"><i class="fas fa-exchange-alt mr-2"></i>Daily Inflow/Outflow (units/day)</label>
+                                <input type="number" class="form-control" id="dailyFlow" value="100" min="0" max="10000">
+                            </div>
+
+                            <!-- Storage Optimization -->
+                            <div class="form-group">
+                                <label><i class="fas fa-rocket mr-2"></i>Optimization Features</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="automatedSystems">
+                                    <label class="form-check-label" for="automatedSystems">Automated Systems (+30% efficiency)</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="climateControl">
+                                    <label class="form-check-label" for="climateControl">Climate Control (+25% capacity)</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="securitySystems">
+                                    <label class="form-check-label" for="securitySystems">Security Systems (+40% protection)</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="inventoryTracking">
+                                    <label class="form-check-label" for="inventoryTracking">Real-time Tracking (+50% accuracy)</label>
+                                </div>
+                            </div>
+
+                            <!-- Calculate Button -->
+                            <button type="button" class="btn btn-warning btn-block" onclick="calculateWarehouse()">
+                                <i class="fas fa-calculator mr-2"></i>Calculate Warehouse Capacity
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Panel -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-chart-area mr-2"></i>Warehouse Analysis</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="warehouseResults" style="display: none;">
+                            <div class="alert alert-warning">
+                                <h6><i class="fas fa-info-circle mr-2"></i>Capacity Summary</h6>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong>Total Capacity:</strong><br>
+                                        <span id="totalCapacity" class="text-warning font-weight-bold">-</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Utilization:</strong><br>
+                                        <span id="utilizationRate" class="text-info">-</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6><i class="fas fa-chart-line mr-2"></i>Storage Metrics</h6>
+                                    <table class="table table-sm">
+                                        <tr>
+                                            <td><strong>Available Space:</strong></td>
+                                            <td id="availableSpace" class="text-right">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Daily Rotation:</strong></td>
+                                            <td id="dailyRotation" class="text-right">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Turnover Rate:</strong></td>
+                                            <td id="turnoverRate" class="text-right">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Peak Capacity:</strong></td>
+                                            <td id="peakCapacity" class="text-right">-</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6><i class="fas fa-dollar-sign mr-2"></i>Economic Analysis</h6>
+                                    <table class="table table-sm">
+                                        <tr>
+                                            <td><strong>Storage Cost:</strong></td>
+                                            <td id="storageCost" class="text-right text-danger">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Value per Unit:</strong></td>
+                                            <td id="valuePerUnit" class="text-right text-info">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Total Inventory Value:</strong></td>
+                                            <td id="totalInventoryValue" class="text-right text-success">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>ROI on Upgrades:</strong></td>
+                                            <td id="warehouseROI" class="text-right text-success">-</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- Warehouse Recommendation -->
+                            <div id="warehouseRecommendation" class="alert mt-3">
+                                <h6><i class="fas fa-lightbulb mr-2"></i>Warehouse Optimization</h6>
+                                <p id="warehouseRecommendationText">-</p>
+                            </div>
+                        </div>
+
+                        <div id="warehouseInitialMessage">
+                            <div class="text-center text-muted py-5">
+                                <i class="fas fa-warehouse fa-3x mb-3"></i>
+                                <h5>Warehouse Management</h5>
+                                <p>Configure your warehouse settings and inventory to calculate optimal storage solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Warehouse Optimization Guide -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-lightbulb mr-2"></i>Storage Optimization Strategies</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h6><i class="fas fa-chart-line mr-2"></i>Capacity Management</h6>
+                                <ul>
+                                    <li>Monitor utilization rates daily</li>
+                                    <li>Plan upgrades before hitting capacity</li>
+                                    <li>Implement FIFO (First In, First Out)</li>
+                                    <li>Optimize item size and weight ratios</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h6><i class="fas fa-cogs mr-2"></i>Efficiency Improvements</h6>
+                                <ul>
+                                    <li>Install automation systems</li>
+                                    <li>Implement real-time tracking</li>
+                                    <li>Use climate control for sensitive items</li>
+                                    <li>Deploy advanced security measures</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h6><i class="fas fa-money-bill-wave mr-2"></i>Cost Optimization</h6>
+                                <ul>
+                                    <li>Balance storage vs. access costs</li>
+                                    <li>Time upgrades for maximum ROI</li>
+                                    <li>Negotiate better unit values</li>
+                                    <li>Minimize idle inventory time</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Warehouse Level Reference -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-table mr-2"></i>Warehouse Level Reference</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Level</th>
+                                        <th>Capacity</th>
+                                        <th>Upgrade Cost</th>
+                                        <th>Maintenance Cost</th>
+                                        <th>Efficiency</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Level 1</td>
+                                        <td>1,000 units</td>
+                                        <td>10,000 Credits</td>
+                                        <td>500 Credits/day</td>
+                                        <td><span class="badge badge-secondary">Basic</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Level 2</td>
+                                        <td>2,500 units</td>
+                                        <td>25,000 Credits</td>
+                                        <td>1,200 Credits/day</td>
+                                        <td><span class="badge badge-info">Standard</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Level 3</td>
+                                        <td>5,000 units</td>
+                                        <td>60,000 Credits</td>
+                                        <td>2,500 Credits/day</td>
+                                        <td><span class="badge badge-success">Good</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Level 4</td>
+                                        <td>10,000 units</td>
+                                        <td>150,000 Credits</td>
+                                        <td>5,000 Credits/day</td>
+                                        <td><span class="badge badge-success">High</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Level 5</td>
+                                        <td>20,000 units</td>
+                                        <td>350,000 Credits</td>
+                                        <td>10,000 Credits/day</td>
+                                        <td><span class="badge badge-warning">Very High</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Level 6</td>
+                                        <td>40,000 units</td>
+                                        <td>800,000 Credits</td>
+                                        <td>20,000 Credits/day</td>
+                                        <td><span class="badge badge-warning">Excellent</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Level 7</td>
+                                        <td>80,000 units</td>
+                                        <td>1,800,000 Credits</td>
+                                        <td>40,000 Credits/day</td>
+                                        <td><span class="badge badge-danger">Maximum</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Item Type Storage Guide -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-boxes mr-2"></i>Item Type Storage Guide</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="card item-type-card">
+                                    <div class="card-header bg-primary text-white">
+                                        <h6><i class="fas fa-gem mr-2"></i>Raw Materials</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>Storage Requirements:</strong></p>
+                                        <ul>
+                                            <li>Basic climate control</li>
+                                            <li>Standard security</li>
+                                            <li>FIFO rotation system</li>
+                                        </ul>
+                                        <p><strong>Value Range:</strong> 45-750 Credits/unit</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card item-type-card">
+                                    <div class="card-header bg-success text-white">
+                                        <h6><i class="fas fa-cube mr-2"></i>Manufactured Goods</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>Storage Requirements:</strong></p>
+                                        <ul>
+                                            <li>Controlled humidity</li>
+                                            <li>Enhanced security</li>
+                                            <li>Automated handling</li>
+                                        </ul>
+                                        <p><strong>Value Range:</strong> 180-5,750 Credits/unit</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card item-type-card">
+                                    <div class="card-header bg-warning text-white">
+                                        <h6><i class="fas fa-crown mr-2"></i>Luxury Items</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>Storage Requirements:</strong></p>
+                                        <ul>
+                                            <li>Premium climate control</li>
+                                            <li>Maximum security</li>
+                                            <li>Individual tracking</li>
+                                        </ul>
+                                        <p><strong>Value Range:</strong> 2.5M-50M Credits/unit</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card item-type-card">
+                                    <div class="card-header bg-info text-white">
+                                        <h6><i class="fas fa-layer-group mr-2"></i>Mixed Inventory</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>Storage Requirements:</strong></p>
+                                        <ul>
+                                            <li>Flexible zoning</li>
+                                            <li>Multi-tier security</li>
+                                            <li>Dynamic optimization</li>
+                                        </ul>
+                                        <p><strong>Value Range:</strong> Variable</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>RESOURCES GPS MMO Game Reference</h5>
+                    <p class="mb-0">Complete game reference and calculator suite</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <p class="mb-0">
+                        <a href="index.html" class="text-light">Back to Home</a> | 
+                        <a href="attack-calculator.html" class="text-light ml-2">Previous: Attack Calculator</a> | 
+                        <a href="headquarters.html" class="text-light ml-2">Back to Base</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="helper.js"></script>
+    <script>
+        // Warehouse data
+        const warehouseData = {
+            1: { capacity: 1000, upgradeCost: 10000, maintenance: 500 },
+            2: { capacity: 2500, upgradeCost: 25000, maintenance: 1200 },
+            3: { capacity: 5000, upgradeCost: 60000, maintenance: 2500 },
+            4: { capacity: 10000, upgradeCost: 150000, maintenance: 5000 },
+            5: { capacity: 20000, upgradeCost: 350000, maintenance: 10000 },
+            6: { capacity: 40000, upgradeCost: 800000, maintenance: 20000 },
+            7: { capacity: 80000, upgradeCost: 1800000, maintenance: 40000 }
+        };
+
+        const itemTypeData = {
+            'raw-materials': { avgValue: 200, efficiency: 1.0 },
+            'manufactured-goods': { avgValue: 1500, efficiency: 0.8 },
+            'luxury-items': { avgValue: 15000000, efficiency: 0.6 },
+            'mixed-inventory': { avgValue: 800, efficiency: 0.9 }
+        };
+
+        function calculateWarehouse() {
+            const warehouseLevel = parseInt(document.getElementById('warehouseLevel').value);
+            const itemTypes = document.getElementById('itemTypes').value;
+            const currentInventory = parseInt(document.getElementById('currentInventory').value);
+            const dailyFlow = parseInt(document.getElementById('dailyFlow').value);
+
+            if (!itemTypes || !itemTypeData[itemTypes]) {
+                alert('Please select a valid item type');
+                return;
+            }
+
+            const warehouse = warehouseData[warehouseLevel];
+            const itemType = itemTypeData[itemTypes];
+            
+            // Calculate optimization multipliers
+            let optimizationMultiplier = 1;
+            if (document.getElementById('automatedSystems').checked) optimizationMultiplier *= 1.30;
+            if (document.getElementById('climateControl').checked) optimizationMultiplier *= 1.25;
+            if (document.getElementById('securitySystems').checked) optimizationMultiplier *= 1.40;
+            if (document.getElementById('inventoryTracking').checked) optimizationMultiplier *= 1.50;
+
+            const effectiveCapacity = warehouse.capacity * optimizationMultiplier * itemType.efficiency;
+            const availableSpace = effectiveCapacity - currentInventory;
+            const utilizationRate = (currentInventory / effectiveCapacity * 100).toFixed(1);
+            const dailyRotation = Math.min(dailyFlow * 2, effectiveCapacity * 0.8);
+            const turnoverRate = (dailyRotation / effectiveCapacity * 100).toFixed(1);
+            const peakCapacity = effectiveCapacity * 1.1; // 10% emergency buffer
+            const storageCost = warehouse.maintenance;
+            const totalInventoryValue = currentInventory * itemType.avgValue;
+            const valuePerUnit = itemType.avgValue;
+            const warehouseROI = (totalInventoryValue / (warehouse.upgradeCost / 365) * 100).toFixed(1);
+
+            // Update display
+            document.getElementById('totalCapacity').textContent = `${effectiveCapacity.toLocaleString()} units`;
+            document.getElementById('utilizationRate').textContent = `${utilizationRate}%`;
+            document.getElementById('availableSpace').textContent = `${availableSpace.toLocaleString()} units`;
+            document.getElementById('dailyRotation').textContent = `${dailyRotation.toLocaleString()} units/day`;
+            document.getElementById('turnoverRate').textContent = `${turnoverRate}%`;
+            document.getElementById('peakCapacity').textContent = `${peakCapacity.toLocaleString()} units`;
+            document.getElementById('storageCost').textContent = `${storageCost.toLocaleString()} Credits/day`;
+            document.getElementById('valuePerUnit').textContent = `${valuePerUnit.toLocaleString()} Credits`;
+            document.getElementById('totalInventoryValue').textContent = `${totalInventoryValue.toLocaleString()} Credits`;
+            document.getElementById('warehouseROI').textContent = `${warehouseROI}%`;
+
+            // Recommendation
+            let recommendation = '';
+            if (utilizationRate >= 90) {
+                recommendation = `<div class="alert alert-danger">
+                    <strong>Critical Capacity!</strong> ${utilizationRate}% utilization. Immediate upgrade required to prevent overflow.
+                </div>`;
+            } else if (utilizationRate >= 75) {
+                recommendation = `<div class="alert alert-warning">
+                    <strong>High Utilization.</strong> ${utilizationRate}% capacity. Plan upgrade soon to maintain efficiency.
+                </div>`;
+            } else if (utilizationRate >= 50) {
+                recommendation = `<div class="alert alert-info">
+                    <strong>Optimal Range.</strong> ${utilizationRate}% utilization. Good balance of capacity and efficiency.
+                </div>`;
+            } else {
+                recommendation = `<div class="alert alert-success">
+                    <strong>Underutilized.</strong> ${utilizationRate}% utilization. Consider reducing costs or increasing inventory.
+                </div>`;
+            }
+            
+            document.getElementById('warehouseRecommendationText').innerHTML = recommendation;
+
+            document.getElementById('warehouseInitialMessage').style.display = 'none';
+            document.getElementById('warehouseResults').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

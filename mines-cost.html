@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mines Cost Calculator - RESOURCES GPS MMO Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-cogs mr-2"></i>RESOURCES GPS MMO Game
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="baseDropdown" data-toggle="dropdown">
+                            <i class="fas fa-building mr-1"></i>Base
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="headquarters.html"><i class="fas fa-home mr-2"></i>Headquarters</a>
+                            <a class="dropdown-item" href="factories.html"><i class="fas fa-industry mr-2"></i>Factories</a>
+                            <a class="dropdown-item" href="special-buildings.html"><i class="fas fa-landmark mr-2"></i>Special Buildings</a>
+                            <a class="dropdown-item" href="resources.html"><i class="fas fa-gem mr-2"></i>Resources</a>
+                            <a class="dropdown-item" href="products.html"><i class="fas fa-cube mr-2"></i>Products</a>
+                            <a class="dropdown-item" href="loot.html"><i class="fas fa-treasure-chest mr-2"></i>Loot</a>
+                            <a class="dropdown-item" href="units.html"><i class="fas fa-users mr-2"></i>Units</a>
+                            <a class="dropdown-item" href="luxury-goods.html"><i class="fas fa-crown mr-2"></i>Luxury Goods</a>
+                            <a class="dropdown-item" href="prices.html"><i class="fas fa-chart-line mr-2"></i>Prices</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" data-toggle="dropdown">
+                            <i class="fas fa-tools mr-1"></i>Tools
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="production-calculation.html"><i class="fas fa-calculator mr-2"></i>Production Calculation</a>
+                            <a class="dropdown-item" href="factory-improvement.html"><i class="fas fa-arrow-trend-up mr-2"></i>Factory Improvement</a>
+                            <a class="dropdown-item" href="mine-improvements.html"><i class="fas fa-mountain mr-2"></i>Mine Improvements</a>
+                            <a class="dropdown-item" href="recycling.html"><i class="fas fa-recycle mr-2"></i>Recycling</a>
+                            <a class="dropdown-item active" href="mines-cost.html"><i class="fas fa-money-bill-wave mr-2"></i>Mines Cost</a>
+                            <a class="dropdown-item" href="yield-of-the-mines.html"><i class="fas fa-chart-bar mr-2"></i>Yield of Mines</a>
+                            <a class="dropdown-item" href="attack-calculator.html"><i class="fas fa-sword mr-2"></i>Attack Calculator</a>
+                            <a class="dropdown-item" href="calculation-of-warehouse.html"><i class="fas fa-warehouse mr-2"></i>Warehouse Calculator</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="production-calculation.html">Tools</a></li>
+                <li class="breadcrumb-item active">Mines Cost</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex align-items-center mb-4">
+                    <i class="fas fa-money-bill-wave text-success mr-4" style="font-size: 4rem;"></i>
+                    <div>
+                        <h1 class="mb-0">Mines Cost Calculator</h1>
+                        <p class="text-muted mb-0">Calculate the complete cost structure of your mining operations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calculator Interface -->
+        <div class="row">
+            <!-- Input Panel -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-cogs mr-2"></i>Mining Cost Setup</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="minesCostForm">
+                            <!-- Resource Type -->
+                            <div class="form-group">
+                                <label for="mineResourceType"><i class="fas fa-gem mr-2"></i>Resource Type</label>
+                                <select class="form-control" id="mineResourceType">
+                                    <option value="">Select Resource</option>
+                                    <option value="coal">Coal Mine</option>
+                                    <option value="iron">Iron Ore</option>
+                                    <option value="oil">Crude Oil</option>
+                                    <option value="copper">Copper Ore</option>
+                                    <option value="gold">Gold Ore</option>
+                                    <option value="silicon">Silicon</option>
+                                    <option value="bauxite">Bauxite</option>
+                                    <option value="lithium">Lithium</option>
+                                </select>
+                            </div>
+
+                            <!-- Mine Level -->
+                            <div class="form-group">
+                                <label for="mineLevel"><i class="fas fa-level-up-alt mr-2"></i>Mine Level</label>
+                                <select class="form-control" id="mineLevel">
+                                    <option value="1">Level 1</option>
+                                    <option value="2">Level 2</option>
+                                    <option value="3">Level 3</option>
+                                    <option value="4">Level 4</option>
+                                    <option value="5">Level 5</option>
+                                </select>
+                            </div>
+
+                            <!-- Daily Production -->
+                            <div class="form-group">
+                                <label for="dailyProduction"><i class="fas fa-cube mr-2"></i>Daily Production (units)</label>
+                                <input type="number" class="form-control" id="dailyProduction" value="1000" min="1" max="50000">
+                            </div>
+
+                            <!-- Operating Hours -->
+                            <div class="form-group">
+                                <label for="operatingHours"><i class="fas fa-clock mr-2"></i>Operating Hours per Day</label>
+                                <input type="number" class="form-control" id="operatingHours" value="24" min="1" max="24">
+                            </div>
+
+                            <!-- Additional Costs -->
+                            <div class="form-group">
+                                <label><i class="fas fa-plus-circle mr-2"></i>Additional Cost Factors</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="maintenanceCosts">
+                                    <label class="form-check-label" for="maintenanceCosts">Maintenance Costs (5% of revenue)</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="energyCosts">
+                                    <label class="form-check-label" for="energyCosts">Energy Costs (8% of revenue)</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="insuranceCosts">
+                                    <label class="form-check-label" for="insuranceCosts">Insurance (3% of revenue)</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="workerCosts">
+                                    <label class="form-check-label" for="workerCosts">Worker Costs (Fixed 2,500/day)</label>
+                                </div>
+                            </div>
+
+                            <!-- Calculate Button -->
+                            <button type="button" class="btn btn-success btn-block" onclick="calculateMinesCost()">
+                                <i class="fas fa-calculator mr-2"></i>Calculate Mining Costs
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Panel -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-chart-area mr-2"></i>Cost Analysis</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="minesCostResults" style="display: none;">
+                            <div class="alert alert-info">
+                                <h6><i class="fas fa-info-circle mr-2"></i>Cost Summary</h6>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong>Total Daily Cost:</strong><br>
+                                        <span id="totalDailyCost" class="text-danger font-weight-bold">-</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Cost per Unit:</strong><br>
+                                        <span id="costPerUnit" class="text-warning">-</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6><i class="fas fa-money-bill mr-2"></i>Cost Breakdown</h6>
+                                    <table class="table table-sm">
+                                        <tr>
+                                            <td><strong>Revenue:</strong></td>
+                                            <td id="dailyRevenue" class="text-right text-success">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Fixed Costs:</strong></td>
+                                            <td id="fixedCosts" class="text-right text-danger">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Variable Costs:</strong></td>
+                                            <td id="variableCosts" class="text-right text-danger">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Additional Costs:</strong></td>
+                                            <td id="additionalCosts" class="text-right text-danger">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Net Profit:</strong></td>
+                                            <td id="netProfit" class="text-right text-success">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Profit Margin:</strong></td>
+                                            <td id="profitMargin" class="text-right text-info">-</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- Cost Efficiency -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6><i class="fas fa-chart-line mr-2"></i>Efficiency Metrics</h6>
+                                    <table class="table table-sm">
+                                        <tr>
+                                            <td><strong>Cost Efficiency:</strong></td>
+                                            <td id="costEfficiency" class="text-right">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>ROI:</strong></td>
+                                            <td id="roi" class="text-right text-success">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Break-even Point:</strong></td>
+                                            <td id="breakEvenPoint" class="text-right text-info">-</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- Mines Cost Recommendation -->
+                            <div id="minesCostRecommendation" class="alert mt-3">
+                                <h6><i class="fas fa-lightbulb mr-2"></i>Cost Optimization</h6>
+                                <p id="minesCostRecommendationText">-</p>
+                            </div>
+                        </div>
+
+                        <div id="minesCostInitialMessage">
+                            <div class="text-center text-muted py-5">
+                                <i class="fas fa-money-bill-wave fa-3x mb-3"></i>
+                                <h5>Mining Cost Analysis</h5>
+                                <p>Select your mine type and production settings to calculate comprehensive cost structures.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cost Optimization Tips -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-lightbulb mr-2"></i>Cost Optimization Strategies</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h6><i class="fas fa-tools mr-2"></i>Maintenance</h6>
+                                <ul>
+                                    <li>Regular equipment servicing</li>
+                                    <li>Preventive maintenance schedules</li>
+                                    <li>Quality replacement parts</li>
+                                    <li>Operator training programs</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h6><i class="fas fa-bolt mr-2"></i>Energy Efficiency</h6>
+                                <ul>
+                                    <li>Upgrade to efficient equipment</li>
+                                    <li>Optimize operating schedules</li>
+                                    <li>Use renewable energy sources</li>
+                                    <li>Implement energy monitoring</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h6><i class="fas fa-users mr-2"></i>Workforce Optimization</h6>
+                                <ul>
+                                    <li>Cross-train employees</li>
+                                    <li>Implement performance bonuses</li>
+                                    <li>Reduce overtime costs</li>
+                                    <li>Improve productivity rates</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cost Comparison Table -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-table mr-2"></i>Resource Cost Comparison</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Resource</th>
+                                        <th>Market Price</th>
+                                        <th>Production Cost</th>
+                                        <th>Profit Margin</th>
+                                        <th>Cost Efficiency</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><i class="fas fa-star text-warning mr-2"></i>Gold Ore</td>
+                                        <td>750 Credits</td>
+                                        <td>150 Credits</td>
+                                        <td>80%</td>
+                                        <td><span class="badge badge-success">Excellent</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-battery-full text-success mr-2"></i>Lithium</td>
+                                        <td>450 Credits</td>
+                                        <td>120 Credits</td>
+                                        <td>73%</td>
+                                        <td><span class="badge badge-success">Very High</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-microchip text-info mr-2"></i>Silicon</td>
+                                        <td>320 Credits</td>
+                                        <td>95 Credits</td>
+                                        <td>70%</td>
+                                        <td><span class="badge badge-success">High</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-coin text-primary mr-2"></i>Copper Ore</td>
+                                        <td>95 Credits</td>
+                                        <td>35 Credits</td>
+                                        <td>63%</td>
+                                        <td><span class="badge badge-info">Good</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-oil-can text-dark mr-2"></i>Crude Oil</td>
+                                        <td>85 Credits</td>
+                                        <td>32 Credits</td>
+                                        <td>62%</td>
+                                        <td><span class="badge badge-info">Stable</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-gem text-danger mr-2"></i>Iron Ore</td>
+                                        <td>120 Credits</td>
+                                        <td>55 Credits</td>
+                                        <td>54%</td>
+                                        <td><span class="badge badge-warning">Medium</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-mountain text-secondary mr-2"></i>Coal</td>
+                                        <td>45 Credits</td>
+                                        <td>25 Credits</td>
+                                        <td>44%</td>
+                                        <td><span class="badge badge-secondary">Basic</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cost Reduction Strategies -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-percentage mr-2"></i>Cost Reduction Strategies</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="card cost-strategy">
+                                    <div class="card-header bg-success text-white">
+                                        <h6><i class="fas fa-chart-line mr-2"></i>Level Optimization</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>Save up to 15%</strong></p>
+                                        <ul>
+                                            <li>Optimal mine levels</li>
+                                            <li>Balanced production</li>
+                                            <li>Level-specific efficiencies</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card cost-strategy">
+                                    <div class="card-header bg-info text-white">
+                                        <h6><i class="fas fa-clock mr-2"></i>Timing Optimization</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>Save up to 20%</strong></p>
+                                        <ul>
+                                            <li>Peak efficiency hours</li>
+                                            <li>Energy rate variations</li>
+                                            <li>Maintenance scheduling</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card cost-strategy">
+                                    <div class="card-header bg-warning text-white">
+                                        <h6><i class="fas fa-wrench mr-2"></i>Maintenance Planning</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>Save up to 25%</strong></p>
+                                        <ul>
+                                            <li>Preventive maintenance</li>
+                                            <li>Bulk part purchasing</li>
+                                            <li>Extended equipment life</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card cost-strategy">
+                                    <div class="card-header bg-primary text-white">
+                                        <h6><i class="fas fa-rocket mr-2"></i>Technology Upgrades</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>Save up to 30%</strong></p>
+                                        <ul>
+                                            <li>Advanced equipment</li>
+                                            <li>Automation systems</li>
+                                            <li>Process optimization</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>RESOURCES GPS MMO Game Reference</h5>
+                    <p class="mb-0">Complete game reference and calculator suite</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <p class="mb-0">
+                        <a href="index.html" class="text-light">Back to Home</a> | 
+                        <a href="recycling.html" class="text-light ml-2">Previous: Recycling</a> | 
+                        <a href="yield-of-the-mines.html" class="text-light ml-2">Next: Yield of Mines</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="helper.js"></script>
+    <script>
+        // Mining cost data
+        const miningCostData = {
+            coal: { price: 45, baseCost: 25, fixedCosts: 2000 },
+            iron: { price: 120, baseCost: 55, fixedCosts: 3000 },
+            oil: { price: 85, baseCost: 32, fixedCosts: 3500 },
+            copper: { price: 95, baseCost: 35, fixedCosts: 2800 },
+            gold: { price: 750, baseCost: 150, fixedCosts: 5000 },
+            silicon: { price: 320, baseCost: 95, fixedCosts: 4000 },
+            bauxite: { price: 180, baseCost: 75, fixedCosts: 3200 },
+            lithium: { price: 450, baseCost: 120, fixedCosts: 4500 }
+        };
+
+        function calculateMinesCost() {
+            const resourceType = document.getElementById('mineResourceType').value;
+            const mineLevel = parseInt(document.getElementById('mineLevel').value);
+            const dailyProduction = parseInt(document.getElementById('dailyProduction').value);
+            const operatingHours = parseInt(document.getElementById('operatingHours').value);
+
+            if (!resourceType || !miningCostData[resourceType]) {
+                alert('Please select a valid resource type');
+                return;
+            }
+
+            const data = miningCostData[resourceType];
+            
+            // Calculate costs
+            const dailyRevenue = dailyProduction * data.price;
+            const fixedCosts = data.fixedCosts;
+            
+            // Variable costs (increase with level and production)
+            let variableCosts = dailyProduction * data.baseCost;
+            variableCosts *= (1 + (mineLevel - 1) * 0.15); // Level multiplier
+            
+            // Additional costs
+            let additionalCosts = 0;
+            if (document.getElementById('maintenanceCosts').checked) additionalCosts += dailyRevenue * 0.05;
+            if (document.getElementById('energyCosts').checked) additionalCosts += dailyRevenue * 0.08;
+            if (document.getElementById('insuranceCosts').checked) additionalCosts += dailyRevenue * 0.03;
+            if (document.getElementById('workerCosts').checked) additionalCosts += 2500;
+
+            const totalDailyCost = fixedCosts + variableCosts + additionalCosts;
+            const netProfit = dailyRevenue - totalDailyCost;
+            const profitMargin = ((netProfit / dailyRevenue) * 100).toFixed(1);
+            const costPerUnit = (totalDailyCost / dailyProduction).toFixed(2);
+            const costEfficiency = ((dailyRevenue / totalDailyCost) * 100).toFixed(1);
+            const roi = ((netProfit / totalDailyCost) * 100).toFixed(1);
+            const breakEvenPoint = dailyProduction; // Simplified
+
+            // Update display
+            document.getElementById('totalDailyCost').textContent = `${totalDailyCost.toLocaleString()} Credits`;
+            document.getElementById('costPerUnit').textContent = `${costPerUnit} Credits`;
+            document.getElementById('dailyRevenue').textContent = `${dailyRevenue.toLocaleString()} Credits`;
+            document.getElementById('fixedCosts').textContent = `${fixedCosts.toLocaleString()} Credits`;
+            document.getElementById('variableCosts').textContent = `${variableCosts.toLocaleString()} Credits`;
+            document.getElementById('additionalCosts').textContent = `${additionalCosts.toLocaleString()} Credits`;
+            document.getElementById('netProfit').textContent = `${netProfit.toLocaleString()} Credits`;
+            document.getElementById('profitMargin').textContent = `${profitMargin}%`;
+            document.getElementById('costEfficiency').textContent = `${costEfficiency}%`;
+            document.getElementById('roi').textContent = `${roi}%`;
+            document.getElementById('breakEvenPoint').textContent = `${breakEvenPoint} units`;
+
+            // Recommendation
+            let recommendation = '';
+            if (profitMargin >= 60) {
+                recommendation = `<div class="alert alert-success">
+                    <strong>Excellent Profitability!</strong> ${profitMargin}% profit margin. This mining operation is highly profitable and efficient.
+                </div>`;
+            } else if (profitMargin >= 40) {
+                recommendation = `<div class="alert alert-info">
+                    <strong>Good Profitability.</strong> ${profitMargin}% profit margin. Consider cost optimization for better returns.
+                </div>`;
+            } else if (profitMargin >= 20) {
+                recommendation = `<div class="alert alert-warning">
+                    <strong>Moderate Profitability.</strong> ${profitMargin}% profit margin. Focus on reducing costs or increasing efficiency.
+                </div>`;
+            } else {
+                recommendation = `<div class="alert alert-danger">
+                    <strong>Low Profitability.</strong> Only ${profitMargin}% margin. Consider upgrading equipment or switching resources.
+                </div>`;
+            }
+            
+            document.getElementById('minesCostRecommendationText').innerHTML = recommendation;
+
+            document.getElementById('minesCostInitialMessage').style.display = 'none';
+            document.getElementById('minesCostResults').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

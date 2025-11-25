@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recycling Calculator - RESOURCES GPS MMO Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-cogs mr-2"></i>RESOURCES GPS MMO Game
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="baseDropdown" data-toggle="dropdown">
+                            <i class="fas fa-building mr-1"></i>Base
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="headquarters.html"><i class="fas fa-home mr-2"></i>Headquarters</a>
+                            <a class="dropdown-item" href="factories.html"><i class="fas fa-industry mr-2"></i>Factories</a>
+                            <a class="dropdown-item" href="special-buildings.html"><i class="fas fa-landmark mr-2"></i>Special Buildings</a>
+                            <a class="dropdown-item" href="resources.html"><i class="fas fa-gem mr-2"></i>Resources</a>
+                            <a class="dropdown-item" href="products.html"><i class="fas fa-cube mr-2"></i>Products</a>
+                            <a class="dropdown-item" href="loot.html"><i class="fas fa-treasure-chest mr-2"></i>Loot</a>
+                            <a class="dropdown-item" href="units.html"><i class="fas fa-users mr-2"></i>Units</a>
+                            <a class="dropdown-item" href="luxury-goods.html"><i class="fas fa-crown mr-2"></i>Luxury Goods</a>
+                            <a class="dropdown-item" href="prices.html"><i class="fas fa-chart-line mr-2"></i>Prices</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" data-toggle="dropdown">
+                            <i class="fas fa-tools mr-1"></i>Tools
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="production-calculation.html"><i class="fas fa-calculator mr-2"></i>Production Calculation</a>
+                            <a class="dropdown-item" href="factory-improvement.html"><i class="fas fa-arrow-trend-up mr-2"></i>Factory Improvement</a>
+                            <a class="dropdown-item" href="mine-improvements.html"><i class="fas fa-mountain mr-2"></i>Mine Improvements</a>
+                            <a class="dropdown-item active" href="recycling.html"><i class="fas fa-recycle mr-2"></i>Recycling</a>
+                            <a class="dropdown-item" href="mines-cost.html"><i class="fas fa-money-bill-wave mr-2"></i>Mines Cost</a>
+                            <a class="dropdown-item" href="yield-of-the-mines.html"><i class="fas fa-chart-bar mr-2"></i>Yield of Mines</a>
+                            <a class="dropdown-item" href="attack-calculator.html"><i class="fas fa-sword mr-2"></i>Attack Calculator</a>
+                            <a class="dropdown-item" href="calculation-of-warehouse.html"><i class="fas fa-warehouse mr-2"></i>Warehouse Calculator</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="production-calculation.html">Tools</a></li>
+                <li class="breadcrumb-item active">Recycling</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex align-items-center mb-4">
+                    <i class="fas fa-recycle text-success mr-4" style="font-size: 4rem;"></i>
+                    <div>
+                        <h1 class="mb-0">Recycling Calculator</h1>
+                        <p class="text-muted mb-0">Convert waste materials into valuable resources and maximize recycling efficiency</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calculator Interface -->
+        <div class="row">
+            <!-- Input Panel -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-cogs mr-2"></i>Recycling Setup</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="recyclingForm">
+                            <!-- Waste Type -->
+                            <div class="form-group">
+                                <label for="wasteType"><i class="fas fa-trash-alt mr-2"></i>Waste Material Type</label>
+                                <select class="form-control" id="wasteType">
+                                    <option value="">Select Waste Type</option>
+                                    <option value="plastic-scrap">Plastic Scrap</option>
+                                    <option value="electronic-scrap">Electronic Scrap</option>
+                                    <option value="scrap-metal">Scrap Metal</option>
+                                    <option value="used-oil">Used Oil</option>
+                                    <option value="waste-glass">Waste Glass</option>
+                                    <option value="old-tires">Old Tires</option>
+                                    <option value="maintenance-kit">Maintenance Kit</option>
+                                </select>
+                            </div>
+
+                            <!-- Quantity -->
+                            <div class="form-group">
+                                <label for="wasteQuantity"><i class="fas fa-cube mr-2"></i>Waste Quantity (units)</label>
+                                <input type="number" class="form-control" id="wasteQuantity" value="100" min="1" max="10000">
+                            </div>
+
+                            <!-- Recycling Facility Level -->
+                            <div class="form-group">
+                                <label for="recyclingLevel"><i class="fas fa-industry mr-2"></i>Recycling Facility Level</label>
+                                <select class="form-control" id="recyclingLevel">
+                                    <option value="1">Level 1</option>
+                                    <option value="2">Level 2</option>
+                                    <option value="3">Level 3</option>
+                                    <option value="4">Level 4</option>
+                                    <option value="5">Level 5</option>
+                                </select>
+                            </div>
+
+                            <!-- Processing Time -->
+                            <div class="form-group">
+                                <label for="processingTime"><i class="fas fa-clock mr-2"></i>Processing Time (hours)</label>
+                                <input type="number" class="form-control" id="processingTime" value="8" min="1" max="168">
+                            </div>
+
+                            <!-- Recycling Efficiency -->
+                            <div class="form-group">
+                                <label><i class="fas fa-percentage mr-2"></i>Efficiency Boosters</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="advancedRecycling">
+                                    <label class="form-check-label" for="advancedRecycling">Advanced Recycling (+40% efficiency)</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ecoFriendly">
+                                    <label class="form-check-label" for="ecoFriendly">Eco-Friendly Process (+25% yield)</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="automatedSorting">
+                                    <label class="form-check-label" for="automatedSorting">Automated Sorting (+30% speed)</label>
+                                </div>
+                            </div>
+
+                            <!-- Calculate Button -->
+                            <button type="button" class="btn btn-success btn-block" onclick="calculateRecycling()">
+                                <i class="fas fa-calculator mr-2"></i>Calculate Recycling
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Panel -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-chart-area mr-2"></i>Recycling Results</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="recyclingResults" style="display: none;">
+                            <div class="alert alert-success">
+                                <h6><i class="fas fa-info-circle mr-2"></i>Recycling Summary</h6>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong>Processing Rate:</strong><br>
+                                        <span id="processingRate">-</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Efficiency:</strong><br>
+                                        <span id="recyclingEfficiency">-</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6><i class="fas fa-chart-line mr-2"></i>Production Output</h6>
+                                    <table class="table table-sm">
+                                        <tr>
+                                            <td><strong>Base Output:</strong></td>
+                                            <td id="baseRecyclingOutput" class="text-right">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Enhanced Output:</strong></td>
+                                            <td id="enhancedRecyclingOutput" class="text-right">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Daily Capacity:</strong></td>
+                                            <td id="dailyCapacity" class="text-right">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Time Required:</strong></td>
+                                            <td id="recyclingTime" class="text-right">-</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6><i class="fas fa-dollar-sign mr-2"></i>Economic Analysis</h6>
+                                    <table class="table table-sm">
+                                        <tr>
+                                            <td><strong>Waste Processing Cost:</strong></td>
+                                            <td id="processingCost" class="text-right text-danger">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Material Value:</strong></td>
+                                            <td id="materialValue" class="text-right text-success">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Profit per Batch:</strong></td>
+                                            <td id="profitPerBatch" class="text-right text-success">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Profit Margin:</strong></td>
+                                            <td id="profitMargin" class="text-right text-info">-</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- Recycling Recommendation -->
+                            <div id="recyclingRecommendation" class="alert mt-3">
+                                <h6><i class="fas fa-lightbulb mr-2"></i>Recycling Recommendation</h6>
+                                <p id="recyclingRecommendationText">-</p>
+                            </div>
+                        </div>
+
+                        <div id="recyclingInitialMessage">
+                            <div class="text-center text-muted py-5">
+                                <i class="fas fa-recycle fa-3x mb-3"></i>
+                                <h5>Recycling Optimization</h5>
+                                <p>Select waste materials and processing settings to calculate optimal recycling strategies.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recycling Guide -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-lightbulb mr-2"></i>Recycling Best Practices</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h6><i class="fas fa-chart-line mr-2"></i>High-Value Waste</h6>
+                                <ul>
+                                    <li><strong>Electronic Scrap:</strong> Extract rare metals</li>
+                                    <li><strong>Maintenance Kits:</strong> High-value components</li>
+                                    <li><strong>Scrap Metal:</strong> Steady demand</li>
+                                    <li><strong>Used Oil:</strong> Industrial applications</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h6><i class="fas fa-clock mr-2"></i>Efficiency Tips</h6>
+                                <ul>
+                                    <li>Combine processing for bulk discounts</li>
+                                    <li>Time with demand spikes</li>
+                                    <li>Upgrade recycling facilities regularly</li>
+                                    <li>Use efficiency boosters wisely</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h6><i class="fas fa-money-bill-wave mr-2"></i>Profit Maximization</h6>
+                                <ul>
+                                    <li>Focus on high-yield combinations</li>
+                                    <li>Monitor material prices daily</li>
+                                    <li>Plan large processing runs</li>
+                                    <li>Consider market trends</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recycling Yields Table -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-table mr-2"></i>Recycling Yields Reference</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Waste Material</th>
+                                        <th>Processing Cost</th>
+                                        <th>Output Materials</th>
+                                        <th>Yield Value</th>
+                                        <th>Profit Rating</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><i class="fas fa-microchip text-info mr-2"></i>Electronic Scrap</td>
+                                        <td>15 Credits/unit</td>
+                                        <td>Copper, Gold, Silver</td>
+                                        <td>45 Credits/unit</td>
+                                        <td><span class="badge badge-success">Excellent</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-wrench text-primary mr-2"></i>Maintenance Kit</td>
+                                        <td>25 Credits/unit</td>
+                                        <td>Steel, Electronics</td>
+                                        <td>85 Credits/unit</td>
+                                        <td><span class="badge badge-success">Very High</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-industry text-secondary mr-2"></i>Scrap Metal</td>
+                                        <td>8 Credits/unit</td>
+                                        <td>Steel, Iron</td>
+                                        <td>25 Credits/unit</td>
+                                        <td><span class="badge badge-info">Good</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-oil-can text-dark mr-2"></i>Used Oil</td>
+                                        <td>12 Credits/unit</td>
+                                        <td>Fuel, Chemicals</td>
+                                        <td>35 Credits/unit</td>
+                                        <td><span class="badge badge-info">Medium</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-wine-glass text-success mr-2"></i>Waste Glass</td>
+                                        <td>5 Credits/unit</td>
+                                        <td>Glass, Sand</td>
+                                        <td>18 Credits/unit</td>
+                                        <td><span class="badge badge-warning">Basic</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-recycle text-success mr-2"></i>Plastic Scrap</td>
+                                        <td>6 Credits/unit</td>
+                                        <td>Plastic, Chemicals</td>
+                                        <td>20 Credits/unit</td>
+                                        <td><span class="badge badge-info">Stable</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Facility Upgrades -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-level-up-alt mr-2"></i>Recycling Facility Upgrades</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card upgrade-card">
+                                    <div class="card-header bg-info text-white">
+                                        <h6><i class="fas fa-cogs mr-2"></i>Basic Upgrade</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>Level 1 → 2</strong></p>
+                                        <ul>
+                                            <li>+20% processing speed</li>
+                                            <li>-10% energy costs</li>
+                                            <li>Better material sorting</li>
+                                        </ul>
+                                        <p><strong>Cost:</strong> 30,000 Credits</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card upgrade-card">
+                                    <div class="card-header bg-success text-white">
+                                        <h6><i class="fas fa-rocket mr-2"></i>Advanced Upgrade</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>Level 2 → 3</strong></p>
+                                        <ul>
+                                            <li>+40% yield efficiency</li>
+                                            <li>Advanced recovery systems</li>
+                                            <li>Automated processing</li>
+                                        </ul>
+                                        <p><strong>Cost:</strong> 75,000 Credits</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card upgrade-card">
+                                    <div class="card-header bg-warning text-white">
+                                        <h6><i class="fas fa-trophy mr-2"></i>Elite Upgrade</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>Level 3 → 4</strong></p>
+                                        <ul>
+                                            <li>+60% processing capacity</li>
+                                            <li>Nano-material recovery</li>
+                                            <li>Zero waste processing</li>
+                                        </ul>
+                                        <p><strong>Cost:</strong> 150,000 Credits</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>RESOURCES GPS MMO Game Reference</h5>
+                    <p class="mb-0">Complete game reference and calculator suite</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <p class="mb-0">
+                        <a href="index.html" class="text-light">Back to Home</a> | 
+                        <a href="mine-improvements.html" class="text-light ml-2">Previous: Mine Improvements</a> | 
+                        <a href="mines-cost.html" class="text-light ml-2">Next: Mines Cost</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="helper.js"></script>
+    <script>
+        // Recycling data
+        const recyclingData = {
+            'plastic-scrap': { processingCost: 6, outputValue: 20, efficiency: 0.75 },
+            'electronic-scrap': { processingCost: 15, outputValue: 45, efficiency: 0.60 },
+            'scrap-metal': { processingCost: 8, outputValue: 25, efficiency: 0.80 },
+            'used-oil': { processingCost: 12, outputValue: 35, efficiency: 0.70 },
+            'waste-glass': { processingCost: 5, outputValue: 18, efficiency: 0.85 },
+            'old-tires': { processingCost: 10, outputValue: 28, efficiency: 0.65 },
+            'maintenance-kit': { processingCost: 25, outputValue: 85, efficiency: 0.90 }
+        };
+
+        function calculateRecycling() {
+            const wasteType = document.getElementById('wasteType').value;
+            const quantity = parseInt(document.getElementById('wasteQuantity').value);
+            const recyclingLevel = parseInt(document.getElementById('recyclingLevel').value);
+            const processingTime = parseFloat(document.getElementById('processingTime').value);
+
+            if (!wasteType || !recyclingData[wasteType]) {
+                alert('Please select a valid waste type');
+                return;
+            }
+
+            const data = recyclingData[wasteType];
+            
+            // Calculate efficiency multipliers
+            let efficiencyMultiplier = 1;
+            if (document.getElementById('advancedRecycling').checked) efficiencyMultiplier *= 1.40;
+            if (document.getElementById('ecoFriendly').checked) efficiencyMultiplier *= 1.25;
+            if (document.getElementById('automatedSorting').checked) efficiencyMultiplier *= 1.30;
+
+            const levelMultiplier = 1 + (recyclingLevel - 1) * 0.20;
+            
+            // Calculate processing
+            const baseOutput = data.outputValue * quantity * data.efficiency;
+            const enhancedOutput = baseOutput * efficiencyMultiplier * levelMultiplier;
+            const dailyCapacity = (enhancedOutput / processingTime) * 24;
+            const processingCost = data.processingCost * quantity;
+            const materialValue = enhancedOutput;
+            const profitPerBatch = materialValue - processingCost;
+            const profitMargin = ((profitPerBatch / materialValue) * 100).toFixed(1);
+            const processingRate = (quantity / processingTime).toFixed(1);
+
+            // Update display
+            document.getElementById('processingRate').textContent = `${processingRate} units/hour`;
+            document.getElementById('recyclingEfficiency').textContent = `${(efficiencyMultiplier * 100).toFixed(0)}%`;
+            document.getElementById('baseRecyclingOutput').textContent = `${baseOutput.toFixed(0)} Credits worth`;
+            document.getElementById('enhancedRecyclingOutput').textContent = `${enhancedOutput.toFixed(0)} Credits worth`;
+            document.getElementById('dailyCapacity').textContent = `${dailyCapacity.toFixed(0)} Credits/day`;
+            document.getElementById('recyclingTime').textContent = `${processingTime} hours`;
+            document.getElementById('processingCost').textContent = `${processingCost.toLocaleString()} Credits`;
+            document.getElementById('materialValue').textContent = `${materialValue.toLocaleString()} Credits`;
+            document.getElementById('profitPerBatch').textContent = `${profitPerBatch.toLocaleString()} Credits`;
+            document.getElementById('profitMargin').textContent = `${profitMargin}%`;
+
+            // Recommendation
+            let recommendation = '';
+            if (profitMargin >= 70) {
+                recommendation = `<div class="alert alert-success">
+                    <strong>Excellent Recycling Opportunity!</strong> High profit margin of ${profitMargin}%. This waste material offers excellent returns.
+                </div>`;
+            } else if (profitMargin >= 50) {
+                recommendation = `<div class="alert alert-info">
+                    <strong>Good Recycling Option.</strong> Decent profit margin of ${profitMargin}%. Recommended for steady income.
+                </div>`;
+            } else if (profitMargin >= 30) {
+                recommendation = `<div class="alert alert-warning">
+                    <strong>Moderate Returns.</strong> Profit margin of ${profitMargin}%. Consider upgrading facilities for better efficiency.
+                </div>`;
+            } else {
+                recommendation = `<div class="alert alert-danger">
+                    <strong>Low Profitability.</strong> Only ${profitMargin}% margin. Consider alternative waste materials or facility upgrades.
+                </div>`;
+            }
+            
+            document.getElementById('recyclingRecommendationText').innerHTML = recommendation;
+
+            document.getElementById('recyclingInitialMessage').style.display = 'none';
+            document.getElementById('recyclingResults').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factory Improvement Calculator - RESOURCES GPS MMO Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-cogs mr-2"></i>RESOURCES GPS MMO Game
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="baseDropdown" data-toggle="dropdown">
+                            <i class="fas fa-building mr-1"></i>Base
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="headquarters.html"><i class="fas fa-home mr-2"></i>Headquarters</a>
+                            <a class="dropdown-item" href="factories.html"><i class="fas fa-industry mr-2"></i>Factories</a>
+                            <a class="dropdown-item" href="special-buildings.html"><i class="fas fa-landmark mr-2"></i>Special Buildings</a>
+                            <a class="dropdown-item" href="resources.html"><i class="fas fa-gem mr-2"></i>Resources</a>
+                            <a class="dropdown-item" href="products.html"><i class="fas fa-cube mr-2"></i>Products</a>
+                            <a class="dropdown-item" href="loot.html"><i class="fas fa-treasure-chest mr-2"></i>Loot</a>
+                            <a class="dropdown-item" href="units.html"><i class="fas fa-users mr-2"></i>Units</a>
+                            <a class="dropdown-item" href="luxury-goods.html"><i class="fas fa-crown mr-2"></i>Luxury Goods</a>
+                            <a class="dropdown-item" href="prices.html"><i class="fas fa-chart-line mr-2"></i>Prices</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" data-toggle="dropdown">
+                            <i class="fas fa-tools mr-1"></i>Tools
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="production-calculation.html"><i class="fas fa-calculator mr-2"></i>Production Calculation</a>
+                            <a class="dropdown-item active" href="factory-improvement.html"><i class="fas fa-arrow-trend-up mr-2"></i>Factory Improvement</a>
+                            <a class="dropdown-item" href="mine-improvements.html"><i class="fas fa-mountain mr-2"></i>Mine Improvements</a>
+                            <a class="dropdown-item" href="recycling.html"><i class="fas fa-recycle mr-2"></i>Recycling</a>
+                            <a class="dropdown-item" href="mines-cost.html"><i class="fas fa-money-bill-wave mr-2"></i>Mines Cost</a>
+                            <a class="dropdown-item" href="yield-of-the-mines.html"><i class="fas fa-chart-bar mr-2"></i>Yield of Mines</a>
+                            <a class="dropdown-item" href="attack-calculator.html"><i class="fas fa-sword mr-2"></i>Attack Calculator</a>
+                            <a class="dropdown-item" href="calculation-of-warehouse.html"><i class="fas fa-warehouse mr-2"></i>Warehouse Calculator</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="production-calculation.html">Tools</a></li>
+                <li class="breadcrumb-item active">Factory Improvement</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex align-items-center mb-4">
+                    <i class="fas fa-arrow-trend-up text-success mr-4" style="font-size: 4rem;"></i>
+                    <div>
+                        <h1 class="mb-0">Factory Improvement Calculator</h1>
+                        <p class="text-muted mb-0">Compare upgrade paths and find the most cost-effective improvements</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calculator Interface -->
+        <div class="row">
+            <!-- Input Panel -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-cogs mr-2"></i>Upgrade Configuration</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="improvementForm">
+                            <!-- Factory Selection -->
+                            <div class="form-group">
+                                <label for="factoryType"><i class="fas fa-industry mr-2"></i>Factory Type</label>
+                                <select class="form-control" id="factoryType" onchange="updateFactoryData()">
+                                    <option value="">Select Factory</option>
+                                    <option value="electronics">Electronics Factory</option>
+                                    <option value="aluminium">Aluminium Factory</option>
+                                    <option value="battery">Battery Factory</option>
+                                    <option value="plastic">Plastic Factory</option>
+                                    <option value="copper">Copper Refinery</option>
+                                    <option value="arms">Arms Factory</option>
+                                </select>
+                            </div>
+
+                            <!-- Current Level -->
+                            <div class="form-group">
+                                <label for="currentLevel"><i class="fas fa-level-up-alt mr-2"></i>Current Level</label>
+                                <select class="form-control" id="currentLevel">
+                                    <option value="1">Level 1</option>
+                                    <option value="2">Level 2</option>
+                                    <option value="3">Level 3</option>
+                                    <option value="4">Level 4</option>
+                                    <option value="5">Level 5</option>
+                                </select>
+                            </div>
+
+                            <!-- Target Level -->
+                            <div class="form-group">
+                                <label for="targetLevel"><i class="fas fa-bullseye mr-2"></i>Target Level</label>
+                                <select class="form-control" id="targetLevel">
+                                    <option value="2">Level 2</option>
+                                    <option value="3">Level 3</option>
+                                    <option value="4">Level 4</option>
+                                    <option value="5">Level 5</option>
+                                    <option value="6">Level 6</option>
+                                </select>
+                            </div>
+
+                            <!-- Production Hours -->
+                            <div class="form-group">
+                                <label for="productionHours"><i class="fas fa-clock mr-2"></i>Hours of Production per Day</label>
+                                <input type="number" class="form-control" id="productionHours" value="24" min="1" max="24">
+                            </div>
+
+                            <!-- Calculate Button -->
+                            <button type="button" class="btn btn-success btn-block" onclick="calculateImprovement()">
+                                <i class="fas fa-calculator mr-2"></i>Calculate Improvement
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Panel -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-chart-area mr-2"></i>Improvement Analysis</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="improvementResults" style="display: none;">
+                            <div class="alert alert-info">
+                                <h6><i class="fas fa-info-circle mr-2"></i>Upgrade Summary</h6>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong>Level Increase:</strong><br>
+                                        <span id="levelIncrease">-</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>ROI Period:</strong><br>
+                                        <span id="roiPeriod">-</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6><i class="fas fa-dollar-sign mr-2"></i>Cost Analysis</h6>
+                                    <table class="table table-sm">
+                                        <tr>
+                                            <td><strong>Upgrade Cost:</strong></td>
+                                            <td id="upgradeCost" class="text-right text-danger">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Current Daily Profit:</strong></td>
+                                            <td id="currentDailyProfit" class="text-right text-warning">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>New Daily Profit:</strong></td>
+                                            <td id="newDailyProfit" class="text-right text-success">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Daily Profit Increase:</strong></td>
+                                            <td id="dailyProfitIncrease" class="text-right text-success">-</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6><i class="fas fa-chart-line mr-2"></i>Production Impact</h6>
+                                    <table class="table table-sm">
+                                        <tr>
+                                            <td><strong>Current Output:</strong></td>
+                                            <td id="currentOutput" class="text-right">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>New Output:</strong></td>
+                                            <td id="newOutput" class="text-right">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Output Increase:</strong></td>
+                                            <td id="outputIncrease" class="text-right">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Efficiency Gain:</strong></td>
+                                            <td id="efficiencyGain" class="text-right">-</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- Recommendation -->
+                            <div id="recommendation" class="alert mt-3">
+                                <h6><i class="fas fa-lightbulb mr-2"></i>Recommendation</h6>
+                                <p id="recommendationText">-</p>
+                            </div>
+                        </div>
+
+                        <div id="initialMessage">
+                            <div class="text-center text-muted py-5">
+                                <i class="fas fa-arrow-trend-up fa-3x mb-3"></i>
+                                <h5>Factory Improvement Analysis</h5>
+                                <p>Select your factory and upgrade levels to calculate the most cost-effective improvement path.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Improvement Recommendations -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-star mr-2"></i>Priority Upgrades</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card priority-card">
+                                    <div class="card-header bg-success text-white">
+                                        <h6><i class="fas fa-trophy mr-2"></i>High Priority</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>Electronics Factory</strong></p>
+                                        <ul class="list-unstyled">
+                                            <li>Level 1 → 3: ROI in 15 days</li>
+                                            <li>Massive profit potential</li>
+                                            <li>Essential for tech progression</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card priority-card">
+                                    <div class="card-header bg-warning text-white">
+                                        <h6><i class="fas fa-medal mr-2"></i>Medium Priority</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>Arms Factory</strong></p>
+                                        <ul class="list-unstyled">
+                                            <li>Level 1 → 2: ROI in 20 days</li>
+                                            <li>High-value products</li>
+                                            <li>Military applications</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card priority-card">
+                                    <div class="card-header bg-info text-white">
+                                        <h6><i class="fas fa-crown mr-2"></i>Specialized</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>Battery Factory</strong></p>
+                                        <ul class="list-unstyled">
+                                            <li>Essential for electronics</li>
+                                            <li>Long-term investment</li>
+                                            <li>Market stability</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upgrade Cost Table -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-table mr-2"></i>Upgrade Cost Reference</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Factory</th>
+                                        <th>Level 1→2</th>
+                                        <th>Level 2→3</th>
+                                        <th>Level 3→4</th>
+                                        <th>Level 4→5</th>
+                                        <th>Best ROI</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><i class="fas fa-microchip text-info mr-2"></i>Electronics</td>
+                                        <td>50,000</td>
+                                        <td>100,000</td>
+                                        <td>200,000</td>
+                                        <td>400,000</td>
+                                        <td><span class="badge badge-success">Level 2→3</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-car-battery text-warning mr-2"></i>Battery</td>
+                                        <td>35,000</td>
+                                        <td>70,000</td>
+                                        <td>140,000</td>
+                                        <td>280,000</td>
+                                        <td><span class="badge badge-success">Level 1→2</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-bomb text-danger mr-2"></i>Arms</td>
+                                        <td>60,000</td>
+                                        <td>120,000</td>
+                                        <td>240,000</td>
+                                        <td>480,000</td>
+                                        <td><span class="badge badge-success">Level 2→3</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-recycle text-success mr-2"></i>Plastic</td>
+                                        <td>25,000</td>
+                                        <td>50,000</td>
+                                        <td>100,000</td>
+                                        <td>200,000</td>
+                                        <td><span class="badge badge-info">Stable</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-industry text-secondary mr-2"></i>Aluminium</td>
+                                        <td>40,000</td>
+                                        <td>80,000</td>
+                                        <td>160,000</td>
+                                        <td>320,000</td>
+                                        <td><span class="badge badge-warning">Level 3→4</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>RESOURCES GPS MMO Game Reference</h5>
+                    <p class="mb-0">Complete game reference and calculator suite</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <p class="mb-0">
+                        <a href="index.html" class="text-light">Back to Home</a> | 
+                        <a href="production-calculation.html" class="text-light ml-2">Previous: Production Calc</a> | 
+                        <a href="mine-improvements.html" class="text-light ml-2">Next: Mine Improvements</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="helper.js"></script>
+    <script>
+        // Factory improvement data
+        const factoryUpgradeData = {
+            electronics: { 
+                baseCost: 50000, 
+                baseOutput: 100, 
+                productValue: 2500,
+                outputMultiplier: 1.5,
+                costMultiplier: 2
+            },
+            aluminium: { 
+                baseCost: 40000, 
+                baseOutput: 200, 
+                productValue: 350,
+                outputMultiplier: 1.4,
+                costMultiplier: 2
+            },
+            battery: { 
+                baseCost: 35000, 
+                baseOutput: 80, 
+                productValue: 1800,
+                outputMultiplier: 1.6,
+                costMultiplier: 2
+            },
+            plastic: { 
+                baseCost: 25000, 
+                baseOutput: 150, 
+                productValue: 180,
+                outputMultiplier: 1.3,
+                costMultiplier: 2
+            },
+            copper: { 
+                baseCost: 30000, 
+                baseOutput: 120, 
+                productValue: 450,
+                outputMultiplier: 1.4,
+                costMultiplier: 2
+            },
+            arms: { 
+                baseCost: 60000, 
+                baseOutput: 60, 
+                productValue: 3200,
+                outputMultiplier: 1.5,
+                costMultiplier: 2
+            }
+        };
+
+        function updateFactoryData() {
+            const factoryType = document.getElementById('factoryType').value;
+            const currentLevel = document.getElementById('currentLevel');
+            const targetLevel = document.getElementById('targetLevel');
+            
+            // Update level options based on selected factory
+            if (factoryType) {
+                currentLevel.innerHTML = '';
+                targetLevel.innerHTML = '';
+                
+                for (let i = 1; i <= 10; i++) {
+                    currentLevel.innerHTML += `<option value="${i}">Level ${i}</option>`;
+                    if (i > 1) {
+                        targetLevel.innerHTML += `<option value="${i}">Level ${i}</option>`;
+                    }
+                }
+            }
+        }
+
+        function calculateImprovement() {
+            const factoryType = document.getElementById('factoryType').value;
+            const currentLevel = parseInt(document.getElementById('currentLevel').value);
+            const targetLevel = parseInt(document.getElementById('targetLevel').value);
+            const productionHours = parseInt(document.getElementById('productionHours').value);
+
+            if (!factoryType || !factoryUpgradeData[factoryType]) {
+                alert('Please select a valid factory type');
+                return;
+            }
+
+            if (targetLevel <= currentLevel) {
+                alert('Target level must be higher than current level');
+                return;
+            }
+
+            const data = factoryUpgradeData[factoryType];
+            
+            // Calculate upgrade costs
+            let totalUpgradeCost = 0;
+            for (let level = currentLevel; level < targetLevel; level++) {
+                totalUpgradeCost += data.baseCost * Math.pow(data.costMultiplier, level - 1);
+            }
+
+            // Calculate current production
+            const currentOutput = data.baseOutput * Math.pow(data.outputMultiplier, currentLevel - 1);
+            const newOutput = data.baseOutput * Math.pow(data.outputMultiplier, targetLevel - 1);
+            
+            // Calculate daily profits
+            const currentDailyProfit = currentOutput * data.productValue * productionHours;
+            const newDailyProfit = newOutput * data.productValue * productionHours;
+            const dailyProfitIncrease = newDailyProfit - currentDailyProfit;
+            
+            // Calculate ROI
+            const roiDays = Math.ceil(totalUpgradeCost / dailyProfitIncrease);
+
+            // Update display
+            document.getElementById('levelIncrease').textContent = `+${targetLevel - currentLevel} levels`;
+            document.getElementById('roiPeriod').textContent = `${roiDays} days`;
+            document.getElementById('upgradeCost').textContent = `${totalUpgradeCost.toLocaleString()} Credits`;
+            document.getElementById('currentDailyProfit').textContent = `${currentDailyProfit.toLocaleString()} Credits`;
+            document.getElementById('newDailyProfit').textContent = `${newDailyProfit.toLocaleString()} Credits`;
+            document.getElementById('dailyProfitIncrease').textContent = `+${dailyProfitIncrease.toLocaleString()} Credits`;
+            document.getElementById('currentOutput').textContent = `${currentOutput.toFixed(1)} units/hour`;
+            document.getElementById('newOutput').textContent = `${newOutput.toFixed(1)} units/hour`;
+            document.getElementById('outputIncrease').textContent = `+${(newOutput - currentOutput).toFixed(1)} units/hour`;
+            document.getElementById('efficiencyGain').textContent = `${(((newOutput / currentOutput) - 1) * 100).toFixed(1)}%`;
+
+            // Recommendation
+            let recommendation = '';
+            const efficiencyGain = ((newOutput / currentOutput) - 1) * 100;
+            
+            if (roiDays <= 30) {
+                recommendation = `<div class="alert alert-success">
+                    <strong>Highly Recommended!</strong> This upgrade pays for itself in ${roiDays} days and provides ${efficiencyGain.toFixed(1)}% efficiency gain. Excellent investment.
+                </div>`;
+            } else if (roiDays <= 60) {
+                recommendation = `<div class="alert alert-info">
+                    <strong>Recommended.</strong> This upgrade pays for itself in ${roiDays} days. Good long-term investment.
+                </div>`;
+            } else {
+                recommendation = `<div class="alert alert-warning">
+                    <strong>Consider Alternatives.</strong> This upgrade takes ${roiDays} days to pay off. Consider upgrading higher-priority factories first.
+                </div>`;
+            }
+            
+            document.getElementById('recommendationText').innerHTML = recommendation;
+
+            document.getElementById('initialMessage').style.display = 'none';
+            document.getElementById('improvementResults').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

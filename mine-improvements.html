@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mine Improvements Calculator - RESOURCES GPS MMO Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-cogs mr-2"></i>RESOURCES GPS MMO Game
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="baseDropdown" data-toggle="dropdown">
+                            <i class="fas fa-building mr-1"></i>Base
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="headquarters.html"><i class="fas fa-home mr-2"></i>Headquarters</a>
+                            <a class="dropdown-item" href="factories.html"><i class="fas fa-industry mr-2"></i>Factories</a>
+                            <a class="dropdown-item" href="special-buildings.html"><i class="fas fa-landmark mr-2"></i>Special Buildings</a>
+                            <a class="dropdown-item" href="resources.html"><i class="fas fa-gem mr-2"></i>Resources</a>
+                            <a class="dropdown-item" href="products.html"><i class="fas fa-cube mr-2"></i>Products</a>
+                            <a class="dropdown-item" href="loot.html"><i class="fas fa-treasure-chest mr-2"></i>Loot</a>
+                            <a class="dropdown-item" href="units.html"><i class="fas fa-users mr-2"></i>Units</a>
+                            <a class="dropdown-item" href="luxury-goods.html"><i class="fas fa-crown mr-2"></i>Luxury Goods</a>
+                            <a class="dropdown-item" href="prices.html"><i class="fas fa-chart-line mr-2"></i>Prices</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" data-toggle="dropdown">
+                            <i class="fas fa-tools mr-1"></i>Tools
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="production-calculation.html"><i class="fas fa-calculator mr-2"></i>Production Calculation</a>
+                            <a class="dropdown-item" href="factory-improvement.html"><i class="fas fa-arrow-trend-up mr-2"></i>Factory Improvement</a>
+                            <a class="dropdown-item active" href="mine-improvements.html"><i class="fas fa-mountain mr-2"></i>Mine Improvements</a>
+                            <a class="dropdown-item" href="recycling.html"><i class="fas fa-recycle mr-2"></i>Recycling</a>
+                            <a class="dropdown-item" href="mines-cost.html"><i class="fas fa-money-bill-wave mr-2"></i>Mines Cost</a>
+                            <a class="dropdown-item" href="yield-of-the-mines.html"><i class="fas fa-chart-bar mr-2"></i>Yield of Mines</a>
+                            <a class="dropdown-item" href="attack-calculator.html"><i class="fas fa-sword mr-2"></i>Attack Calculator</a>
+                            <a class="dropdown-item" href="calculation-of-warehouse.html"><i class="fas fa-warehouse mr-2"></i>Warehouse Calculator</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="production-calculation.html">Tools</a></li>
+                <li class="breadcrumb-item active">Mine Improvements</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex align-items-center mb-4">
+                    <i class="fas fa-mountain text-warning mr-4" style="font-size: 4rem;"></i>
+                    <div>
+                        <h1 class="mb-0">Mine Improvements Calculator</h1>
+                        <p class="text-muted mb-0">Optimize your mining operations and maximize resource extraction efficiency</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calculator Interface -->
+        <div class="row">
+            <!-- Input Panel -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-cogs mr-2"></i>Mining Configuration</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="mineImprovementForm">
+                            <!-- Resource Type -->
+                            <div class="form-group">
+                                <label for="resourceType"><i class="fas fa-gem mr-2"></i>Resource Type</label>
+                                <select class="form-control" id="resourceType" onchange="updateMineData()">
+                                    <option value="">Select Resource</option>
+                                    <option value="coal">Coal Mine</option>
+                                    <option value="iron">Iron Ore</option>
+                                    <option value="oil">Crude Oil</option>
+                                    <option value="copper">Copper Ore</option>
+                                    <option value="gold">Gold Ore</option>
+                                    <option value="silicon">Silicon</option>
+                                    <option value="bauxite">Bauxite</option>
+                                    <option value="lithium">Lithium</option>
+                                </select>
+                            </div>
+
+                            <!-- Current Mine Level -->
+                            <div class="form-group">
+                                <label for="currentMineLevel"><i class="fas fa-level-up-alt mr-2"></i>Current Mine Level</label>
+                                <select class="form-control" id="currentMineLevel">
+                                    <option value="1">Level 1</option>
+                                    <option value="2">Level 2</option>
+                                    <option value="3">Level 3</option>
+                                    <option value="4">Level 4</option>
+                                    <option value="5">Level 5</option>
+                                    <option value="6">Level 6</option>
+                                </select>
+                            </div>
+
+                            <!-- Target Mine Level -->
+                            <div class="form-group">
+                                <label for="targetMineLevel"><i class="fas fa-bullseye mr-2"></i>Target Mine Level</label>
+                                <select class="form-control" id="targetMineLevel">
+                                    <option value="2">Level 2</option>
+                                    <option value="3">Level 3</option>
+                                    <option value="4">Level 4</option>
+                                    <option value="5">Level 5</option>
+                                    <option value="6">Level 6</option>
+                                    <option value="7">Level 7</option>
+                                </select>
+                            </div>
+
+                            <!-- Mining Hours per Day -->
+                            <div class="form-group">
+                                <label for="miningHours"><i class="fas fa-clock mr-2"></i>Hours of Mining per Day</label>
+                                <input type="number" class="form-control" id="miningHours" value="24" min="1" max="24">
+                            </div>
+
+                            <!-- Improvement Options -->
+                            <div class="form-group">
+                                <label><i class="fas fa-tools mr-2"></i>Improvement Packages</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="efficiencyUpgrade">
+                                    <label class="form-check-label" for="efficiencyUpgrade">Efficiency Upgrade (+25% output)</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="speedUpgrade">
+                                    <label class="form-check-label" for="speedUpgrade">Speed Upgrade (+30% extraction rate)</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="maintenanceKit">
+                                    <label class="form-check-label" for="maintenanceKit">Maintenance Kit (reduce wear)</label>
+                                </div>
+                            </div>
+
+                            <!-- Calculate Button -->
+                            <button type="button" class="btn btn-warning btn-block" onclick="calculateMineImprovement()">
+                                <i class="fas fa-calculator mr-2"></i>Calculate Improvements
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Panel -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-chart-area mr-2"></i>Improvement Analysis</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="mineResults" style="display: none;">
+                            <div class="alert alert-warning">
+                                <h6><i class="fas fa-info-circle mr-2"></i>Mining Upgrade Summary</h6>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong>Level Increase:</strong><br>
+                                        <span id="mineLevelIncrease">-</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Total Investment:</strong><br>
+                                        <span id="totalInvestment">-</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6><i class="fas fa-chart-line mr-2"></i>Production Impact</h6>
+                                    <table class="table table-sm">
+                                        <tr>
+                                            <td><strong>Current Output:</strong></td>
+                                            <td id="currentMineOutput" class="text-right">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>New Output:</strong></td>
+                                            <td id="newMineOutput" class="text-right">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Daily Production:</strong></td>
+                                            <td id="dailyProduction" class="text-right">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Revenue per Day:</strong></td>
+                                            <td id="dailyRevenue" class="text-right text-success">-</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6><i class="fas fa-dollar-sign mr-2"></i>Investment Analysis</h6>
+                                    <table class="table table-sm">
+                                        <tr>
+                                            <td><strong>Upgrade Cost:</strong></td>
+                                            <td id="mineUpgradeCost" class="text-right text-danger">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Improvement Costs:</strong></td>
+                                            <td id="improvementCosts" class="text-right text-danger">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Total Investment:</strong></td>
+                                            <td id="totalMineInvestment" class="text-right text-danger">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Payback Period:</strong></td>
+                                            <td id="minePayback" class="text-right text-info">-</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- Mine Improvement Recommendation -->
+                            <div id="mineRecommendation" class="alert mt-3">
+                                <h6><i class="fas fa-lightbulb mr-2"></i>Mining Recommendation</h6>
+                                <p id="mineRecommendationText">-</p>
+                            </div>
+                        </div>
+
+                        <div id="mineInitialMessage">
+                            <div class="text-center text-muted py-5">
+                                <i class="fas fa-mountain fa-3x mb-3"></i>
+                                <h5>Mine Improvement Planning</h5>
+                                <p>Select your mine type and upgrade targets to calculate optimal improvement strategies.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mining Efficiency Guide -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-lightbulb mr-2"></i>Mining Optimization Tips</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h6><i class="fas fa-chart-line mr-2"></i>Priority Resources</h6>
+                                <ul>
+                                    <li><strong>Gold Ore:</strong> Highest profit per unit</li>
+                                    <li><strong>Crude Oil:</strong> Steady demand</li>
+                                    <li><strong>Silicon:</strong> Tech industry demand</li>
+                                    <li><strong>Lithium:</strong> Battery production needs</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h6><i class="fas fa-clock mr-2"></i>Efficiency Tips</h6>
+                                <ul>
+                                    <li>Upgrade during off-peak hours</li>
+                                    <li>Use maintenance kits regularly</li>
+                                    <li>Monitor resource prices daily</li>
+                                    <li>Plan improvements around events</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h6><i class="fas fa-money-bill-wave mr-2"></i>Cost Management</h6>
+                                <ul>
+                                    <li>Focus on highest ROI first</li>
+                                    <li>Combine upgrades for discounts</li>
+                                    <li>Time improvements with sales</li>
+                                    <li>Consider resource market trends</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mine Upgrade Costs -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-table mr-2"></i>Mine Upgrade Costs</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Resource</th>
+                                        <th>Base Price</th>
+                                        <th>Level 1→2</th>
+                                        <th>Level 2→3</th>
+                                        <th>Level 3→4</th>
+                                        <th>ROI Rating</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><i class="fas fa-star text-warning mr-2"></i>Gold Ore</td>
+                                        <td>750 Credits</td>
+                                        <td>80,000</td>
+                                        <td>160,000</td>
+                                        <td>320,000</td>
+                                        <td><span class="badge badge-success">Excellent</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-oil-can text-dark mr-2"></i>Crude Oil</td>
+                                        <td>85 Credits</td>
+                                        <td>25,000</td>
+                                        <td>50,000</td>
+                                        <td>100,000</td>
+                                        <td><span class="badge badge-info">Good</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-gem text-primary mr-2"></i>Silicon</td>
+                                        <td>320 Credits</td>
+                                        <td>45,000</td>
+                                        <td>90,000</td>
+                                        <td>180,000</td>
+                                        <td><span class="badge badge-success">High</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-battery-full text-success mr-2"></i>Lithium</td>
+                                        <td>450 Credits</td>
+                                        <td>60,000</td>
+                                        <td>120,000</td>
+                                        <td>240,000</td>
+                                        <td><span class="badge badge-warning">Medium</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-gem text-danger mr-2"></i>Iron Ore</td>
+                                        <td>120 Credits</td>
+                                        <td>20,000</td>
+                                        <td>40,000</td>
+                                        <td>80,000</td>
+                                        <td><span class="badge badge-info">Stable</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-mountain text-secondary mr-2"></i>Coal</td>
+                                        <td>45 Credits</td>
+                                        <td>15,000</td>
+                                        <td>30,000</td>
+                                        <td>60,000</td>
+                                        <td><span class="badge badge-secondary">Basic</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Improvement Packages -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-box mr-2"></i>Improvement Packages</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card improvement-package">
+                                    <div class="card-header bg-info text-white">
+                                        <h6><i class="fas fa-tachometer-alt mr-2"></i>Efficiency Package</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>+25% Output Boost</strong></p>
+                                        <ul>
+                                            <li>Advanced extraction tools</li>
+                                            <li>Improved mining techniques</li>
+                                            <li>Better resource sorting</li>
+                                        </ul>
+                                        <p><strong>Cost:</strong> 25,000 Credits</p>
+                                        <p><strong>ROI:</strong> 30-45 days</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card improvement-package">
+                                    <div class="card-header bg-success text-white">
+                                        <h6><i class="fas fa-rocket mr-2"></i>Speed Package</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>+30% Extraction Rate</strong></p>
+                                        <ul>
+                                            <li>Faster drilling equipment</li>
+                                            <li>Automated systems</li>
+                                            <li>Optimized workflows</li>
+                                        </ul>
+                                        <p><strong>Cost:</strong> 35,000 Credits</p>
+                                        <p><strong>ROI:</strong> 25-40 days</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card improvement-package">
+                                    <div class="card-header bg-warning text-white">
+                                        <h6><i class="fas fa-wrench mr-2"></i>Maintenance Kit</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>Reduce Equipment Wear</strong></p>
+                                        <ul>
+                                            <li>Preventive maintenance</li>
+                                            <li>Equipment protection</li>
+                                            <li>Extended lifespan</li>
+                                        </ul>
+                                        <p><strong>Cost:</strong> 15,000 Credits</p>
+                                        <p><strong>ROI:</strong> 60+ days</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>RESOURCES GPS MMO Game Reference</h5>
+                    <p class="mb-0">Complete game reference and calculator suite</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <p class="mb-0">
+                        <a href="index.html" class="text-light">Back to Home</a> | 
+                        <a href="factory-improvement.html" class="text-light ml-2">Previous: Factory Improvement</a> | 
+                        <a href="recycling.html" class="text-light ml-2">Next: Recycling</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="helper.js"></script>
+    <script>
+        // Mine data
+        const mineData = {
+            coal: { baseOutput: 50, price: 45, upgradeCost: 15000, levelMultiplier: 1.4 },
+            iron: { baseOutput: 30, price: 120, upgradeCost: 20000, levelMultiplier: 1.5 },
+            oil: { baseOutput: 25, price: 85, upgradeCost: 25000, levelMultiplier: 1.6 },
+            copper: { baseOutput: 35, price: 95, upgradeCost: 22000, levelMultiplier: 1.4 },
+            gold: { baseOutput: 15, price: 750, upgradeCost: 80000, levelMultiplier: 1.7 },
+            silicon: { baseOutput: 20, price: 320, upgradeCost: 45000, levelMultiplier: 1.5 },
+            bauxite: { baseOutput: 40, price: 180, upgradeCost: 30000, levelMultiplier: 1.4 },
+            lithium: { baseOutput: 18, price: 450, upgradeCost: 60000, levelMultiplier: 1.6 }
+        };
+
+        function updateMineData() {
+            const resourceType = document.getElementById('resourceType').value;
+            const currentLevel = document.getElementById('currentMineLevel');
+            const targetLevel = document.getElementById('targetMineLevel');
+            
+            // Update level options based on selected resource
+            if (resourceType) {
+                currentLevel.innerHTML = '';
+                targetLevel.innerHTML = '';
+                
+                for (let i = 1; i <= 10; i++) {
+                    currentLevel.innerHTML += `<option value="${i}">Level ${i}</option>`;
+                    if (i > 1) {
+                        targetLevel.innerHTML += `<option value="${i}">Level ${i}</option>`;
+                    }
+                }
+            }
+        }
+
+        function calculateMineImprovement() {
+            const resourceType = document.getElementById('resourceType').value;
+            const currentLevel = parseInt(document.getElementById('currentMineLevel').value);
+            const targetLevel = parseInt(document.getElementById('targetMineLevel').value);
+            const miningHours = parseInt(document.getElementById('miningHours').value);
+
+            if (!resourceType || !mineData[resourceType]) {
+                alert('Please select a valid resource type');
+                return;
+            }
+
+            if (targetLevel <= currentLevel) {
+                alert('Target level must be higher than current level');
+                return;
+            }
+
+            const data = mineData[resourceType];
+            
+            // Calculate upgrade costs
+            let upgradeCost = 0;
+            for (let level = currentLevel; level < targetLevel; level++) {
+                upgradeCost += data.upgradeCost * Math.pow(1.5, level - 1);
+            }
+
+            // Calculate improvement costs
+            let improvementCosts = 0;
+            if (document.getElementById('efficiencyUpgrade').checked) improvementCosts += 25000;
+            if (document.getElementById('speedUpgrade').checked) improvementCosts += 35000;
+            if (document.getElementById('maintenanceKit').checked) improvementCosts += 15000;
+
+            const totalInvestment = upgradeCost + improvementCosts;
+
+            // Calculate production
+            let currentOutput = data.baseOutput * Math.pow(data.levelMultiplier, currentLevel - 1);
+            let newOutput = data.baseOutput * Math.pow(data.levelMultiplier, targetLevel - 1);
+
+            // Apply improvement multipliers
+            if (document.getElementById('efficiencyUpgrade').checked) newOutput *= 1.25;
+            if (document.getElementById('speedUpgrade').checked) newOutput *= 1.30;
+
+            const dailyProduction = newOutput * miningHours;
+            const dailyRevenue = dailyProduction * data.price;
+
+            const levelIncrease = targetLevel - currentLevel;
+            const paybackDays = Math.ceil(totalInvestment / dailyRevenue);
+
+            // Update display
+            document.getElementById('mineLevelIncrease').textContent = `+${levelIncrease} levels`;
+            document.getElementById('totalInvestment').textContent = `${totalInvestment.toLocaleString()} Credits`;
+            document.getElementById('currentMineOutput').textContent = `${currentOutput.toFixed(1)} units/hour`;
+            document.getElementById('newMineOutput').textContent = `${newOutput.toFixed(1)} units/hour`;
+            document.getElementById('dailyProduction').textContent = `${dailyProduction.toFixed(0)} units/day`;
+            document.getElementById('dailyRevenue').textContent = `${dailyRevenue.toLocaleString()} Credits/day`;
+            document.getElementById('mineUpgradeCost').textContent = `${upgradeCost.toLocaleString()} Credits`;
+            document.getElementById('improvementCosts').textContent = `${improvementCosts.toLocaleString()} Credits`;
+            document.getElementById('totalMineInvestment').textContent = `${totalInvestment.toLocaleString()} Credits`;
+            document.getElementById('minePayback').textContent = `${paybackDays} days`;
+
+            // Recommendation
+            let recommendation = '';
+            if (paybackDays <= 30) {
+                recommendation = `<div class="alert alert-success">
+                    <strong>Excellent Investment!</strong> This mining improvement pays for itself in ${paybackDays} days with excellent profit potential.
+                </div>`;
+            } else if (paybackDays <= 60) {
+                recommendation = `<div class="alert alert-info">
+                    <strong>Good Investment.</strong> Reasonable payback period of ${paybackDays} days with steady returns.
+                </div>`;
+            } else {
+                recommendation = `<div class="alert alert-warning">
+                    <strong>Long-term Investment.</strong> Payback period of ${paybackDays} days. Consider higher-priority upgrades first.
+                </div>`;
+            }
+            
+            document.getElementById('mineRecommendationText').innerHTML = recommendation;
+
+            document.getElementById('mineInitialMessage').style.display = 'none';
+            document.getElementById('mineResults').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

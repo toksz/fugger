@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Production Calculator - RESOURCES GPS MMO Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-cogs mr-2"></i>RESOURCES GPS MMO Game
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="baseDropdown" data-toggle="dropdown">
+                            <i class="fas fa-building mr-1"></i>Base
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="headquarters.html"><i class="fas fa-home mr-2"></i>Headquarters</a>
+                            <a class="dropdown-item" href="factories.html"><i class="fas fa-industry mr-2"></i>Factories</a>
+                            <a class="dropdown-item" href="special-buildings.html"><i class="fas fa-landmark mr-2"></i>Special Buildings</a>
+                            <a class="dropdown-item" href="resources.html"><i class="fas fa-gem mr-2"></i>Resources</a>
+                            <a class="dropdown-item" href="products.html"><i class="fas fa-cube mr-2"></i>Products</a>
+                            <a class="dropdown-item" href="loot.html"><i class="fas fa-treasure-chest mr-2"></i>Loot</a>
+                            <a class="dropdown-item" href="units.html"><i class="fas fa-users mr-2"></i>Units</a>
+                            <a class="dropdown-item" href="luxury-goods.html"><i class="fas fa-crown mr-2"></i>Luxury Goods</a>
+                            <a class="dropdown-item" href="prices.html"><i class="fas fa-chart-line mr-2"></i>Prices</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" data-toggle="dropdown">
+                            <i class="fas fa-tools mr-1"></i>Tools
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item active" href="production-calculation.html"><i class="fas fa-calculator mr-2"></i>Production Calculation</a>
+                            <a class="dropdown-item" href="factory-improvement.html"><i class="fas fa-arrow-trend-up mr-2"></i>Factory Improvement</a>
+                            <a class="dropdown-item" href="mine-improvements.html"><i class="fas fa-mountain mr-2"></i>Mine Improvements</a>
+                            <a class="dropdown-item" href="recycling.html"><i class="fas fa-recycle mr-2"></i>Recycling</a>
+                            <a class="dropdown-item" href="mines-cost.html"><i class="fas fa-money-bill-wave mr-2"></i>Mines Cost</a>
+                            <a class="dropdown-item" href="yield-of-the-mines.html"><i class="fas fa-chart-bar mr-2"></i>Yield of Mines</a>
+                            <a class="dropdown-item" href="attack-calculator.html"><i class="fas fa-sword mr-2"></i>Attack Calculator</a>
+                            <a class="dropdown-item" href="calculation-of-warehouse.html"><i class="fas fa-warehouse mr-2"></i>Warehouse Calculator</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="production-calculation.html">Tools</a></li>
+                <li class="breadcrumb-item active">Production Calculator</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex align-items-center mb-4">
+                    <i class="fas fa-calculator text-primary mr-4" style="font-size: 4rem;"></i>
+                    <div>
+                        <h1 class="mb-0">Production Calculator</h1>
+                        <p class="text-muted mb-0">Calculate optimal production chains and maximize your factory output</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calculator Interface -->
+        <div class="row">
+            <!-- Input Panel -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-cogs mr-2"></i>Production Setup</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="productionForm">
+                            <!-- Factory Selection -->
+                            <div class="form-group">
+                                <label for="factoryType"><i class="fas fa-industry mr-2"></i>Factory Type</label>
+                                <select class="form-control" id="factoryType">
+                                    <option value="">Select Factory</option>
+                                    <option value="electronics">Electronics Factory</option>
+                                    <option value="aluminium">Aluminium Factory</option>
+                                    <option value="battery">Battery Factory</option>
+                                    <option value="plastic">Plastic Factory</option>
+                                    <option value="copper">Copper Refinery</option>
+                                    <option value="arms">Arms Factory</option>
+                                    <option value="steel">Steel Production</option>
+                                    <option value="medical">Medical Technology</option>
+                                    <option value="gold">Gold Refining</option>
+                                </select>
+                            </div>
+
+                            <!-- Factory Level -->
+                            <div class="form-group">
+                                <label for="factoryLevel"><i class="fas fa-level-up-alt mr-2"></i>Factory Level</label>
+                                <select class="form-control" id="factoryLevel">
+                                    <option value="1">Level 1</option>
+                                    <option value="2">Level 2</option>
+                                    <option value="3">Level 3</option>
+                                    <option value="4">Level 4</option>
+                                    <option value="5">Level 5</option>
+                                    <option value="6">Level 6</option>
+                                    <option value="7">Level 7</option>
+                                    <option value="8">Level 8</option>
+                                    <option value="9">Level 9</option>
+                                    <option value="10">Level 10</option>
+                                </select>
+                            </div>
+
+                            <!-- Production Time -->
+                            <div class="form-group">
+                                <label for="productionTime"><i class="fas fa-clock mr-2"></i>Production Time (hours)</label>
+                                <input type="number" class="form-control" id="productionTime" value="1" min="0.1" step="0.1">
+                            </div>
+
+                            <!-- Quantity -->
+                            <div class="form-group">
+                                <label for="quantity"><i class="fas fa-cube mr-2"></i>Production Quantity</label>
+                                <input type="number" class="form-control" id="quantity" value="1" min="1">
+                            </div>
+
+                            <!-- Boost Multipliers -->
+                            <div class="form-group">
+                                <label><i class="fas fa-rocket mr-2"></i>Boost Multipliers</label>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="techUpgrade1">
+                                            <label class="form-check-label" for="techUpgrade1">Tech Upgrade 1 (+10%)</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="techUpgrade2">
+                                            <label class="form-check-label" for="techUpgrade2">Tech Upgrade 2 (+15%)</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="techUpgrade3">
+                                            <label class="form-check-label" for="techUpgrade3">Tech Upgrade 3 (+25%)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="overtime">
+                                            <label class="form-check-label" for="overtime">Overtime (+30%)</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="nightShift">
+                                            <label class="form-check-label" for="nightShift">Night Shift (2x)</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="guestWorkers">
+                                            <label class="form-check-label" for="guestWorkers">Guest Workers (+20%)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Calculate Button -->
+                            <button type="button" class="btn btn-primary btn-block" onclick="calculateProduction()">
+                                <i class="fas fa-calculator mr-2"></i>Calculate Production
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Panel -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-chart-line mr-2"></i>Production Results</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="resultsSection" style="display: none;">
+                            <div class="alert alert-success">
+                                <h6><i class="fas fa-info-circle mr-2"></i>Production Summary</h6>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong>Base Output:</strong><br>
+                                        <span id="baseOutput">-</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Total Multiplier:</strong><br>
+                                        <span id="totalMultiplier">-</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6><i class="fas fa-chart-bar mr-2"></i>Production Details</h6>
+                                    <table class="table table-sm">
+                                        <tr>
+                                            <td><strong>Output per hour:</strong></td>
+                                            <td id="outputPerHour" class="text-right">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Total production:</strong></td>
+                                            <td id="totalProduction" class="text-right">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Time required:</strong></td>
+                                            <td id="timeRequired" class="text-right">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Efficiency:</strong></td>
+                                            <td id="efficiency" class="text-right">-</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6><i class="fas fa-dollar-sign mr-2"></i>Profit Analysis</h6>
+                                    <table class="table table-sm">
+                                        <tr>
+                                            <td><strong>Product value:</strong></td>
+                                            <td id="productValue" class="text-right text-warning">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Total revenue:</strong></td>
+                                            <td id="totalRevenue" class="text-right text-success">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Profit per hour:</strong></td>
+                                            <td id="profitPerHour" class="text-right text-success">-</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="initialMessage">
+                            <div class="text-center text-muted py-5">
+                                <i class="fas fa-calculator fa-3x mb-3"></i>
+                                <h5>Ready to Calculate</h5>
+                                <p>Select your factory type and settings to get started with production calculations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Production Guide -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-lightbulb mr-2"></i>Production Tips</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h6><i class="fas fa-chart-line mr-2"></i>Optimization</h6>
+                                <ul>
+                                    <li>Maximize boost combinations</li>
+                                    <li>Time production for peak efficiency</li>
+                                    <li>Consider resource costs vs. output</li>
+                                    <li>Upgrade factories for better ratios</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h6><i class="fas fa-clock mr-2"></i>Time Management</h6>
+                                <ul>
+                                    <li>Use Night Shift for 24/7 operations</li>
+                                    <li>Plan around Overtime periods</li>
+                                    <li>Chain productions efficiently</li>
+                                    <li>Monitor production cycles</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h6><i class="fas fa-money-bill-wave mr-2"></i>Profit Maximization</h6>
+                                <ul>
+                                    <li>Focus on high-value products</li>
+                                    <li>Monitor market prices</li>
+                                    <li>Consider production chains</li>
+                                    <li>Balance speed vs. profit</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Factory Reference -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-industry mr-2"></i>Factory Reference</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Factory</th>
+                                        <th>Base Output</th>
+                                        <th>Input Requirements</th>
+                                        <th>Profitability</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Electronics</td>
+                                        <td>100 units/hour</td>
+                                        <td>Silicon, Copper, Steel</td>
+                                        <td><span class="badge badge-success">High</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aluminium</td>
+                                        <td>200 units/hour</td>
+                                        <td>Bauxite, Energy</td>
+                                        <td><span class="badge badge-info">Medium</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Battery</td>
+                                        <td>80 units/hour</td>
+                                        <td>Lithium, Aluminium, Steel</td>
+                                        <td><span class="badge badge-success">High</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Plastic</td>
+                                        <td>150 units/hour</td>
+                                        <td>Oil, Chemicals</td>
+                                        <td><span class="badge badge-warning">Medium</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Arms Factory</td>
+                                        <td>60 units/hour</td>
+                                        <td>Steel, Copper, Chemicals</td>
+                                        <td><span class="badge badge-success">Very High</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>RESOURCES GPS MMO Game Reference</h5>
+                    <p class="mb-0">Complete game reference and calculator suite</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <p class="mb-0">
+                        <a href="index.html" class="text-light">Back to Home</a> | 
+                        <a href="prices.html" class="text-light ml-2">Previous: Prices</a> | 
+                        <a href="factory-improvement.html" class="text-light ml-2">Next: Factory Improvement</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="helper.js"></script>
+    <script>
+        // Factory data
+        const factoryData = {
+            electronics: { output: 100, value: 2500, inputs: { silicon: 2, copper: 1, steel: 1 } },
+            aluminium: { output: 200, value: 350, inputs: { bauxite: 3 } },
+            battery: { output: 80, value: 1800, inputs: { lithium: 2, aluminium: 1, steel: 1 } },
+            plastic: { output: 150, value: 180, inputs: { oil: 2, chemicals: 1 } },
+            copper: { output: 120, value: 450, inputs: { copperore: 3 } },
+            arms: { output: 60, value: 3200, inputs: { steel: 2, copper: 1, chemicals: 1 } },
+            steel: { output: 100, value: 350, inputs: { ironore: 2, coal: 1 } },
+            medical: { output: 40, value: 5750, inputs: { steel: 1, electronics: 1, chemicals: 2 } },
+            gold: { output: 50, value: 8500, inputs: { goldore: 3 } }
+        };
+
+        function calculateProduction() {
+            const factoryType = document.getElementById('factoryType').value;
+            const factoryLevel = parseInt(document.getElementById('factoryLevel').value);
+            const productionTime = parseFloat(document.getElementById('productionTime').value);
+            const quantity = parseInt(document.getElementById('quantity').value);
+
+            if (!factoryType || !factoryType in factoryData) {
+                alert('Please select a valid factory type');
+                return;
+            }
+
+            const data = factoryData[factoryType];
+            
+            // Calculate base output
+            let baseOutput = data.output * factoryLevel;
+            let timeMultiplier = 1;
+            
+            // Calculate boost multipliers
+            let totalMultiplier = 1;
+            if (document.getElementById('techUpgrade1').checked) totalMultiplier *= 1.10;
+            if (document.getElementById('techUpgrade2').checked) totalMultiplier *= 1.15;
+            if (document.getElementById('techUpgrade3').checked) totalMultiplier *= 1.25;
+            if (document.getElementById('overtime').checked) totalMultiplier *= 1.30;
+            if (document.getElementById('nightShift').checked) totalMultiplier *= 2.0;
+            if (document.getElementById('guestWorkers').checked) totalMultiplier *= 1.20;
+
+            // Calculate final output
+            const finalOutput = baseOutput * totalMultiplier;
+            const outputPerHour = finalOutput / productionTime;
+            const totalProduction = outputPerHour * productionTime;
+            const efficiency = (finalOutput / (data.output * factoryLevel) * 100).toFixed(1);
+
+            // Calculate profits
+            const productValue = data.value;
+            const totalRevenue = totalProduction * productValue;
+            const profitPerHour = (totalRevenue / productionTime);
+
+            // Display results
+            document.getElementById('baseOutput').textContent = `${baseOutput} units (Level ${factoryLevel})`;
+            document.getElementById('totalMultiplier').textContent = `${(totalMultiplier * 100).toFixed(1)}%`;
+            document.getElementById('outputPerHour').textContent = `${outputPerHour.toFixed(1)} units/hour`;
+            document.getElementById('totalProduction').textContent = `${totalProduction.toFixed(1)} units`;
+            document.getElementById('timeRequired').textContent = `${productionTime} hours`;
+            document.getElementById('efficiency').textContent = `${efficiency}%`;
+            document.getElementById('productValue').textContent = `${productValue.toLocaleString()} Credits`;
+            document.getElementById('totalRevenue').textContent = `${totalRevenue.toLocaleString()} Credits`;
+            document.getElementById('profitPerHour').textContent = `${profitPerHour.toLocaleString()} Credits/hour`;
+
+            document.getElementById('initialMessage').style.display = 'none';
+            document.getElementById('resultsSection').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

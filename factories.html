@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factories - RESOURCES GPS MMO Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-cogs mr-2"></i>RESOURCES GPS MMO Game
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="baseDropdown" data-toggle="dropdown">
+                            <i class="fas fa-building mr-1"></i>Base
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="headquarters.html"><i class="fas fa-home mr-2"></i>Headquarters</a>
+                            <a class="dropdown-item active" href="factories.html"><i class="fas fa-industry mr-2"></i>Factories</a>
+                            <a class="dropdown-item" href="special-buildings.html"><i class="fas fa-landmark mr-2"></i>Special Buildings</a>
+                            <a class="dropdown-item" href="resources.html"><i class="fas fa-gem mr-2"></i>Resources</a>
+                            <a class="dropdown-item" href="products.html"><i class="fas fa-cube mr-2"></i>Products</a>
+                            <a class="dropdown-item" href="loot.html"><i class="fas fa-treasure-chest mr-2"></i>Loot</a>
+                            <a class="dropdown-item" href="units.html"><i class="fas fa-users mr-2"></i>Units</a>
+                            <a class="dropdown-item" href="luxury-goods.html"><i class="fas fa-crown mr-2"></i>Luxury Goods</a>
+                            <a class="dropdown-item" href="prices.html"><i class="fas fa-chart-line mr-2"></i>Prices</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" data-toggle="dropdown">
+                            <i class="fas fa-tools mr-1"></i>Tools
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="production-calculation.html"><i class="fas fa-calculator mr-2"></i>Production Calculation</a>
+                            <a class="dropdown-item" href="factory-improvement.html"><i class="fas fa-arrow-trend-up mr-2"></i>Factory Improvement</a>
+                            <a class="dropdown-item" href="mine-improvements.html"><i class="fas fa-mountain mr-2"></i>Mine Improvements</a>
+                            <a class="dropdown-item" href="recycling.html"><i class="fas fa-recycle mr-2"></i>Recycling</a>
+                            <a class="dropdown-item" href="mines-cost.html"><i class="fas fa-money-bill-wave mr-2"></i>Mines Cost</a>
+                            <a class="dropdown-item" href="yield-of-the-mines.html"><i class="fas fa-chart-bar mr-2"></i>Yield of Mines</a>
+                            <a class="dropdown-item" href="attack-calculator.html"><i class="fas fa-sword mr-2"></i>Attack Calculator</a>
+                            <a class="dropdown-item" href="calculation-of-warehouse.html"><i class="fas fa-warehouse mr-2"></i>Warehouse Calculator</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Factories</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex align-items-center mb-4">
+                    <i class="fas fa-industry text-primary mr-4" style="font-size: 4rem;"></i>
+                    <div>
+                        <h1 class="mb-0">Factories</h1>
+                        <p class="text-muted mb-0">Production facilities for manufacturing products and materials</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Factory Categories -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-list mr-2"></i>All Factories</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>List of all available factories in the game with their production capabilities and requirements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Factory List -->
+        <div class="row">
+            <!-- Electronics Factory -->
+            <div class="col-lg-6 mb-4">
+                <div class="card factory-card h-100">
+                    <div class="card-header d-flex align-items-center">
+                        <img src="assets/images/electronics-factory.png" alt="Electronics Factory" class="factory-icon mr-3">
+                        <h5 class="mb-0">Electronics Factory</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <strong>Produces:</strong><br>
+                                <img src="assets/images/electronics.png" class="resource-icon mr-2" width="24" height="24">Electronics
+                            </div>
+                            <div class="col-6">
+                                <strong>Requires HQ Level:</strong><br>
+                                <span class="badge badge-primary">Level 2</span>
+                            </div>
+                        </div>
+                        
+                        <h6>Production Requirements (per 100 units):</h6>
+                        <ul class="list-unstyled">
+                            <li><img src="assets/images/copper-coins.png" class="resource-icon mr-2" width="20" height="20"> 300,000 Credits</li>
+                            <li><img src="assets/images/plastics.png" class="resource-icon mr-2" width="20" height="20"> 240 Plastics</li>
+                            <li><img src="assets/images/copper.png" class="resource-icon mr-2" width="20" height="20"> 180 Copper</li>
+                            <li><img src="assets/images/silicon.png" class="resource-icon mr-2" width="20" height="20"> 60 Silicon</li>
+                        </ul>
+                        
+                        <div class="mt-3">
+                            <strong>Profit:</strong> <span class="text-success">6,849,180 Credits</span> (28% margin)
+                        </div>
+                        
+                        <div class="mt-3">
+                            <strong>Used For:</strong>
+                            <ul class="mt-2">
+                                <li>Medical Technology production</li>
+                                <li>Scan Drones production</li>
+                                <li>Truck Plant upgrades</li>
+                                <li>HQ upgrades (Level 9+)</li>
+                                <li>Special building construction</li>
+                                <li>Unit production</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aluminium Factory -->
+            <div class="col-lg-6 mb-4">
+                <div class="card factory-card h-100">
+                    <div class="card-header d-flex align-items-center">
+                        <img src="assets/images/aluminium-factory.png" alt="Aluminium Factory" class="factory-icon mr-3">
+                        <h5 class="mb-0">Aluminium Factory</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <strong>Produces:</strong><br>
+                                <img src="assets/images/aluminium.png" class="resource-icon mr-2" width="24" height="24">Aluminium
+                            </div>
+                            <div class="col-6">
+                                <strong>Requires HQ Level:</strong><br>
+                                <span class="badge badge-primary">Level 3</span>
+                            </div>
+                        </div>
+                        
+                        <h6>Production Requirements (per 100 units):</h6>
+                        <ul class="list-unstyled">
+                            <li><img src="assets/images/copper-coins.png" class="resource-icon mr-2" width="20" height="20"> 150,000 Credits</li>
+                            <li><img src="assets/images/bauxite.png" class="resource-icon mr-2" width="20" height="20"> 200 Bauxite</li>
+                            <li><img src="assets/images/crude-oil.png" class="resource-icon mr-2" width="20" height="20"> 30 Crude Oil</li>
+                        </ul>
+                        
+                        <div class="mt-3">
+                            <strong>Profit:</strong> <span class="text-success">3,245,000 Credits</span> (24% margin)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Battery Factory -->
+            <div class="col-lg-6 mb-4">
+                <div class="card factory-card h-100">
+                    <div class="card-header d-flex align-items-center">
+                        <img src="assets/images/battery-factory.png" alt="Battery Factory" class="factory-icon mr-3">
+                        <h5 class="mb-0">Battery Factory</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <strong>Produces:</strong><br>
+                                <img src="assets/images/batteries.png" class="resource-icon mr-2" width="24" height="24">Batteries
+                            </div>
+                            <div class="col-6">
+                                <strong>Requires HQ Level:</strong><br>
+                                <span class="badge badge-primary">Level 4</span>
+                            </div>
+                        </div>
+                        
+                        <h6>Production Requirements (per 100 units):</h6>
+                        <ul class="list-unstyled">
+                            <li><img src="assets/images/copper-coins.png" class="resource-icon mr-2" width="20" height="20"> 500,000 Credits</li>
+                            <li><img src="assets/images/lithium.png" class="resource-icon mr-2" width="20" height="20"> 100 Lithium</li>
+                            <li><img src="assets/images/copper.png" class="resource-icon mr-2" width="20" height="20"> 80 Copper</li>
+                            <li><img src="assets/images/plastics.png" class="resource-icon mr-2" width="20" height="20"> 40 Plastics</li>
+                        </ul>
+                        
+                        <div class="mt-3">
+                            <strong>Profit:</strong> <span class="text-success">8,750,000 Credits</span> (32% margin)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plastic Factory -->
+            <div class="col-lg-6 mb-4">
+                <div class="card factory-card h-100">
+                    <div class="card-header d-flex align-items-center">
+                        <img src="assets/images/plastic-factory.png" alt="Plastic Factory" class="factory-icon mr-3">
+                        <h5 class="mb-0">Plastic Factory</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <strong>Produces:</strong><br>
+                                <img src="assets/images/plastics.png" class="resource-icon mr-2" width="24" height="24">Plastics
+                            </div>
+                            <div class="col-6">
+                                <strong>Requires HQ Level:</strong><br>
+                                <span class="badge badge-primary">Level 2</span>
+                            </div>
+                        </div>
+                        
+                        <h6>Production Requirements (per 100 units):</h6>
+                        <ul class="list-unstyled">
+                            <li><img src="assets/images/copper-coins.png" class="resource-icon mr-2" width="20" height="20"> 100,000 Credits</li>
+                            <li><img src="assets/images/crude-oil.png" class="resource-icon mr-2" width="20" height="20"> 150 Crude Oil</li>
+                            <li><img src="assets/images/coal.png" class="resource-icon mr-2" width="20" height="20"> 50 Coal</li>
+                        </ul>
+                        
+                        <div class="mt-3">
+                            <strong>Profit:</strong> <span class="text-success">1,850,000 Credits</span> (22% margin)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copper Refinery -->
+            <div class="col-lg-6 mb-4">
+                <div class="card factory-card h-100">
+                    <div class="card-header d-flex align-items-center">
+                        <img src="assets/images/copper-refinery.png" alt="Copper Refinery" class="factory-icon mr-3">
+                        <h5 class="mb-0">Copper Refinery</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <strong>Produces:</strong><br>
+                                <img src="assets/images/copper.png" class="resource-icon mr-2" width="24" height="24">Copper
+                            </div>
+                            <div class="col-6">
+                                <strong>Requires HQ Level:</strong><br>
+                                <span class="badge badge-primary">Level 2</span>
+                            </div>
+                        </div>
+                        
+                        <h6>Production Requirements (per 100 units):</h6>
+                        <ul class="list-unstyled">
+                            <li><img src="assets/images/copper-coins.png" class="resource-icon mr-2" width="20" height="20"> 80,000 Credits</li>
+                            <li><img src="assets/images/chalcopyrite.png" class="resource-icon mr-2" width="20" height="20"> 200 Chalcopyrite</li>
+                            <li><img src="assets/images/coal.png" class="resource-icon mr-2" width="20" height="20"> 30 Coal</li>
+                        </ul>
+                        
+                        <div class="mt-3">
+                            <strong>Profit:</strong> <span class="text-success">1,520,000 Credits</span> (25% margin)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arms Factory -->
+            <div class="col-lg-6 mb-4">
+                <div class="card factory-card h-100">
+                    <div class="card-header d-flex align-items-center">
+                        <img src="assets/images/arms-factory.png" alt="Arms Factory" class="factory-icon mr-3">
+                        <h5 class="mb-0">Arms Factory</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <strong>Produces:</strong><br>
+                                <img src="assets/images/weapons.png" class="resource-icon mr-2" width="24" height="24">Weapons
+                            </div>
+                            <div class="col-6">
+                                <strong>Requires HQ Level:</strong><br>
+                                <span class="badge badge-primary">Level 5</span>
+                            </div>
+                        </div>
+                        
+                        <h6>Production Requirements (per 100 units):</h6>
+                        <ul class="list-unstyled">
+                            <li><img src="assets/images/copper-coins.png" class="resource-icon mr-2" width="20" height="20"> 800,000 Credits</li>
+                            <li><img src="assets/images/steel.png" class="resource-icon mr-2" width="20" height="20"> 300 Steel</li>
+                            <li><img src="assets/images/copper.png" class="resource-icon mr-2" width="20" height="20"> 200 Copper</li>
+                            <li><img src="assets/images/electronics.png" class="resource-icon mr-2" width="20" height="20"> 50 Electronics</li>
+                        </ul>
+                        
+                        <div class="mt-3">
+                            <strong>Profit:</strong> <span class="text-success">12,450,000 Credits</span> (35% margin)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Factory Statistics -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-chart-line mr-2"></i>Production Statistics</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3 text-center">
+                                <h3 class="text-primary">15</h3>
+                                <p class="mb-0">Total Factories</p>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <h3 class="text-success">28%</h3>
+                                <p class="mb-0">Average Profit Margin</p>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <h3 class="text-warning">Level 2</h3>
+                                <p class="mb-0">Minimum HQ Level</p>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <h3 class="text-info">9</h3>
+                                <p class="mb-0">Resource Types</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>RESOURCES GPS MMO Game Reference</h5>
+                    <p class="mb-0">Complete game reference and calculator suite</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <p class="mb-0">
+                        <a href="index.html" class="text-light">Back to Home</a> | 
+                        <a href="headquarters.html" class="text-light ml-2">Previous: Headquarters</a> | 
+                        <a href="special-buildings.html" class="text-light ml-2">Next: Special Buildings</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="helper.js"></script>
+    <script>
+        // Factory data for calculator integration
+        window.FactoryData = {
+            electronics: {
+                name: "Electronics Factory",
+                output: "Electronics",
+                credits: 300000,
+                plastics: 240,
+                copper: 180,
+                silicon: 60,
+                hqLevel: 2,
+                profit: 6849180,
+                profitMargin: 28
+            },
+            aluminium: {
+                name: "Aluminium Factory",
+                output: "Aluminium",
+                credits: 150000,
+                bauxite: 200,
+                crudeOil: 30,
+                hqLevel: 3,
+                profit: 3245000,
+                profitMargin: 24
+            },
+            battery: {
+                name: "Battery Factory",
+                output: "Batteries",
+                credits: 500000,
+                lithium: 100,
+                copper: 80,
+                plastics: 40,
+                hqLevel: 4,
+                profit: 8750000,
+                profitMargin: 32
+            }
+        };
+    </script>
+</body>
+</html>

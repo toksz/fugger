@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yield of the Mines Calculator - RESOURCES GPS MMO Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-cogs mr-2"></i>RESOURCES GPS MMO Game
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="baseDropdown" data-toggle="dropdown">
+                            <i class="fas fa-building mr-1"></i>Base
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="headquarters.html"><i class="fas fa-home mr-2"></i>Headquarters</a>
+                            <a class="dropdown-item" href="factories.html"><i class="fas fa-industry mr-2"></i>Factories</a>
+                            <a class="dropdown-item" href="special-buildings.html"><i class="fas fa-landmark mr-2"></i>Special Buildings</a>
+                            <a class="dropdown-item" href="resources.html"><i class="fas fa-gem mr-2"></i>Resources</a>
+                            <a class="dropdown-item" href="products.html"><i class="fas fa-cube mr-2"></i>Products</a>
+                            <a class="dropdown-item" href="loot.html"><i class="fas fa-treasure-chest mr-2"></i>Loot</a>
+                            <a class="dropdown-item" href="units.html"><i class="fas fa-users mr-2"></i>Units</a>
+                            <a class="dropdown-item" href="luxury-goods.html"><i class="fas fa-crown mr-2"></i>Luxury Goods</a>
+                            <a class="dropdown-item" href="prices.html"><i class="fas fa-chart-line mr-2"></i>Prices</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" data-toggle="dropdown">
+                            <i class="fas fa-tools mr-1"></i>Tools
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="production-calculation.html"><i class="fas fa-calculator mr-2"></i>Production Calculation</a>
+                            <a class="dropdown-item" href="factory-improvement.html"><i class="fas fa-arrow-trend-up mr-2"></i>Factory Improvement</a>
+                            <a class="dropdown-item" href="mine-improvements.html"><i class="fas fa-mountain mr-2"></i>Mine Improvements</a>
+                            <a class="dropdown-item" href="recycling.html"><i class="fas fa-recycle mr-2"></i>Recycling</a>
+                            <a class="dropdown-item" href="mines-cost.html"><i class="fas fa-money-bill-wave mr-2"></i>Mines Cost</a>
+                            <a class="dropdown-item active" href="yield-of-the-mines.html"><i class="fas fa-chart-bar mr-2"></i>Yield of Mines</a>
+                            <a class="dropdown-item" href="attack-calculator.html"><i class="fas fa-sword mr-2"></i>Attack Calculator</a>
+                            <a class="dropdown-item" href="calculation-of-warehouse.html"><i class="fas fa-warehouse mr-2"></i>Warehouse Calculator</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="production-calculation.html">Tools</a></li>
+                <li class="breadcrumb-item active">Yield of Mines</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex align-items-center mb-4">
+                    <i class="fas fa-chart-bar text-primary mr-4" style="font-size: 4rem;"></i>
+                    <div>
+                        <h1 class="mb-0">Yield of the Mines Calculator</h1>
+                        <p class="text-muted mb-0">Analyze mine productivity and optimize extraction rates for maximum yield</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calculator Interface -->
+        <div class="row">
+            <!-- Input Panel -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-cogs mr-2"></i>Mining Yield Setup</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="yieldForm">
+                            <!-- Mine Resource -->
+                            <div class="form-group">
+                                <label for="mineResource"><i class="fas fa-gem mr-2"></i>Mine Resource</label>
+                                <select class="form-control" id="mineResource">
+                                    <option value="">Select Resource</option>
+                                    <option value="coal">Coal Mine</option>
+                                    <option value="iron">Iron Ore</option>
+                                    <option value="oil">Crude Oil</option>
+                                    <option value="copper">Copper Ore</option>
+                                    <option value="gold">Gold Ore</option>
+                                    <option value="silicon">Silicon</option>
+                                    <option value="bauxite">Bauxite</option>
+                                    <option value="lithium">Lithium</option>
+                                </select>
+                            </div>
+
+                            <!-- Mine Level -->
+                            <div class="form-group">
+                                <label for="mineYieldLevel"><i class="fas fa-level-up-alt mr-2"></i>Mine Level</label>
+                                <select class="form-control" id="mineYieldLevel">
+                                    <option value="1">Level 1</option>
+                                    <option value="2">Level 2</option>
+                                    <option value="3">Level 3</option>
+                                    <option value="4">Level 4</option>
+                                    <option value="5">Level 5</option>
+                                    <option value="6">Level 6</option>
+                                </select>
+                            </div>
+
+                            <!-- Operating Conditions -->
+                            <div class="form-group">
+                                <label for="operatingConditions"><i class="fas fa-thermometer-half mr-2"></i>Operating Conditions</label>
+                                <select class="form-control" id="operatingConditions">
+                                    <option value="optimal">Optimal (100% efficiency)</option>
+                                    <option value="good">Good (85% efficiency)</option>
+                                    <option value="average">Average (70% efficiency)</option>
+                                    <option value="poor">Poor (50% efficiency)</option>
+                                    <option value="adverse">Adverse (30% efficiency)</option>
+                                </select>
+                            </div>
+
+                            <!-- Operating Time -->
+                            <div class="form-group">
+                                <label for="operatingTime"><i class="fas fa-clock mr-2"></i>Operating Time (hours/day)</label>
+                                <input type="number" class="form-control" id="operatingTime" value="24" min="1" max="24">
+                            </div>
+
+                            <!-- Yield Boosters -->
+                            <div class="form-group">
+                                <label><i class="fas fa-rocket mr-2"></i>Yield Boosters</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="advancedExtraction">
+                                    <label class="form-check-label" for="advancedExtraction">Advanced Extraction (+40% yield)</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="perfectConditions">
+                                    <label class="form-check-label" for="perfectConditions">Perfect Conditions (+25% efficiency)</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="premiumEquipment">
+                                    <label class="form-check-label" for="premiumEquipment">Premium Equipment (+30% output)</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="expertCrew">
+                                    <label class="form-check-label" for="expertCrew">Expert Crew (+20% productivity)</label>
+                                </div>
+                            </div>
+
+                            <!-- Calculate Button -->
+                            <button type="button" class="btn btn-primary btn-block" onclick="calculateYield()">
+                                <i class="fas fa-calculator mr-2"></i>Calculate Mine Yield
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Panel -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-chart-area mr-2"></i>Yield Analysis</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="yieldResults" style="display: none;">
+                            <div class="alert alert-primary">
+                                <h6><i class="fas fa-info-circle mr-2"></i>Yield Summary</h6>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong>Daily Yield:</strong><br>
+                                        <span id="dailyYield" class="text-primary font-weight-bold">-</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Efficiency:</strong><br>
+                                        <span id="totalEfficiency" class="text-success">-</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6><i class="fas fa-chart-line mr-2"></i>Production Metrics</h6>
+                                    <table class="table table-sm">
+                                        <tr>
+                                            <td><strong>Base Yield:</strong></td>
+                                            <td id="baseYield" class="text-right">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Enhanced Yield:</strong></td>
+                                            <td id="enhancedYield" class="text-right">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Hourly Rate:</strong></td>
+                                            <td id="hourlyRate" class="text-right">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Peak Capacity:</strong></td>
+                                            <td id="peakCapacity" class="text-right">-</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6><i class="fas fa-dollar-sign mr-2"></i>Economic Impact</h6>
+                                    <table class="table table-sm">
+                                        <tr>
+                                            <td><strong>Daily Revenue:</strong></td>
+                                            <td id="yieldDailyRevenue" class="text-right text-success">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Monthly Revenue:</strong></td>
+                                            <td id="yieldMonthlyRevenue" class="text-right text-success">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Annual Revenue:</strong></td>
+                                            <td id="yieldAnnualRevenue" class="text-right text-success">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Value per Unit:</strong></td>
+                                            <td id="valuePerUnit" class="text-right text-info">-</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- Yield Recommendation -->
+                            <div id="yieldRecommendation" class="alert mt-3">
+                                <h6><i class="fas fa-lightbulb mr-2"></i>Yield Optimization</h6>
+                                <p id="yieldRecommendationText">-</p>
+                            </div>
+                        </div>
+
+                        <div id="yieldInitialMessage">
+                            <div class="text-center text-muted py-5">
+                                <i class="fas fa-chart-bar fa-3x mb-3"></i>
+                                <h5>Mine Yield Analysis</h5>
+                                <p>Select your mine type and operating conditions to calculate optimal yield scenarios.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Yield Optimization Guide -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-lightbulb mr-2"></i>Yield Optimization Guide</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h6><i class="fas fa-chart-line mr-2"></i>High-Yield Resources</h6>
+                                <ul>
+                                    <li><strong>Gold Ore:</strong> Highest value per unit</li>
+                                    <li><strong>Lithium:</strong> Premium tech demand</li>
+                                    <li><strong>Silicon:</strong> Electronics industry</li>
+                                    <li><strong>Crude Oil:</strong> Industrial backbone</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h6><i class="fas fa-cog mr-2"></i>Optimization Strategies</h6>
+                                <ul>
+                                    <li>Upgrade to higher mine levels</li>
+                                    <li>Use all available boosters</li>
+                                    <li>Maintain optimal conditions</li>
+                                    <li>Time operations for peak efficiency</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h6><i class="fas fa-trophy mr-2"></i>Peak Performance</h6>
+                                <ul>
+                                    <li>Level 6+ mines for maximum output</li>
+                                    <li>Perfect operating conditions</li>
+                                    <li>All boosters active simultaneously</li>
+                                    <li>24/7 continuous operation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mine Yield Reference -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-table mr-2"></i>Mine Yield Reference</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Resource</th>
+                                        <th>Base Yield (Level 1)</th>
+                                        <th>Market Value</th>
+                                        <th>Yield Potential</th>
+                                        <th>ROI Rating</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><i class="fas fa-star text-warning mr-2"></i>Gold Ore</td>
+                                        <td>15 units/hour</td>
+                                        <td>750 Credits</td>
+                                        <td>Very High</td>
+                                        <td><span class="badge badge-success">Excellent</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-battery-full text-success mr-2"></i>Lithium</td>
+                                        <td>18 units/hour</td>
+                                        <td>450 Credits</td>
+                                        <td>High</td>
+                                        <td><span class="badge badge-success">Very High</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-microchip text-info mr-2"></i>Silicon</td>
+                                        <td>20 units/hour</td>
+                                        <td>320 Credits</td>
+                                        <td>High</td>
+                                        <td><span class="badge badge-success">High</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-coin text-primary mr-2"></i>Copper Ore</td>
+                                        <td>35 units/hour</td>
+                                        <td>95 Credits</td>
+                                        <td>Medium</td>
+                                        <td><span class="badge badge-info">Good</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-oil-can text-dark mr-2"></i>Crude Oil</td>
+                                        <td>25 units/hour</td>
+                                        <td>85 Credits</td>
+                                        <td>Medium</td>
+                                        <td><span class="badge badge-info">Stable</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-gem text-danger mr-2"></i>Iron Ore</td>
+                                        <td>30 units/hour</td>
+                                        <td>120 Credits</td>
+                                        <td>Medium</td>
+                                        <td><span class="badge badge-warning">Moderate</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-mountain text-secondary mr-2"></i>Coal</td>
+                                        <td>50 units/hour</td>
+                                        <td>45 Credits</td>
+                                        <td>Basic</td>
+                                        <td><span class="badge badge-secondary">Starter</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Operating Condition Effects -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-thermometer-half mr-2"></i>Operating Conditions Impact</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card condition-card">
+                                    <div class="card-header bg-success text-white">
+                                        <h6><i class="fas fa-check-circle mr-2"></i>Optimal Conditions</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>100% Efficiency</strong></p>
+                                        <ul>
+                                            <li>Perfect weather conditions</li>
+                                            <li>Optimal temperature range</li>
+                                            <li>Stable geological conditions</li>
+                                            <li>No external disruptions</li>
+                                        </ul>
+                                        <p><strong>Bonus:</strong> Maximum yield potential</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card condition-card">
+                                    <div class="card-header bg-info text-white">
+                                        <h6><i class="fas fa-thumbs-up mr-2"></i>Good Conditions</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>85% Efficiency</strong></p>
+                                        <ul>
+                                            <li>Favorable weather patterns</li>
+                                            <li>Suitable temperature</li>
+                                            <li>Minimal geological issues</li>
+                                            <li>Occasional minor disruptions</li>
+                                        </ul>
+                                        <p><strong>Bonus:</strong> High productivity</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card condition-card">
+                                    <div class="card-header bg-warning text-white">
+                                        <h6><i class="fas fa-exclamation-triangle mr-2"></i>Poor Conditions</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>50% Efficiency</strong></p>
+                                        <ul>
+                                            <li>Adverse weather conditions</li>
+                                            <li>Extreme temperatures</li>
+                                            <li>Geological challenges</li>
+                                            <li>Frequent disruptions</li>
+                                        </ul>
+                                        <p><strong>Bonus:</strong> Reduced output</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>RESOURCES GPS MMO Game Reference</h5>
+                    <p class="mb-0">Complete game reference and calculator suite</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <p class="mb-0">
+                        <a href="index.html" class="text-light">Back to Home</a> | 
+                        <a href="mines-cost.html" class="text-light ml-2">Previous: Mines Cost</a> | 
+                        <a href="attack-calculator.html" class="text-light ml-2">Next: Attack Calculator</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="helper.js"></script>
+    <script>
+        // Mine yield data
+        const mineYieldData = {
+            coal: { baseYield: 50, price: 45, levelMultiplier: 1.4 },
+            iron: { baseYield: 30, price: 120, levelMultiplier: 1.5 },
+            oil: { baseYield: 25, price: 85, levelMultiplier: 1.6 },
+            copper: { baseYield: 35, price: 95, levelMultiplier: 1.4 },
+            gold: { baseYield: 15, price: 750, levelMultiplier: 1.7 },
+            silicon: { baseYield: 20, price: 320, levelMultiplier: 1.5 },
+            bauxite: { baseYield: 40, price: 180, levelMultiplier: 1.4 },
+            lithium: { baseYield: 18, price: 450, levelMultiplier: 1.6 }
+        };
+
+        function calculateYield() {
+            const mineResource = document.getElementById('mineResource').value;
+            const mineLevel = parseInt(document.getElementById('mineYieldLevel').value);
+            const operatingConditions = document.getElementById('operatingConditions').value;
+            const operatingTime = parseInt(document.getElementById('operatingTime').value);
+
+            if (!mineResource || !mineYieldData[mineResource]) {
+                alert('Please select a valid resource type');
+                return;
+            }
+
+            const data = mineYieldData[mineResource];
+            
+            // Base yield calculation
+            const baseYield = data.baseYield;
+            const levelYield = baseYield * Math.pow(data.levelMultiplier, mineLevel - 1);
+            
+            // Operating conditions efficiency
+            let conditionMultiplier = 1;
+            switch (operatingConditions) {
+                case 'optimal': conditionMultiplier = 1.0; break;
+                case 'good': conditionMultiplier = 0.85; break;
+                case 'average': conditionMultiplier = 0.70; break;
+                case 'poor': conditionMultiplier = 0.50; break;
+                case 'adverse': conditionMultiplier = 0.30; break;
+            }
+            
+            // Yield boosters
+            let boosterMultiplier = 1;
+            if (document.getElementById('advancedExtraction').checked) boosterMultiplier *= 1.40;
+            if (document.getElementById('perfectConditions').checked) boosterMultiplier *= 1.25;
+            if (document.getElementById('premiumEquipment').checked) boosterMultiplier *= 1.30;
+            if (document.getElementById('expertCrew').checked) boosterMultiplier *= 1.20;
+
+            const totalEfficiency = (conditionMultiplier * boosterMultiplier * 100).toFixed(0);
+            const enhancedYield = levelYield * conditionMultiplier * boosterMultiplier;
+            const dailyYield = enhancedYield * operatingTime;
+            const hourlyRate = enhancedYield;
+            const peakCapacity = data.baseYield * Math.pow(data.levelMultiplier, 6); // Max level
+            const dailyRevenue = dailyYield * data.price;
+            const monthlyRevenue = dailyRevenue * 30;
+            const annualRevenue = dailyRevenue * 365;
+            const valuePerUnit = data.price;
+
+            // Update display
+            document.getElementById('dailyYield').textContent = `${dailyYield.toFixed(0)} units/day`;
+            document.getElementById('totalEfficiency').textContent = `${totalEfficiency}%`;
+            document.getElementById('baseYield').textContent = `${baseYield.toFixed(0)} units/hour (Level 1)`;
+            document.getElementById('enhancedYield').textContent = `${enhancedYield.toFixed(1)} units/hour`;
+            document.getElementById('hourlyRate').textContent = `${hourlyRate.toFixed(1)} units/hour`;
+            document.getElementById('peakCapacity').textContent = `${peakCapacity.toFixed(0)} units/hour (Max)`;
+            document.getElementById('yieldDailyRevenue').textContent = `${dailyRevenue.toLocaleString()} Credits`;
+            document.getElementById('yieldMonthlyRevenue').textContent = `${monthlyRevenue.toLocaleString()} Credits`;
+            document.getElementById('yieldAnnualRevenue').textContent = `${annualRevenue.toLocaleString()} Credits`;
+            document.getElementById('valuePerUnit').textContent = `${valuePerUnit} Credits/unit`;
+
+            // Recommendation
+            let recommendation = '';
+            if (totalEfficiency >= 120) {
+                recommendation = `<div class="alert alert-success">
+                    <strong>Outstanding Yield Performance!</strong> ${totalEfficiency}% efficiency with excellent profit potential. Maintain these optimal conditions.
+                </div>`;
+            } else if (totalEfficiency >= 80) {
+                recommendation = `<div class="alert alert-info">
+                    <strong>Strong Yield Performance.</strong> ${totalEfficiency}% efficiency. Consider adding more boosters for even better results.
+                </div>`;
+            } else if (totalEfficiency >= 50) {
+                recommendation = `<div class="alert alert-warning">
+                    <strong>Moderate Yield.</strong> ${totalEfficiency}% efficiency. Focus on improving operating conditions and adding boosters.
+                </div>`;
+            } else {
+                recommendation = `<div class="alert alert-danger">
+                    <strong>Poor Yield Performance.</strong> Only ${totalEfficiency}% efficiency. Urgent optimization needed for profitability.
+                </div>`;
+            }
+            
+            document.getElementById('yieldRecommendationText').innerHTML = recommendation;
+
+            document.getElementById('yieldInitialMessage').style.display = 'none';
+            document.getElementById('yieldResults').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

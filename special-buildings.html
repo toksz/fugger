@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Buildings - RESOURCES GPS MMO Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-cogs mr-2"></i>RESOURCES GPS MMO Game
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="baseDropdown" data-toggle="dropdown">
+                            <i class="fas fa-building mr-1"></i>Base
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="headquarters.html"><i class="fas fa-home mr-2"></i>Headquarters</a>
+                            <a class="dropdown-item" href="factories.html"><i class="fas fa-industry mr-2"></i>Factories</a>
+                            <a class="dropdown-item active" href="special-buildings.html"><i class="fas fa-landmark mr-2"></i>Special Buildings</a>
+                            <a class="dropdown-item" href="resources.html"><i class="fas fa-gem mr-2"></i>Resources</a>
+                            <a class="dropdown-item" href="products.html"><i class="fas fa-cube mr-2"></i>Products</a>
+                            <a class="dropdown-item" href="loot.html"><i class="fas fa-treasure-chest mr-2"></i>Loot</a>
+                            <a class="dropdown-item" href="units.html"><i class="fas fa-users mr-2"></i>Units</a>
+                            <a class="dropdown-item" href="luxury-goods.html"><i class="fas fa-crown mr-2"></i>Luxury Goods</a>
+                            <a class="dropdown-item" href="prices.html"><i class="fas fa-chart-line mr-2"></i>Prices</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" data-toggle="dropdown">
+                            <i class="fas fa-tools mr-1"></i>Tools
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="production-calculation.html"><i class="fas fa-calculator mr-2"></i>Production Calculation</a>
+                            <a class="dropdown-item" href="factory-improvement.html"><i class="fas fa-arrow-trend-up mr-2"></i>Factory Improvement</a>
+                            <a class="dropdown-item" href="mine-improvements.html"><i class="fas fa-mountain mr-2"></i>Mine Improvements</a>
+                            <a class="dropdown-item" href="recycling.html"><i class="fas fa-recycle mr-2"></i>Recycling</a>
+                            <a class="dropdown-item" href="mines-cost.html"><i class="fas fa-money-bill-wave mr-2"></i>Mines Cost</a>
+                            <a class="dropdown-item" href="yield-of-the-mines.html"><i class="fas fa-chart-bar mr-2"></i>Yield of Mines</a>
+                            <a class="dropdown-item" href="attack-calculator.html"><i class="fas fa-sword mr-2"></i>Attack Calculator</a>
+                            <a class="dropdown-item" href="calculation-of-warehouse.html"><i class="fas fa-warehouse mr-2"></i>Warehouse Calculator</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Special Buildings</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex align-items-center mb-4">
+                    <i class="fas fa-landmark text-primary mr-4" style="font-size: 4rem;"></i>
+                    <div>
+                        <h1 class="mb-0">Special Buildings</h1>
+                        <p class="text-muted mb-0">Unique structures providing special bonuses and capabilities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Building Categories -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-list mr-2"></i>All Special Buildings</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Special buildings provide unique bonuses, unlock special abilities, and enhance your base operations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Building List -->
+        <div class="row">
+            <!-- Hospital -->
+            <div class="col-lg-6 mb-4">
+                <div class="card special-building-card h-100">
+                    <div class="card-header d-flex align-items-center">
+                        <img src="assets/images/hospital.png" alt="Hospital" class="building-icon mr-3">
+                        <h5 class="mb-0">Hospital</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <strong>Function:</strong><br>
+                                <span class="text-success">Medical Support</span>
+                            </div>
+                            <div class="col-6">
+                                <strong>Requires HQ Level:</strong><br>
+                                <span class="badge badge-primary">Level 3</span>
+                            </div>
+                        </div>
+                        
+                        <h6>Benefits:</h6>
+                        <ul>
+                            <li>Increases unit recovery speed</li>
+                            <li>Reduces casualty rates during attacks</li>
+                            <li>Enables medical technology production</li>
+                            <li>Improves factory efficiency by 15%</li>
+                        </ul>
+                        
+                        <h6>Construction Cost:</h6>
+                        <ul class="list-unstyled">
+                            <li><img src="assets/images/copper-coins.png" class="resource-icon mr-2" width="16" height="16"> 500,000 Credits</li>
+                            <li><img src="assets/images/medical-technology.png" class="resource-icon mr-2" width="16" height="16"> 100 Medical Technology</li>
+                            <li><img src="assets/images/electronics.png" class="resource-icon mr-2" width="16" height="16"> 200 Electronics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Casino -->
+            <div class="col-lg-6 mb-4">
+                <div class="card special-building-card h-100">
+                    <div class="card-header d-flex align-items-center">
+                        <img src="assets/images/casino.png" alt="Casino" class="building-icon mr-3">
+                        <h5 class="mb-0">Casino</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <strong>Function:</strong><br>
+                                <span class="text-warning">Income Generation</span>
+                            </div>
+                            <div class="col-6">
+                                <strong>Requires HQ Level:</strong><br>
+                                <span class="badge badge-primary">Level 4</span>
+                            </div>
+                        </div>
+                        
+                        <h6>Benefits:</h6>
+                        <ul>
+                            <li>Generates passive credits income</li>
+                            <li>Increases random loot drops</li>
+                            <li>Provides bonus credits during events</li>
+                            <li>Chance for instant resource finds</li>
+                        </ul>
+                        
+                        <h6>Construction Cost:</h6>
+                        <ul class="list-unstyled">
+                            <li><img src="assets/images/copper-coins.png" class="resource-icon mr-2" width="16" height="16"> 2,000,000 Credits</li>
+                            <li><img src="assets/images/gold.png" class="resource-icon mr-2" width="16" height="16"> 500 Gold</li>
+                            <li><img src="assets/images/luxury-car.png" class="resource-icon mr-2" width="16" height="16"> 1 Luxury Car</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HR Department -->
+            <div class="col-lg-6 mb-4">
+                <div class="card special-building-card h-100">
+                    <div class="card-header d-flex align-items-center">
+                        <img src="assets/images/hr-department.png" alt="HR Department" class="building-icon mr-3">
+                        <h5 class="mb-0">HR Department</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <strong>Function:</strong><br>
+                                <span class="text-info">Personnel Management</span>
+                            </div>
+                            <div class="col-6">
+                                <strong>Requires HQ Level:</strong><br>
+                                <span class="badge badge-primary">Level 3</span>
+                            </div>
+                        </div>
+                        
+                        <h6>Benefits:</h6>
+                        <ul>
+                            <li>Reduces unit training time by 25%</li>
+                            <li>Increases unit effectiveness by 20%</li>
+                            <li>Enables elite unit recruitment</li>
+                            <li>Provides bonus productivity</li>
+                        </ul>
+                        
+                        <h6>Construction Cost:</h6>
+                        <ul class="list-unstyled">
+                            <li><img src="assets/images/copper-coins.png" class="resource-icon mr-2" width="16" height="16"> 750,000 Credits</li>
+                            <li><img src="assets/images/electronics.png" class="resource-icon mr-2" width="16" height="16"> 150 Electronics</li>
+                            <li><img src="assets/images/medical-technology.png" class="resource-icon mr-2" width="16" height="16"> 50 Medical Technology</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fire Station -->
+            <div class="col-lg-6 mb-4">
+                <div class="card special-building-card h-100">
+                    <div class="card-header d-flex align-items-center">
+                        <img src="assets/images/fire-station.png" alt="Fire Station" class="building-icon mr-3">
+                        <h5 class="mb-0">Fire Station</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <strong>Function:</strong><br>
+                                <span class="text-danger">Damage Control</span>
+                            </div>
+                            <div class="col-6">
+                                <strong>Requires HQ Level:</strong><br>
+                                <span class="badge badge-primary">Level 3</span>
+                            </div>
+                        </div>
+                        
+                        <h6>Benefits:</h6>
+                        <ul>
+                            <li>Reduces damage from attacks by 30%</li>
+                            <li>Protects factories from sabotage</li>
+                            <li>Emergency resource recovery</li>
+                            <li>Reduces maintenance costs</li>
+                        </ul>
+                        
+                        <h6>Construction Cost:</h6>
+                        <ul class="list-unstyled">
+                            <li><img src="assets/images/copper-coins.png" class="resource-icon mr-2" width="16" height="16"> 400,000 Credits</li>
+                            <li><img src="assets/images/steel.png" class="resource-icon mr-2" width="16" height="16"> 300 Steel</li>
+                            <li><img src="assets/images/concrete.png" class="resource-icon mr-2" width="16" height="16"> 200 Concrete</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Center -->
+            <div class="col-lg-6 mb-4">
+                <div class="card special-building-card h-100">
+                    <div class="card-header d-flex align-items-center">
+                        <img src="assets/images/tech-center.png" alt="Tech Center" class="building-icon mr-3">
+                        <h5 class="mb-0">Tech Center</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <strong>Function:</strong><br>
+                                <span class="text-primary">Research & Development</span>
+                            </div>
+                            <div class="col-6">
+                                <strong>Requires HQ Level:</strong><br>
+                                <span class="badge badge-primary">Level 5</span>
+                            </div>
+                        </div>
+                        
+                        <h6>Benefits:</h6>
+                        <ul>
+                            <li>Unlocks advanced production recipes</li>
+                            <li>Increases research speed by 50%</li>
+                            <li>Reduces upgrade costs by 15%</li>
+                            <li>Enables tech upgrade production</li>
+                        </ul>
+                        
+                        <h6>Construction Cost:</h6>
+                        <ul class="list-unstyled">
+                            <li><img src="assets/images/copper-coins.png" class="resource-icon mr-2" width="16" height="16"> 5,000,000 Credits</li>
+                            <li><img src="assets/images/electronics.png" class="resource-icon mr-2" width="16" height="16"> 1,000 Electronics</li>
+                            <li><img src="assets/images/silicon.png" class="resource-icon mr-2" width="16" height="16"> 500 Silicon</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Training Camp -->
+            <div class="col-lg-6 mb-4">
+                <div class="card special-building-card h-100">
+                    <div class="card-header d-flex align-items-center">
+                        <img src="assets/images/training-camp.png" alt="Training Camp" class="building-icon mr-3">
+                        <h5 class="mb-0">Training Camp</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <strong>Function:</strong><br>
+                                <span class="text-success">Unit Training</span>
+                            </div>
+                            <div class="col-6">
+                                <strong>Requires HQ Level:</strong><br>
+                                <span class="badge badge-primary">Level 4</span>
+                            </div>
+                        </div>
+                        
+                        <h6>Benefits:</h6>
+                        <ul>
+                            <li>Enables elite unit production</li>
+                            <li>Reduces training costs by 20%</li>
+                            <li>Increases unit experience gain</li>
+                            <li>Unlocks special unit abilities</li>
+                        </ul>
+                        
+                        <h6>Construction Cost:</h6>
+                        <ul class="list-unstyled">
+                            <li><img src="assets/images/copper-coins.png" class="resource-icon mr-2" width="16" height="16"> 2,500,000 Credits</li>
+                            <li><img src="assets/images/steel.png" class="resource-icon mr-2" width="16" height="16"> 800 Steel</li>
+                            <li><img src="assets/images/weapons.png" class="resource-icon mr-2" width="16" height="16"> 100 Weapons</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Building Statistics -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-chart-line mr-2"></i>Special Building Statistics</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3 text-center">
+                                <h3 class="text-primary">12</h3>
+                                <p class="mb-0">Total Special Buildings</p>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <h3 class="text-success">25%</h3>
+                                <p class="mb-0">Average Efficiency Boost</p>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <h3 class="text-warning">Level 3</h3>
+                                <p class="mb-0">Minimum HQ Level</p>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <h3 class="text-info">5+</h3>
+                                <p class="mb-0">Building Categories</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>RESOURCES GPS MMO Game Reference</h5>
+                    <p class="mb-0">Complete game reference and calculator suite</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <p class="mb-0">
+                        <a href="index.html" class="text-light">Back to Home</a> | 
+                        <a href="factories.html" class="text-light ml-2">Previous: Factories</a> | 
+                        <a href="resources.html" class="text-light ml-2">Next: Resources</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="helper.js"></script>
+    <script>
+        // Special buildings data for calculator integration
+        window.SpecialBuildingData = {
+            hospital: {
+                name: "Hospital",
+                function: "Medical Support",
+                hqLevel: 3,
+                credits: 500000,
+                medicalTech: 100,
+                electronics: 200,
+                benefits: ["Increases unit recovery speed", "Reduces casualty rates", "Enables medical technology production"]
+            },
+            casino: {
+                name: "Casino",
+                function: "Income Generation",
+                hqLevel: 4,
+                credits: 2000000,
+                gold: 500,
+                luxuryCar: 1,
+                benefits: ["Generates passive income", "Increases random loot drops", "Bonus credits during events"]
+            }
+            // Additional building data would be added here
+        };
+    </script>
+</body>
+</html>
