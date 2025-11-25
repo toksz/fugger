@@ -36,21 +36,30 @@ body {
 
 .fa-3x {
     margin-bottom: 1rem;
+    color: var(--accent-gold);
 }
 
 /* Tool-specific styles */
 .form-control {
-    border-radius: 10px;
-    border: 2px solid #e9ecef;
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-primary);
 }
 
 .form-control:focus {
-    border-color: #667eea;
-    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
+    background-color: var(--secondary-bg);
+    color: var(--text-primary);
+}
+
+.form-control::placeholder {
+    color: var(--text-muted);
 }
 
 .stat {
-    color: #ffc107;
+    color: var(--accent-gold);
     font-weight: bold;
 }
 
@@ -111,15 +120,51 @@ body {
     margin-bottom: 2rem;
 }
 
+/* Dark theme utilities */
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+.text-primary {
+    color: var(--accent-gold) !important;
+}
+
+.text-success {
+    color: var(--accent-gold) !important;
+}
+
+.text-warning {
+    color: #ffc107 !important;
+}
+
+.text-danger {
+    color: #dc3545 !important;
+}
+
+.text-info {
+    color: #17a2b8 !important;
+}
+
+.badge {
+    background-color: var(--primary-dark);
+    color: var(--text-primary);
+}
+
+.alert {
+    background-color: var(--secondary-bg);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
 @media (max-width: 768px) {
     .jumbotron h1 {
         font-size: 2rem;
     }
-    
+
     .card {
         margin-bottom: 20px;
     }
-    
+
     .btn {
         font-size: 0.9rem;
     }

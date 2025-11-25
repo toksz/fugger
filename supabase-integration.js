@@ -241,6 +241,18 @@ class SupabaseIntegration {
     return this.marketPrices.find(p => p.item_id === parseInt(itemId));
   }
 
+  async logout() {
+    try {
+      const { error } = await this.supabase.auth.signOut();
+      if (error) throw error;
+      this.isAuthenticated = false;
+      this.updateUserDisplays();
+      console.log('User logged out');
+    } catch (error) {
+      console.error('Logout error:', error);
+    }
+  }
+
   // Utility methods for calculators
   formatCurrency(amount) {
     return new Intl.NumberFormat('en-US', {
