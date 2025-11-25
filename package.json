@@ -15,28 +15,27 @@
     "supabase:generate-types": "supabase gen types typescript --local > types/supabase.ts"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.39.1",
+    "@popperjs/core": "^2.11.8",
     "@supabase/auth-ui-react": "^0.4.7",
     "@supabase/auth-ui-shared": "^0.1.8",
-    "next": "^14.0.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "bootstrap": "^4.6.2",
+    "@supabase/supabase-js": "^2.84.0",
+    "bootstrap": "^5.3.8",
+    "chart.js": "^4.5.1",
     "jquery": "^3.7.1",
-    "popper.js": "^1.16.1",
-    "react-bootstrap": "^2.9.1",
-    "react-chartjs-2": "^5.2.0",
-    "chart.js": "^4.4.0",
-    "swr": "^2.2.4"
+    "next": "^14.2.33",
+    "react": "^18.3.1",
+    "react-bootstrap": "^2.10.10",
+    "react-chartjs-2": "^5.3.1",
+    "react-dom": "^18.3.1",
+    "swr": "^2.3.6"
   },
   "devDependencies": {
-    "@types/node": "^20.10.0",
-    "@types/react": "^18.2.44",
-    "@types/react-dom": "^18.2.17",
-    "typescript": "^5.3.3",
-    "eslint": "^8.55.0",
-    "eslint-config-next": "^14.0.4",
-    "@supabase/supabase-cli": "^1.142.2"
+    "@types/node": "^20.19.25",
+    "@types/react": "^18.3.27",
+    "@types/react-dom": "^18.3.7",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^14.2.33",
+    "typescript": "^5.9.3"
   },
   "keywords": [
     "resources-game",

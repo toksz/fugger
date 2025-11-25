@@ -119,7 +119,7 @@ export class ResourcesApiClient {
       })
 
       const { data, error } = await supabase.functions.invoke('get-user-data', {
-        body: null,
+        body: {},
         headers: {
           'x-custom-params': params.toString()
         }
@@ -201,7 +201,7 @@ export const db = {
     return { data, error }
   },
 
-  updateUserProfile: async (userId: string, updates: any) => {
+  updateUserProfile: async (userId: string, updates: Record<string, any>) => {
     const { data, error } = await supabase
       .from('profiles')
       .update(updates)
