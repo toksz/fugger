@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Factory, Lock, Mail, Eye, EyeOff, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -6,23 +6,67 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { auth } from "@/lib/supabase";
 
 const Auth = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleLogin = (e: React.FormEvent) => {
+  useEffect(() => {
+    // Check if user is already authenticated
+    const checkAuth = async () => {
+      const { user } = await auth.getUser();
+      if (user) {
+        navigate("/");
+      }
+    };
+    checkAuth();
+
+    // Listen for auth changes
+    const { data: { subscription } } = auth.onAuthStateChange((event, session) => {
+      if (event === 'SIGNED_IN' && session) {
+        navigate("/");
+      }
+    });
+
+    return () => subscription.unsubscribe();
+  }, [navigate]);
+
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder login - navigate to home
-    navigate("/");
+    setIsLoading(true);
+    setError("");
+
+    try {
+      const { error } = await auth.signIn(email, password);
+      if (error) throw error;
+      // Navigation will be handled by the auth state change listener
+    } catch (error: any) {
+      setError(error.message || "Login failed");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  const handleSignup = (e: React.FormEvent) => {
+  const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder signup - navigate to home
-    navigate("/");
+    setIsLoading(true);
+    setError("");
+
+    try {
+      const { error } = await auth.signUp(email, password, username);
+      if (error) throw error;
+      setError("Registration successful! Please check your email to confirm your account.");
+    } catch (error: any) {
+      setError(error.message || "Signup failed");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -123,14 +167,32 @@ const Auth = () => {
                     </div>
                   </div>
 
-                  <Button type="submit" className="w-full mt-6 terminal-glow font-mono uppercase tracking-wide">
-                    Establish Connection
+                  <Button type="submit" className="w-full mt-6 terminal-glow font-mono uppercase tracking-wide" disabled={isLoading}>
+                    {isLoading ? "CONNECTING..." : "Establish Connection"}
                   </Button>
                 </form>
               </TabsContent>
 
               <TabsContent value="signup">
                 <form onSubmit={handleSignup} className="space-y-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="signup-username" className="text-xs uppercase tracking-wide text-muted-foreground">
+                      Username
+                    </Label>
+                    <div className="relative">
+                      <Factory className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                      <Input
+                        id="signup-username"
+                        type="text"
+                        placeholder="operator_name"
+                        className="pl-10 bg-muted/50 border-primary/20 focus:border-primary font-mono"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        required
+                      />
+                    </div>
+                  </div>
+
                   <div className="space-y-2">
                     <Label htmlFor="signup-email" className="text-xs uppercase tracking-wide text-muted-foreground">
                       Email Address
@@ -189,6 +251,14 @@ const Auth = () => {
             </Tabs>
           </CardContent>
         </Card>
+
+        {error && (
+          <div className="bg-destructive/10 border border-destructive/20 rounded p-3 mt-4">
+            <p className="text-xs text-destructive font-mono">
+              <span className="text-destructive">⚠</span> {error}
+            </p>
+          </div>
+        )}
 
         <p className="text-center text-xs text-muted-foreground mt-6 font-mono">
           <span className="text-primary">SECURE</span> · All transmissions encrypted
