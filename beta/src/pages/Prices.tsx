@@ -1,8 +1,10 @@
-import { TrendingUp, Info } from "lucide-react";
+import { TrendingUp, Info, Loader2 } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
+import { useEffect, useState } from "react";
+import { market } from "@/lib/supabase";
 
 const allPrices = [
   { item: "Coal", category: "Resource", price: "45", change: "+2.3%", status: "Stable", statusType: "success" },
